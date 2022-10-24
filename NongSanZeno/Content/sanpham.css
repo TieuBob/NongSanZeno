@@ -1,0 +1,211 @@
+﻿body {
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: 'Arvo', serif;
+    color: #056303;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 2.8em;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+p, ul, ol {
+    margin-top: 0;
+    line-height: 240%;
+}
+
+ul, ol {
+}
+
+a {
+    text-decoration: none;
+    color: #056303;
+}
+
+    a:hover {
+    }
+
+#wrapper {
+    background: url(images/img03.jpg) repeat-y center top;
+}
+
+#wrapper2 {
+    background: url(images/img02.jpg) no-repeat center top;
+}
+#page {
+    width: 940px;
+    margin: 0px auto;
+    padding: 30px 0px;
+}
+#content {
+    float: right;
+    width: 592px;
+    padding: 0px 30px;
+}
+
+.post {
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-bottom: 1px dashed #CACACA;
+}
+
+    .post .title {
+        margin: 0px;
+        padding: 7px 0px 0px 0px;
+        letter-spacing: -1px;
+    }
+
+        .post .title a {
+            border: none;
+            letter-spacing: 1px;
+            letter-spacing: -1px;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 26px;
+            font-weight: normal;
+            color: #056303;
+        }
+
+    .post .meta {
+        margin-bottom: 30px;
+        padding: 0px;
+        letter-spacing: 1px;
+        text-align: left;
+        text-transform: uppercase;
+        font-family: 'Arvo', serif;
+        font-size: 12px;
+        font-weight: normal;
+    }
+
+        .post .meta .date {
+            float: left;
+        }
+
+        .post .meta .posted {
+            float: right;
+        }
+
+        .post .meta a {
+        }
+
+    .post .entry {
+        padding: 0px 0px 30px 0px;
+        padding-bottom: 20px;
+        text-align: justify;
+    }
+
+
+#search {
+    float: left;
+    width: 300px;
+    height: 60px;
+    padding: 20px 0px 0px 0px;
+}
+
+    #search form {
+        height: 41px;
+        margin: 0;
+        padding: 10px 0 0 20px;
+    }
+
+    #search fieldset {
+        margin: 0;
+        padding: 0;
+        border: inset;
+    }
+
+#search-text {
+    width: 200px;
+    padding: 5px 5px 3px 5px;
+    border: inset;
+    border-radius: 5px 10px;
+    background: #D0C9B7;
+    text-transform: lowercase;
+    font: normal 11px Arial, Helvetica, sans-serif;
+}
+
+#search-submit {
+    width: 70px;
+    height: 34px;
+    border: outset;
+    border-radius: 7px 7px;
+    background: #3d1a1a;
+    color: #FFF;
+}
+
+#sidebar {
+    float: left;
+    width: 310px;
+    margin: 0px;
+    color: #726B63;
+}
+
+    #sidebar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #sidebar li {
+        margin: 0;
+        padding: 0;
+    }
+
+        #sidebar li ul {
+            margin: 0px 0px;
+            padding-bottom: 50px;
+        }
+
+        #sidebar li li {
+            line-height: 35px;
+            border-bottom: 1px dashed #A5A08C;
+            margin: 0px 30px;
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+            #sidebar li li span {
+            }
+
+            #sidebar li li a {
+                padding: 0px 0px 0px 0px;
+            }
+
+    #sidebar h2 {
+        margin: 0px;
+        padding: 0px 0px 10px 0px;
+        padding-left: 30px;
+        text-align: left;
+        text-transform: uppercase;
+        font-size: 20px;
+        font-weight: normal;
+        color: #2E2E2E;
+    }
+
+    #sidebar p {
+        margin: 0 0px;
+        padding: 0px 30px 20px 30px;
+        text-align: justify;
+        font-size: 14px;
+    }
+
+    #sidebar a {
+        border: none;
+        color: #857E6E;
+    }
+
+        #sidebar a:hover {
+            text-decoration: underline;
+        }

@@ -1,0 +1,257 @@
+﻿@using NongSanZeno.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<tbSanPham>
+
+@{
+    ViewBag.Title = "SPTheoNhom";
+    Layout = "~/Views/Layout/_LayoutSanPham.cshtml";
+}
+
+<h3 style="text-align:center; color:red">SẢN PHẨM THEO NHÓM</h3>
+@foreach (var sanpham in Model)
+{
+    <div class="col-sm-3 col-lg-3 col-md-3">
+        <div class="thumbnail">
+
+            <a href="@Url.Action("ChiTiet", "NongSanZeno", new {id = sanpham.MaNhom})">
+                <img alt="@sanpham.TenSP" src="~/images/sanpham/@sanpham.AnhSP" style="width:170px; height:200px" />
+                <div>
+                    <br />
+                    <h6 style="text-align:center; height:30px">
+                        @sanpham.TenSP
+                    </h6>
+                    <br />
+                </div>
+            </a>
+            <div class="caption" style="margin-bottom:10px">
+                <p><strong> Giá: </strong> @String.Format("{0:0,0}", sanpham.GiaBan) VNĐ</p>
+                <div id="Datmua">
+                    <a href="@Url.Action("ThemGiohang", "GioHang", new {@masp = sanpham.MaSP, @strURL=Request.Url.ToString() })">
+                        ĐẶT MUA
+                    </a>
+                </div>
+            </div>
+            <div class="ratings">
+                <p class="pull-right">15 reviews</p>
+                <p>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                    <span class="glyphicon glyphicon-star"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+}
+
+@* tao lien ket cac trang*@
+<div style="clear: both;">&nbsp;</div>
+<ul class="pagination modal-4">
+    @Html.PagedListPager(Model, page => Url.Action("SPTheoBanhKem", new { page = page }))
+</ul>
+
+<style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .thumbnail {
+        /*width: 250px;
+        float: left;
+        padding: 0;*/
+        margin: 10px auto;
+        position: relative;
+        width: 320px;
+        height: 420px;
+        background: #EEEBDA;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+
+        .thumbnail:hover::before {
+            top: -75%;
+            transform: skewY(390deg);
+        }
+
+        .thumbnail::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-weight: 600;
+            font-size: 8em;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail img {
+            position: relative;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1;
+            max-height: 100%;
+            max-width: 100%;
+            transition: 0.5s;
+        }
+
+        .thumbnail:hover img {
+            max-width: 50%;
+            max-height: 50%;
+        }
+
+        .thumbnail .caption {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+            .thumbnail .caption h3 {
+                font-size: 10px;
+                color: aliceblue;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .thumbnail .caption .pull-right {
+                font-size: 24px;
+                color: aliceblue;
+                font-weight: 500;
+                text-transform: none;
+                letter-spacing: 1px;
+            }
+
+        .thumbnail .buy {
+            position: relative;
+            top: 200px;
+            opacity: 0;
+            margin: 0 auto;
+            padding: 8px 30px;
+            margin-top: 0px;
+            color: aliceblue;
+            text-decoration: none;
+            background: #938f63;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+            .thumbnail .buy:hover {
+                background-color: #fcf5c7;
+                color: black;
+                font-weight: bold;
+            }
+
+        .thumbnail:hover .buy {
+            top: 0;
+            position: relative;
+            opacity: 10;
+        }
+
+    div#Datmua {
+        clear: both;
+        background-color: darkgreen;
+        width: 100px;
+        height: 35px;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        padding-top: 8px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+    }
+
+    #Datmua a {
+        color: white;
+    }
+
+    /*.MenuTrang li {
+        display: inline-block;
+        box-sizing: border-box;
+        border: 1px solid #e1e1e1;
+        margin: 1px;
+        border-radius: 2px;
+        padding: 5px 10px;
+        text-align: center;
+        justify-content: center;
+    }*/
+    .pagination {
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        margin-top: 10px;
+        text-align: center
+    }
+
+        .pagination li {
+            display: inline;
+            text-align: center;
+        }
+
+        .pagination a {
+            float: left;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 5px 12px;
+            color: #fff;
+            margin-left: -1px;
+            border: 1px solid transparent;
+            line-height: 1.5;
+        }
+
+            .pagination a.active {
+                cursor: default;
+            }
+
+            .pagination a:active {
+                outline: none;
+            }
+
+    .modal-4 a {
+        margin: 0 5px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        -moz-border-radius: 100%;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        background-color: #F7C12C;
+        text-align: center;
+    }
+
+        .modal-4 a.prev {
+            -moz-border-radius: 50px 0 0 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px 0 0 50px;
+            width: 100px;
+        }
+
+        .modal-4 a.next {
+            -moz-border-radius: 0 50px 50px 0;
+            -webkit-border-radius: 0;
+            border-radius: 0 50px 50px 0;
+            width: 100px;
+        }
+
+        .modal-4 a:hover {
+            background-color: #FFA500;
+        }
+
+        .modal-4 a.active, .modal-4 a:active {
+            background-color: #FFA100;
+        }
+</style>

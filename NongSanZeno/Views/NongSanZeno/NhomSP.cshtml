@@ -1,0 +1,13 @@
+﻿@model IEnumerable<NongSanZeno.Models.tbNhom>
+
+<h2 style="text-align:center">NHÓM NÔNG SẢN</h2>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <a href="@Url.Action("SPTheoNhom", "NongSanZeno", new {id = item.MaNhom})" class="list-group-item">
+                @item.TenNhom
+            </a>
+        </li>
+    }
+</ul>

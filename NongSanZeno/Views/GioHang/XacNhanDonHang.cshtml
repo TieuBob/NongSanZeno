@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewBag.Title = "XacNhanDonHang";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+<div class="hinh">
+    <p><img src="~/Content/LoginUser/images/backgrounlogin.jpg" height="450"></p>
+</div>
+<div class="thank-you" style="margin-left: 22%">
+    <h1>Đơn Hàng Của Quý Khách Đã Được Đặt Thành Công</h1>
+    <h4>Chúng Tôi Sẽ Liên Hệ Xác Nhận Với Quý Khách Trong Thời Gian Sớm Nhất Và Giao Hàng Đúng Hẹn</h4>
+    <a class="btn btn-default" href="@Url.Action("SanPham","NongSanZeno")">Tiếp Tục Mua Hàng</a>
+</div>
+
+<style>
+    /*body {
+        background: url(~/Content/images/cart.jpg);
+    }*/
+    .thank-you {
+        width: 1140px;
+        height: auto;
+        color: black;
+    }
+
+    h1, h4 {
+        padding-top: 20px;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        color: white;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        margin: 20px 0px;
+        margin-left: 43%;
+        background-color: #ea2858;
+    }
+
+        .btn:hover {
+            background: #fff;
+            color: black;
+            transition: 0.5s all;
+            -webkit-transition: 0.5s all;
+            -o-transition: 0.5s all;
+            -moz-transition: 0.5s all;
+            -ms-transition: 0.5s all;
+        }
+
+    @@media (max-width: 1050px) {
+        .thank-you {
+            width: 940px;
+        }
+    }
+
+    @@media (max-width: 780px) {
+        .thank-you {
+            width: 700px;
+        }
+
+        h1, h4 {
+            font-size: 20px;
+        }
+
+        h4 {
+            width: 80%;
+            margin-left: 70px;
+        }
+
+        .btn {
+            width: 40%;
+            margin-left: 31%;
+        }
+    }
+
+    @@media (max-width: 480px) {
+        .thank-you {
+            width: 100%;
+        }
+
+        h1, h4 {
+            width: 80%;
+            font-size: 14px;
+            margin-left: 50px;
+        }
+
+        h4 {
+            width: 80%;
+            margin-left: 50px;
+        }
+
+        .btn {
+            width: 45%;
+            margin-left: 32%;
+        }
+    }
+
+    @@media (max-width: 320px) {
+        .thank-you {
+            width: 100%;
+        }
+
+        h1, h4 {
+            width: 80%;
+            font-size: 16px;
+            margin-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            width: 52%;
+            font-size: 12px;
+            margin-left: 25%;
+            margin-top: 65px;
+        }
+    }
+
+    .hinh {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+</style>

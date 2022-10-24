@@ -1,0 +1,129 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<style>
+    .fa {
+        text-align: center;
+        font-size: 3em;
+        letter-spacing: 8px;
+        font-weight: 500;
+        font-family: 'Dosis', sans-serif;
+        text-transform: uppercase;
+        text-shadow: 5px 3px 5px #101010;
+    }
+
+    textarea {
+        margin: 10px 0;
+        outline: none;
+        font-size: .9em;
+        padding: 1em 3em 1em 1em;
+        border: none;
+        margin-bottom: 0.3em;
+        background: rgba(255, 255, 255, 0.85);
+        width: 100%;
+        height: 100px;
+        color: #000;
+        border-radius: 30px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+        textarea:focus {
+            height: 50%;
+            text-align: unset;
+            padding: 15px 15px;
+        }
+
+    .Support {
+        padding-top: 10%;
+    }
+
+    .in {
+        width: 15%;
+        margin-top: 20px;
+        margin-left: 45%;
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liên Hệ Sugar Bakery</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Online Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript">
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Meta tag Keywords -->
+    <!-- css files -->
+    <link rel="stylesheet" href="~/Content/Contact/ContactUs.css" type="text/css" media="all" /> <!-- Style-CSS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- //css files -->
+    <!-- online-fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800&amp;subset=latin-ext" rel="stylesheet">
+    <!-- //online-fonts -->
+</head>
+<body>
+    <div class="container">
+        <!--header-->
+        <div class="header-w3l">
+            <h1>Chăm Sóc Khách Hàng</h1>
+        </div>
+        <!--//header-->
+        @using (Html.BeginForm())
+        {
+            <div class="contact-box">
+                <div style="height:400px;color:black" class="contact-left">
+                    <h2>Địa Chỉ</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.4205948966132!2d106.78291401534767!3d10.855580060694733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175276e7ea103df%3A0xb6cf10bb7d719327!2zSHV0ZWNoIEtodSBFIC0gVHJ1bmcgVMOibSDEkMOgbyBU4bqhbyBOaMOibiBM4buxYyBDaOG6pXQgTMaw4bujbmcgQ2Fv!5e0!3m2!1svi!2s!4v1656220473346!5m2!1svi!2s"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="contact-right">
+                    <div class="right-top">
+
+                        <div class="row">
+                            <br />
+                            <p>Email:NongSanZeno@gmail.com</p>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="row">
+                            <br />
+                            <p>Thời Gian Làm Việc: 8H-22H Thứ Hai-Chủ Nhật</p>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="right-bottom" style="color:black">
+                        <h2>Mạng Xã Hội</h2>
+
+                        <a href="https://www.facebook.com/truongdinh.truong61/"><img src="~/images/contact/fb.png"></a>
+                        <a href="https://twitter.com/Trnginh84751498"><img src="~/images/contact/twitter.png"></a>
+                        <a href="https://www.instagram.com/_iamtdt/"><img src="~/images/contact/instagram.png"></a>
+                        <div class="clear"></div>
+                        <div style="margin-top:25px;" class="back">
+                            <a class="submit" href="@Url.Action("TrangChu", "Home")" style="margin-top: 50px;background-color:darkgreen;color:black;font-weight:bold">TRANG CHỦ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="Support">
+                <div class="header-w3l">
+                    <h1>Phản hồi của bạn đến Nông Sản Zeno</h1>
+                </div>
+
+                <div class="pom-agile">
+                    <textarea placeholder="Ý Kiến Của Khách Hàng" name="LyDo" class="pass" type="text" required=""></textarea>
+                    <span class="icon2"><i aria-hidden="true"></i></span>
+                    <input class="submit in" style="background-color:darkgreen;color:black;font-weight:bold" type="Submit" value="Gửi">
+                </div>
+            </div>
+        }
+
+    </div>
+</body>
+</html>

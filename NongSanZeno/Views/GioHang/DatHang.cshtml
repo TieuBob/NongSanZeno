@@ -1,0 +1,185 @@
+﻿@using NongSanZeno.Models
+@model List<GioHang>
+
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+<div class="content-giohang">
+    <h1 style="text-align:center" class="tt">Thông Tin Đơn Hàng</h1>
+    <table align="center" border="1">
+        <tr style="text-align:center; font-weight:bold">
+            <td>Mã Sản Phẩm</td>
+            <td>Tên Sản Phẩm</td>
+            <td>Ảnh Bìa</td>
+            <td>Số Lượng</td>
+            <td>Đơn Giá</td>
+            <td>Thành Tiền</td>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr style="text-align:center; font-weight:bold">
+                <td>@item.masp</td>
+                <td>@item.tensp</td>
+                <td><img src="~/images/sanpham/@item.anhbia" alt="Alternate Text" width="100" /></td>
+                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { id = item.masp }))
+                {
+                    <td>@item.soluong</td>
+                    <td>@String.Format("{0:0,0 }", @item.dongia)</td>
+                    <td>@String.Format("{0:0,0 }", @item.thanhtien)</td>
+                }
+            </tr>
+        }
+        <tr style="text-align:center; font-weight:bold">
+            <td colspan="4">Số Lượng : @ViewBag.TongSoLuong</td>
+            <td colspan="5">Tổng Tiền : @String.Format("{0:0,0 }", ViewBag.TongTien) VNĐ</td>
+        </tr>
+        <tr style="text-align:right; font-weight:bold">
+            <td colspan="9"><a class="btn btn-warning" style="background-color: #cecece; border-radius: 10px; border-color: #808080; color: black; font-weight: bold; " href="@Url.Action("GioHang","GioHang")">Về Giỏ Hàng</a></td>
+        </tr>
+    </table>
+</div>
+<div class="content-giohang" style="margin-top: 100px;">
+    <h1 style="text-align:center">Thông Tin Đặt Hàng</h1>
+    @{
+        tbKhachHang kh = (tbKhachHang)Session["Taikhoan"];
+        tbDonHang dh = new tbDonHang();
+
+    }
+    <table align="center">
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <tr style="height:40px">
+                <td>Khách Hàng</td>
+                <td style="font-weight:bold">@kh.HoTen</td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Tên Người Nhận</td>
+                <td>
+                    <div class="pom-agile">
+                        <input placeholder="Tên Người Nhận" name="NguoiNhan" class="pass" type="text" required="">
+                        <span class="icon2"><i aria-hidden="true"></i></span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Email</td>
+                <td style="font-weight:bold">@kh.Email</td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Địa Chỉ</td>
+                <td style="font-weight:bold">@kh.DiaChiKH</td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Số Điện Thoại</td>
+                <td style="font-weight:bold">@kh.DienThoaiKH</td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Ngày Đặt</td>
+                <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Ngày Giao</td>
+                <td style="font-weight:bold"><input type="date" name="Ngaygiao" /></td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Điạ Chỉ Nhận Hàng</td>
+                <td>
+                    <div class="pom-agile">
+                        <input placeholder="Địa Chỉ" name="DiaChi" class="pass" type="text" required="">
+                        <span class="icon2"><i aria-hidden="true"></i></span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr style="height:40px">
+                <td>Ghi Chú</td>
+                <td>
+                    <div class="pom-agile">
+                        <input placeholder="Ghi Chú" name="GhiChu" class="pass" type="text" required="">
+                        <span class="icon2"><i aria-hidden="true"></i></span>
+                    </div>
+                </td>
+            </tr>
+
+            <tr style="height:40px;">
+
+                <td colspan="9" style="text-align: right; font-weight: bold">
+                    <input type="submit" style="background-color: #cecece; border-radius: 10px; border-color: #808080;padding:5px; color: black; font-weight: bold; " value="Đồng Ý Đặt Hàng" />
+                </td>
+            </tr>
+
+        }
+    </table>
+
+</div>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    h1 {
+        width: 85%;
+        color: black;
+        margin-top: 100px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .content-giohang {
+        width: 100%;
+        margin-top: 100px;
+        font-size: 20px;
+    }
+
+    table {
+        width: 85%;
+        box-shadow: 0px 15px 25px 5px rgb(0 0 0 / 25%);
+        border: 0.5px;
+        border-radius: 15px;
+        margin: 0 auto;
+    }
+
+    td {
+        padding: 10px;
+        border: solid;
+    }
+
+    tr:first-child {
+        background: #808080;
+    }
+
+    tr btn {
+        margin: 10px 10px;
+    }
+
+    media (max-width: 1024px) {
+        content-giohang
+
+    {
+        margin-top: 70px;
+        font-size: 12px;
+    }
+
+    }
+
+    media (max-width: 430px) {
+        content-giohang
+
+    {
+        width: 50%;
+        font-size: 8px;
+    }
+    }
+</style>

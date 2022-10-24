@@ -1,0 +1,452 @@
+﻿@model IEnumerable<NongSanZeno.Models.tbSanPham>
+
+@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/Content/home.css">
+<!-- home section start -->
+
+<section class="home" id="home">
+    <div class="slides-container">
+
+        <div class="slide active">
+            <div class="content">
+                <span>Bánh Sinh Nhật</span>
+                <h3>Giảm Giá Đến 50%</h3>
+                <a href="@Url.Action("SanPham","NongSanZeno")" class="btn">Shop Now</a>
+            </div>
+            <div class="img">
+                <img src="~/images/img/home-img-1.png" alt="">
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+                <span>Freeship Với Hóa Đơn Trên 500.000vnđ</span>
+                <h3>Giảm Giá Đến 50%</h3>
+                <a href="@Url.Action("SanPham","NongSanZeno")" class="btn">Shop Now</a>
+            </div>
+            <div class="img">
+                <img src="~/images/img/home-img-2.png" alt="">
+            </div>
+        </div>
+
+        <div class="slide">
+            <div class="content">
+                <span>Giao Hàng Tận Nơi Trong Vòng 30 Phút</span>
+                <h3>Giảm Giá Đến 50%</h3>
+                <a href="@Url.Action("SanPham","NongSanZeno")" class="btn">Shop Now</a>
+            </div>
+            <div class="img">
+                <img src="~/images/img/home-img-3.png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div id="next-slide" class="fas fa-angle-right" onclick="next()"></div>
+    <div id="prev-slide" class="fas fa-angle-left" onclick="next()"></div>
+
+</section>
+
+
+<section class="banner-container">
+
+    <div class="banner">
+        <img src="~/images/img/banner-1.jpg" alt="">
+        <div class="content">
+            <span>Flash Sale</span>
+            <h3>Giảm Giá Đến 50%</h3>
+            <a href="@Url.Action("SanPham","NongSanZeno")" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="~/images/img/banner-2.jpg" alt="">
+        <div class="content">
+            <span>Flash Sale</span>
+            <h3>Giảm Giá Đến 50%</h3>
+            <a href="@Url.Action("SanPham","NongSanZeno")" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="~/images/img/banner-3.jpg" alt="">
+        <div class="content">
+            <span>Flash Sale</span>
+            <h3>Giảm Giá Đến 50%</h3>
+            <a href="@Url.Action("SanPham","NongSanZeno")" class="btn">Shop Now</a>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="products; category">
+
+    <h1 class="title"> Sản Phẩm <span>Nổi Bật</span> <a href="@Url.Action("SanPham","NongSanZeno")">Xem Tất Cả >></a> </h1>
+
+    <div class="box-container">
+        @foreach (var sanpham in Model)
+        {
+            <div class="col-sm-4 col-lg-4 col-md-4">
+                <div class="thumbnail">
+                    <a href="@Url.Action("ChiTiet", "NongSanZeno", new { id = @sanpham.MaSP })">
+                        <img alt="@sanpham.TenSP" src="~/images/sanpham/@sanpham.AnhSP" style="width:170px; height:200px" />
+                        <div>
+                            <br />
+                            <h6 style="text-align:center; height:30px">
+                                @sanpham.TenSP
+                            </h6>
+                            <br />
+                        </div>
+                    </a>
+                    <div class="caption" style="margin-bottom:10px">
+                        <p><strong> Giá: </strong> @String.Format("{0:0,0}", sanpham.GiaBan) VNĐ</p>
+                        <div id="Datmua">
+                            <a href="@Url.Action("ThemGiohang", "GioHang", new { @masp = sanpham.MaSP, @strURL = Request.Url.ToString() })">
+                                ĐẶT MUA
+                            </a>
+                        </div>
+                        <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+
+<!-- about section start -->
+
+<section class="about">
+    <div class="img">
+        <img src="~/images/img/sugar.png" alt="">
+    </div>
+    <div class="content">
+        <span>Chào Mừng Bạn Đén Với Tiệm Bánh Sugar</span>
+        <h3>Sugar Bakery</h3>
+        <p>
+            Được thành lập vào tháng 5 năm 2022 với 4 thành viên cực kì tâm huyết, Sugar Bakery tự tin là một trong những tiệm bánh hàng đầu ở TP.HCM, với mong muốn đem lại cho khách hàng những chiếc bánh tươi ngon mới ra lò và giá thành hợp lý. Sugar
+            Bakery luôn mong muốn khách hàng sẽ nhận được những chiếc bánh ngon nhất, giúp khách hàng ngon miệng.
+        </p>
+        <h6 class="title"><a href="@Url.Action("GioiThieu","Home")">Về chúng tôi >>></a> </h6>
+    </div>
+</section>
+
+<!-- gallery section start -->
+
+<section class="gallery">
+    <h1 class="title"> Bộ Sưu Tập <span>Ảnh</span> <a href="@Url.Action("SanPham","NongSanZeno")">Xem Tất Cả >></a> </h1>
+    <div class="box-container">
+
+        <div class="box">
+            <img src="~/images/img/gallery-img-1.jpg" alt="">
+            <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share-alt"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="~/images/img/gallery-img-2.jpg" alt="">
+            <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share-alt"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="~/images/img/gallery-img-3.jpg" alt="">
+            <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share-alt"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="~/images/img/gallery-img-4.jpg" alt="">
+            <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share-alt"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="~/images/img/gallery-img-5.jpg" alt="">
+            <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share-alt"></a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="~/images/img/gallery-img-6.jpg" alt="">
+            <div class="icons">
+                <a href="#" class="fas fa-eye"></a>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" class="fas fa-share-alt"></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- client section start -->
+
+<div class="heading">
+    <h1>Đánh Giá Của Khách Hàng</h1>
+</div>
+
+<section class="info-container">
+
+    <div class="info">
+        <img src="~/images/img/icons-1.png" alt="">
+        <div class="content">
+            <h3>Giao Hàng Siêu Tốc</h3>
+            <span>Trong Vòng 30 Phút</span>
+        </div>
+    </div>
+
+    <div class="info">
+        <img src="~/images/img/icons-2.png" alt="">
+        <div class="content">
+            <h3>Hoạt Động 24h</h3>
+            <span>Gọi Chúng Tôi Bất Kì Lúc Nào</span>
+        </div>
+    </div>
+
+    <div class="info">
+        <img src="~/images/img/icons-3.png" alt="">
+        <div class="content">
+            <h3>Thanh Toán Dễ Dàng</h3>
+            <span>Internet Baking, Visa, Momo,...</span>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+<!-- custom js file link -->
+<script src="~/Scripts/main.js"></script>
+
+<style>
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .thumbnail {
+        /*width: 250px;
+        float: left;
+        padding: 0;*/
+        margin: 10px auto;
+        position: relative;
+        width: 320px;
+        height: 420px;
+        background: #EEEBDA;
+        border-radius: 20px;
+        overflow: hidden;
+        /*box-shadow: 10px 5px #ebebeb;*/
+    }
+
+        .thumbnail:hover::before {
+            top: -75%;
+            transform: skewY(390deg);
+        }
+
+        .thumbnail::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-weight: 600;
+            font-size: 8em;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnail img {
+            position: relative;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1;
+            max-height: 100%;
+            max-width: 100%;
+            transition: 0.5s;
+        }
+
+        .thumbnail:hover img {
+            max-width: 50%;
+            max-height: 50%;
+        }
+
+        .thumbnail .caption {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1;
+        }
+
+            .thumbnail .caption h3 {
+                font-size: 10px;
+                color: aliceblue;
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .thumbnail .caption .pull-right {
+                font-size: 24px;
+                color: aliceblue;
+                font-weight: 500;
+                text-transform: none;
+                letter-spacing: 1px;
+            }
+
+        .thumbnail .buy {
+            position: relative;
+            top: 200px;
+            opacity: 0;
+            margin: 0 auto;
+            padding: 8px 30px;
+            margin-top: 0px;
+            color: aliceblue;
+            text-decoration: none;
+            background: #938f63;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.5s;
+            font-weight: bold;
+        }
+
+            .thumbnail .buy:hover {
+                background-color: #fcf5c7;
+                color: black;
+                font-weight: bold;
+            }
+
+        .thumbnail:hover .buy {
+            top: 0;
+            position: relative;
+            opacity: 10;
+        }
+
+    div#Datmua {
+        clear: both;
+        background-color: darkgreen;
+        width: 100px;
+        height: 35px;
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        padding-top: 8px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+    }
+
+    #Datmua a {
+        color: white;
+    }
+
+    /*.MenuTrang li {
+        display: inline-block;
+        box-sizing: border-box;
+        border: 1px solid #e1e1e1;
+        margin: 1px;
+        border-radius: 2px;
+        padding: 5px 10px;
+        text-align: center;
+        justify-content: center;
+    }*/
+    .pagination {
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        margin-top: 10px;
+        text-align: center
+    }
+
+        .pagination li {
+            display: inline;
+            text-align: center;
+        }
+
+        .pagination a {
+            float: left;
+            display: block;
+            font-size: 14px;
+            text-decoration: none;
+            padding: 5px 12px;
+            color: #fff;
+            margin-left: -1px;
+            border: 1px solid transparent;
+            line-height: 1.5;
+        }
+
+            .pagination a.active {
+                cursor: default;
+            }
+
+            .pagination a:active {
+                outline: none;
+            }
+
+    .modal-4 a {
+        margin: 0 5px;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        -moz-border-radius: 100%;
+        -webkit-border-radius: 100%;
+        border-radius: 100%;
+        background-color: #F7C12C;
+        text-align: center;
+    }
+
+        .modal-4 a.prev {
+            -moz-border-radius: 50px 0 0 50px;
+            -webkit-border-radius: 50px;
+            border-radius: 50px 0 0 50px;
+            width: 100px;
+        }
+
+        .modal-4 a.next {
+            -moz-border-radius: 0 50px 50px 0;
+            -webkit-border-radius: 0;
+            border-radius: 0 50px 50px 0;
+            width: 100px;
+        }
+
+        .modal-4 a:hover {
+            background-color: #FFA500;
+        }
+
+        .modal-4 a.active, .modal-4 a:active {
+            background-color: #FFA100;
+        }
+</style>
