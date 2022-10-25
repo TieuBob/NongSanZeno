@@ -144,6 +144,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\sanpham.css" />
     <Content Include="images\cart.jpg" />
     <Content Include="images\contact\fb.png" />
     <Content Include="images\contact\fbbb.jpg" />
@@ -1980,7 +1981,6 @@
     <Content Include="Content\LoginUser\js\owl.carousel.min.js" />
     <Content Include="Content\LoginUser\js\popper.min.js" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="Content\sanpham.css" />
     <Content Include="Content\Contact\ContactUs.css" />
     <Content Include="Content\Contact\font-awesome.css" />
     <Content Include="Content\Contact\style.css" />

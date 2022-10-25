@@ -1953,7 +1953,8 @@ pre code {
     width: 100%;
   }
 }
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px)*/
+@media (min-width: 2000px) {
   .container {
     width: 53.158101216%;
   }
