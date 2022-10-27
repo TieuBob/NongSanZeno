@@ -127,11 +127,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginAdminController.cs" />
+    <Compile Include="Controllers\LoginUserController.cs" />
     <Compile Include="Controllers\NongSanZenoController.cs" />
-    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2415,11 +2415,17 @@
     <Content Include="Views\GioHang\GiohangPartial.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\XacNhanDonHang.cshtml" />
+    <Content Include="Views\Home\GioiThieu.cshtml" />
+    <Content Include="Views\Layout\_LayoutAdmin.cshtml" />
+    <Content Include="Views\LoginAdmin\LoginAdmin.cshtml" />
+    <Content Include="Views\LoginAdmin\Index.cshtml" />
+    <Content Include="Views\LoginAdmin\ForgotPassword.cshtml" />
+    <Content Include="Views\LoginUser\DangKy.cshtml" />
+    <Content Include="Views\LoginUser\Dangnhap.cshtml" />
+    <Content Include="Views\LoginUser\Thongtintk.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

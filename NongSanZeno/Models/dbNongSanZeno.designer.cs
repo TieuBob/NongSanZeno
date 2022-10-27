@@ -1366,7 +1366,7 @@ namespace NongSanZeno.Models
 		
 		private int _MaKH;
 		
-		private string _HoTen;
+		private string _TenKH;
 		
 		private string _TaiKhoan;
 		
@@ -1390,8 +1390,8 @@ namespace NongSanZeno.Models
     partial void OnCreated();
     partial void OnMaKHChanging(int value);
     partial void OnMaKHChanged();
-    partial void OnHoTenChanging(string value);
-    partial void OnHoTenChanged();
+    partial void OnTenKHChanging(string value);
+    partial void OnTenKHChanged();
     partial void OnTaiKhoanChanging(string value);
     partial void OnTaiKhoanChanged();
     partial void OnMatKhauChanging(string value);
@@ -1433,22 +1433,22 @@ namespace NongSanZeno.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_HoTen", DbType="NVarChar(50)")]
-		public string HoTen
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKH", DbType="NVarChar(50)")]
+		public string TenKH
 		{
 			get
 			{
-				return this._HoTen;
+				return this._TenKH;
 			}
 			set
 			{
-				if ((this._HoTen != value))
+				if ((this._TenKH != value))
 				{
-					this.OnHoTenChanging(value);
+					this.OnTenKHChanging(value);
 					this.SendPropertyChanging();
-					this._HoTen = value;
-					this.SendPropertyChanged("HoTen");
-					this.OnHoTenChanged();
+					this._TenKH = value;
+					this.SendPropertyChanged("TenKH");
+					this.OnTenKHChanged();
 				}
 			}
 		}
@@ -1652,7 +1652,7 @@ namespace NongSanZeno.Models
 		
 		private int _MaLoaiSP;
 		
-		private string _TenloaiSP;
+		private string _TenLoaiSP;
 		
 		private string _AnhLSP;
 		
@@ -1664,8 +1664,8 @@ namespace NongSanZeno.Models
     partial void OnCreated();
     partial void OnMaLoaiSPChanging(int value);
     partial void OnMaLoaiSPChanged();
-    partial void OnTenloaiSPChanging(string value);
-    partial void OnTenloaiSPChanged();
+    partial void OnTenLoaiSPChanging(string value);
+    partial void OnTenLoaiSPChanged();
     partial void OnAnhLSPChanging(string value);
     partial void OnAnhLSPChanged();
     #endregion
@@ -1696,22 +1696,22 @@ namespace NongSanZeno.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenloaiSP", DbType="NVarChar(50)")]
-		public string TenloaiSP
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenLoaiSP", DbType="NVarChar(50)")]
+		public string TenLoaiSP
 		{
 			get
 			{
-				return this._TenloaiSP;
+				return this._TenLoaiSP;
 			}
 			set
 			{
-				if ((this._TenloaiSP != value))
+				if ((this._TenLoaiSP != value))
 				{
-					this.OnTenloaiSPChanging(value);
+					this.OnTenLoaiSPChanging(value);
 					this.SendPropertyChanging();
-					this._TenloaiSP = value;
-					this.SendPropertyChanged("TenloaiSP");
-					this.OnTenloaiSPChanged();
+					this._TenLoaiSP = value;
+					this.SendPropertyChanged("TenLoaiSP");
+					this.OnTenLoaiSPChanged();
 				}
 			}
 		}

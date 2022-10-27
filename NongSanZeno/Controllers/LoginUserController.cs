@@ -9,10 +9,9 @@ using NongSanZeno.Models;
 
 namespace NongSanZeno.Controllers
 {
-    public class UserController : Controller
+    public class LoginUserController : Controller
     {
-        dbNongSanZenoDataContext data = new dbNongSanZenoDataContext();
-
+        // create string MD5
         public static string MD5Hash(string input)
         {
             StringBuilder hash = new StringBuilder();
@@ -25,7 +24,10 @@ namespace NongSanZeno.Controllers
             }
             return hash.ToString();
         }
-        // GET: User
+
+
+        dbNongSanZenoDataContext data = new dbNongSanZenoDataContext();
+        // GET: LoginUser
         [HttpGet]
         public ActionResult DangKy()
         {
@@ -73,7 +75,7 @@ namespace NongSanZeno.Controllers
             else
             {
                 //Gán giá trị cho đối tượng được tạo mới (KH)
-                kh.HoTen = hoten;
+                kh.TenKH = hoten;
                 kh.TaiKhoan = tendn;
                 kh.MatKhau = MD5Hash(matkhau);
                 kh.Email = email;
@@ -112,7 +114,7 @@ namespace NongSanZeno.Controllers
                 tbKhachHang kh = data.tbKhachHangs.SingleOrDefault(n => n.TaiKhoan == tendn && n.MatKhau == MD5Hash(matkhau));
                 if (kh != null)
                 {
-                    Session["User"] = kh.HoTen;
+                    Session["User"] = kh.TenKH;
                     Session["Taikhoan"] = kh;
 
                     return RedirectToAction("SanPham", "NongSanZeno");

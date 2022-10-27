@@ -7,9 +7,10 @@ using NongSanZeno.Models;
 
 namespace NongSanZeno.Controllers
 {
-    public class AdminController : Controller
+    public class LoginAdminController : Controller
     {
         dbNongSanZenoDataContext data = new dbNongSanZenoDataContext();
+
         // GET: Admin
         public ActionResult Index()
         {
@@ -20,12 +21,12 @@ namespace NongSanZeno.Controllers
             return View();
         }
         [HttpGet]
-        public ActionResult DangNhapAD()
+        public ActionResult LoginAdmin()
         {
             return View();
         }
         [HttpPost]
-        public ActionResult DangNhapAD(FormCollection collection)
+        public ActionResult LoginAdmin(FormCollection collection)
         {
             string user = collection["form-username"];
             string pass = collection["form-password"];
@@ -34,13 +35,13 @@ namespace NongSanZeno.Controllers
             if (ad == null)
             {
                 ViewBag.ThongBaoAdmin = "Tài Khoản Hoặc Mật Khẩu Sai";
-                return this.DangNhapAD();
+                return this.LoginAdmin();
             }
             Session["TKadmin"] = ad;
             return RedirectToAction("Index", "Admin");
         }
 
-        public ActionResult QuenMatKhauAD()
+        public ActionResult ForgotPassword()
         {
             return View();
         }

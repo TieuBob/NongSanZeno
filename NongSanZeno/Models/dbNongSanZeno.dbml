@@ -61,7 +61,7 @@
   <Table Name="dbo.tbKhachHang" Member="tbKhachHangs">
     <Type Name="tbKhachHang">
       <Column Name="MaKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="HoTen" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TaiKhoan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="MatKhau" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
@@ -75,7 +75,7 @@
   <Table Name="dbo.tbLoaiSanPham" Member="tbLoaiSanPhams">
     <Type Name="tbLoaiSanPham">
       <Column Name="MaLoaiSP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenloaiSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenLoaiSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="AnhLSP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="tbLoaiSanPham_tbSanPham" Member="tbSanPhams" ThisKey="MaLoaiSP" OtherKey="MaLoaiSP" Type="tbSanPham" />
     </Type>
