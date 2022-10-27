@@ -506,7 +506,7 @@ left:50.18%;
 margin:0;
 }
 #prev span {
-    background-image: url('../images/leftbutton.png');
+    background-image: url('../images/Leftbutton.png');
     display: block;
     height: 30px;
     width: 30px;
@@ -514,7 +514,7 @@ margin:0;
     font-size: 0px;
 }
 #next span {
-    background-image: url('../images/rightbutton.png');
+    background-image: url('../images/Rightbutton.png');
     display: block;
     height: 30px;
     width: 30px;
