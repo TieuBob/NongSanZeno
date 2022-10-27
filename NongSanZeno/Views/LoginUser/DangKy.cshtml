@@ -1,17 +1,52 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Layout/_LayoutLoginUser.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>DangKy</title>
-</head>
-<body>
-    <div> 
+<form action="#" method="post">
+    <div class="form-group first">
+        <label for="user">Họ và tên</label>
+        <input style="height:45px; border-radius:24px" type="text" class="form-control" placeholder="tên của bạn" name="Hoten">
+        <h6 style="color:red; text-align:center">@ViewData["Loi1"]</h6>
     </div>
-</body>
-</html>
+    <div class="form-group first">
+        <label for="user">Tên đăng nhập</label>
+        <input style="height:45px; border-radius:24px" type="text" class="form-control" placeholder="tên đăng nhập" name="TenDN">
+        <h6 style="color:red; text-align:center">@ViewData["Loi2"]</h6>
+    </div>
+    <div class="form-group first">
+        <label for="user">Mật khẩu</label>
+        <input style="height:45px; border-radius:24px" type="password" class="form-control" placeholder="mật khẩu" name="Matkhau">
+        <h6 style="color:red; text-align:center">@ViewData["Loi3"]</h6>
+    </div>
+    <div class="form-group first">
+        <label for="user">Nhập lại mật khẩu</label>
+        <input style="height:45px; border-radius:24px" type="password" class="form-control" placeholder="nhập lại mật khẩu" name="Nhaplaimatkhau">
+        <h6 style="color:red; text-align:center">@ViewData["Loi4"]</h6>
+    </div>
+    <div class="form-group first">
+        <label for="user">Địa chỉ</label>
+        <input style="height:45px; border-radius:24px" type="text" class="form-control" placeholder="địa chỉ" name="Diachi">
+        <h6 style="color:red; text-align:center">@ViewData["Loi5"]</h6>
+    </div>
+    <div class="form-group first">
+        <label for="user">Email</label>
+        <input style="height:45px; border-radius:24px" type="text" class="form-control" placeholder="email@gmail.com" name="Email">
+        <h6 style="color:red; text-align:center">@ViewData["Loi6"]</h6>
+    </div>
+    <div class="form-group first">
+        <label for="user">Điện thoại</label>
+        <input style="height:45px; border-radius:24px" type="text" class="form-control" placeholder="điện thoại" name="Dienthoai">
+        <h6 style="color:red; text-align:center">@ViewData["Loi7"]</h6>
+    </div>
+    <div class="form-group first">
+        <label for="user">Ngày sinh</label>
+        <input style="height:45px; border-radius:24px" type="date" class="form-control" placeholder="ngày sinh" name="Ngaysinh">
+    </div>
+
+    <input type="submit" value="Đăng Ký" class="btn btn-block py-2 btn-primary">
+</form>
+<p>
+    @Html.ActionLink("Bạn đã có tài khoản? Đăng nhập", "Dangnhap", "LoginUser")
+</p>

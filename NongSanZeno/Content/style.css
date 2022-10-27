@@ -5825,7 +5825,7 @@ bottom:auto;
 left:0%;
 margin:0;
 height:66px;
-width:205px;
+width:105px;
 display:block;
 position:absolute;
 border:0 none;
@@ -10502,7 +10502,8 @@ bottom:auto;
 left:0%;
 margin:0;
 height:66px;
-width:205px;
+/*width:205px;*/
+width:66px;
 display:block;
 position:absolute;
 border:0 none;

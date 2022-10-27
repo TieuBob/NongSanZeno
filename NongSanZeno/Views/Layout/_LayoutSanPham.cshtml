@@ -107,7 +107,7 @@
                             </span>
                         </button>
                         <a href="http://www.kixgo.com" target="_self">
-                            <img class="ttr_menu_logo" src="~/images/logobakery.png">
+                            <img class="ttr_menu_logo" src="~/images/logo.png" style="width:105px">
                         </a>
                     </div>
                     <div class="menu-center collapse navbar-collapse">
@@ -139,16 +139,13 @@
                             @if (Session["User"] == null)
                             {
                                 <li>
-                                    <a href="@Url.Action("DangKy","NguoiDung")">Đăng Ký</a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Dangnhap","NguoiDung")">Đăng Nhập</a>
+                                    <a href="@Url.Action("Dangnhap","LoginUser")" class="ttr_menu_items_parent_link"><i class="fa fa-user icon"></i></a>
                                 </li>
                             }
                             else
                             {
                                 <li class="Login"><a href="@Url.Action("TrangChu","Home")">Đăng Xuất</a></li>
-                                <li class="Login"><a href="@Url.Action("Thongtintk","NguoiDung")">Xin Chào @Session["User"]</a></li>
+                                <li class="Login"><a href="@Url.Action("Thongtintk","LoginUser")">Xin Chào @Session["User"]</a></li>
                             }
                             <li>
                                 @Html.Action("GiohangPartial", "GioHang")
@@ -202,7 +199,7 @@
                                 <span class="ttr_image" style="float:none;display:block;text-align:center;overflow:hidden;margin:2.86em 0em 0em 0em;">
                                     <span>
                                         @*<img class="ttr_uniform" src="images/104.png" style="max-width:205px;max-height:66px;" />*@
-                                        <img class="ttr_uniform" src="~/images/logofooter.png" style="max-width:205px;max-height:66px;" />
+                                        <img class="ttr_uniform" src="~/images/logo.png" style="max-width:205px;max-height:66px;" />
                                     </span>
                                 </span>
                             </p>

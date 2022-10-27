@@ -1,17 +1,40 @@
 ﻿
 @{
-    Layout = null;
+    ViewBag.Title = "Dangnhap";
+    Layout = "~/Views/Layout/_LayoutLoginUser.cshtml";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Dangnhap</title>
-</head>
-<body>
-    <div> 
+<div class="text-center mb-5">
+    <h3 class="text-uppercase">ĐĂNG NHẬP</h3>
+</div>
+<form action="#" method="post">
+    <div class="form-group first">
+        <label for="username">Tên đăng nhập</label>
+        <input style="height:45px; border-radius:24px" type="text" class="form-control" placeholder="Tên đăng nhập" name="TenDN">
+        <h6 style="color:red; text-align:center">@ViewData["Loi1"]</h6>
     </div>
-</body>
-</html>
+    <div class="form-group last mb-3">
+        <label for="password">Mật khẩu</label>
+        <input style="height:45px; border-radius:24px" type="password" class="form-control" placeholder="Mật khẩu" name="Matkhau">
+        <h6 style="color:red; text-align:center">@ViewData["Loi2"]</h6>
+    </div>
+
+    <div class="d-sm-flex mb-5 align-items-center">
+        <label class="control control--checkbox mb-3 mb-sm-0">
+            <span class="caption">Remember me</span>
+            <input type="checkbox" checked="checked" />
+            <div class="control__indicator"></div>
+        </label>
+        <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span>
+    </div>
+
+    <input type="submit" value="Đăng nhập" class="btn btn-block py-2 btn-primary">
+</form>
+
+<p>
+    @Html.ActionLink("Bạn chưa có tài khoản? Đăng ký", "Dangky", "LoginUser")
+</p>
+<p>
+    @Html.ActionLink("Quay lại trang chủ", "TrangChu", "Home")
+</p>
