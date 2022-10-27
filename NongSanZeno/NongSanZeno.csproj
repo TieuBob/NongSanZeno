@@ -127,6 +127,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminDonHangController.cs" />
+    <Compile Include="Controllers\AdminKhachHangController.cs" />
+    <Compile Include="Controllers\AdminSanPhamController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginAdminController.cs" />
@@ -2379,6 +2382,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\AdminDonHang\" />
+    <Folder Include="Views\AdminKhachHang\" />
+    <Folder Include="Views\AdminSanPham\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
