@@ -27,6 +27,18 @@
     <p class="text" style="color:white">THÊM SẢN PHẨM</p>
     <p class="icon">&#43;</p>
 </a>
+<a href="@Url.Action("Themlsp","AdminSanPham")" class="ADD-Btn2">
+    <p class="text" style="color:white">THÊM LOẠI SẢN PHẨM</p>
+    <p class="icon">&#43;</p>
+</a>
+<a href="@Url.Action("Themnsp","AdminSanPham")" class="ADD-Btn2">
+    <p class="text" style="color:white">THÊM NHÓM SẢN PHẨM</p>
+    <p class="icon">&#43;</p>
+</a>
+<a href="@Url.Action("ThemDvt","AdminSanPham")" class="ADD-Btn2">
+    <p class="text" style="color:white">THÊM ĐƠN VỊ TÍNH</p>
+    <p class="icon">&#43;</p>
+</a>
 
 <table class="table" border="1">
     <tr>
@@ -85,14 +97,12 @@
     @Html.PagedListPager(Model, page => Url.Action("DSsanpham", new { page = page }))
 </div>
 <style>
-    /*.MenuTrang li {
-        display: inline-block;
-        box-sizing: border-box;
-        border: 1px solid #e1e1e1;
-        margin: 1px;
-        border-radius: 2px;
-        padding: 5px 10px;
-    }*/
+    .btn-success {
+        color: #fff;
+        background-color: #006400;
+        border-color: #006400;
+    }
+
     .pagination {
         position: relative;
         background: #fff;
@@ -220,8 +230,8 @@
 
     .ADD-Btn {
         margin-left: 20%;
-        width: 18%;
-        background: #198754;
+        width: 13%;
+        background: #4e4e22;
         margin-top: 10px;
         margin-bottom: 10px;
         float: left;
@@ -245,8 +255,8 @@
 
     .ADD-Btn2 {
         margin-left: 3%;
-        width: 20%;
-        background: #198754;
+        width: 16%;
+        background: #4e4e22;
         margin-top: 10px;
         margin-bottom: 10px;
         float: left;

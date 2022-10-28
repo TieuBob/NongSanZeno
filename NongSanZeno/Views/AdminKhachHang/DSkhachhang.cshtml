@@ -49,7 +49,7 @@
 
             <td>
                 @Html.ActionLink("Chi tiết", "ChiTietkhachhang", new { id = item.MaKH }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Xóa", "Xoakhachhang", new { id = item.MaKH }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "Xoakhachhang", new { id = item.MaKH }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }
@@ -60,14 +60,12 @@
 </div>
 
 <style>
-    /*.MenuTrang li {
-        display: inline-block;
-        box-sizing: border-box;
-        border: 1px solid #e1e1e1;
-        margin: 1px;
-        border-radius: 2px;
-        padding: 5px 10px;
-    }*/
+    .btn-success {
+        color: #fff;
+        background-color: #006400;
+        border-color: #006400;
+    }
+
     .pagination {
         position: relative;
         background: #fff;

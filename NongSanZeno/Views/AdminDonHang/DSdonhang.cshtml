@@ -75,10 +75,15 @@
             <td>
                 @Html.DisplayFor(modelItem => item.TongTien)
             </td>
-            <td class="tool">
+            @*<td class="tool">
                 <a href="@Url.Action("ChiTietdonhang", "AdminDonHang", new { id = item.MaDH })">Chi tiết</a> |
                 <a href="@Url.Action("Suadonhang", "AdminDonHang", new { id = item.MaDH })">Sửa</a> |
                 <a href="@Url.Action("Xoadonhang", "AdminDonHang", new { id = item.MaDH })">Xoá</a>
+            </td>*@
+            <td>
+                @Html.ActionLink("Chi tiết", "ChiTietdonhang", new { id = item.MaDH }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Sửa", "Suadonhang", new { id = item.MaDH }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xoá", "Xoadonhang", new { id = item.MaDH }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }
@@ -89,6 +94,12 @@
     @Html.PagedListPager(Model, page => Url.Action("DSdonhang", new { page = page }))
 </div>
 <style>
+    .btn-success {
+        color: #fff;
+        background-color: #006400;
+        border-color: #006400;
+    }
+
     form {
         margin: 20px 20px 50px 20px;
     }

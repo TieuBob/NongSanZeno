@@ -53,7 +53,7 @@
             </td>
             <td>
                 @Html.ActionLink("Chi tiết", "ChiTietPhanHoi", new { id = item.STT }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Xóa", "XoaPhanHoi", new { id = item.STT }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "XoaPhanHoi", new { id = item.STT }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }
@@ -64,6 +64,12 @@
 </div>
 
 <style>
+    .btn-success {
+        color: #fff;
+        background-color: #006400;
+        border-color: #006400;
+    }
+
     .pagination {
         position: relative;
         background: #fff;
