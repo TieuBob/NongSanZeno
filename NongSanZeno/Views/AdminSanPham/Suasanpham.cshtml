@@ -11,69 +11,75 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.MaSP)
-        <div class="form-group">
-            Tên Sản Phẩm
-            <div class="col-md-10">
-                <input required type="text" name="TenSP" value="@Model.TenSP" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            Giá
-            <div class="col-md-10">
-                <input required type="text" name="Giaban" value="@Model.GiaBan" />
-            </div>
-        </div>
-
-        <div class="form-group">
-            Mô Tả
-            <div class="col-md-10">
-                <textarea required name="Mota" rows="10" cols="40">@Model.MoTa</textarea>
-            </div>
-        </div>
-
-        <div class="form-group">
-            Ảnh Bìa
-            <div class="col-md-10">
-                <input type="file" name="fileupload" />
-                <div style="text-align: center;margin-left:40%"><img style="width:200px" src="~/images/sanpham/@Model.AnhSP" /></div>
-                <input class="tenanh" type="text" readonly name="Anh" value="@Model.AnhSP" />
-            </div>
-        </div>
-        <div class="clear"></div>
-        <div class="form-group">
-            Ngày Cập Nhật
-
-            <div class="col-md-10">
-                <p>@String.Format("{0:dd/MM/yyyy}", Model.NgayCapNhat)</p>
-                <input required type="date" name="Ngaycapnhat" />
-            </div>
-        </div>
-
-        @*<div class="form-group">
-                Loại Sản Phẩm
-                <div class="col-md-10">
-                    @Html.DropDownList("MaLoaiSP")
-                </div>
-            </div>*@
-
-        <div class="form-group">
-            Loại bánh kem
-            <div class="col-md-10">
-                @Html.DropDownList("MaBK")
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Lưu" class="btn btn-default" />
-                <a href="@Url.Action("DSsanpham","AdminSanPham")" class="btn btn-default">Back</a>
-            </div>
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MaSP)
+    <div class="form-group">
+        Tên Sản Phẩm
+        <div class="col-md-10">
+            <input required type="text" name="TenSP" value="@Model.TenSP" />
         </div>
     </div>
+
+    <div class="form-group">
+        Giá
+        <div class="col-md-10">
+            <input required type="text" name="Giaban" value="@Model.GiaBan" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        Mô Tả
+        <div class="col-md-10">
+            <textarea required name="Mota" rows="10" cols="40">@Model.MoTa</textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        Ảnh Bìa
+        <div class="col-md-10">
+            <input type="file" name="fileupload" />
+            <div style="text-align: center;margin-left:40%"><img style="width:200px" src="~/images/sanpham/@Model.AnhSP" /></div>
+            <input class="tenanh" type="text" readonly name="Anh" value="@Model.AnhSP" />
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="form-group">
+        Ngày Cập Nhật
+        <div class="col-md-10">
+            <p>@String.Format("{0:dd/MM/yyyy}", Model.NgayCapNhat)</p>
+            <input required type="date" name="Ngaycapnhat" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        Loại Sản Phẩm
+        <div class="col-md-10">
+            @Html.DropDownList("Loai")
+        </div>
+    </div>
+
+    <div class="form-group">
+        Nhóm sản phẩm
+        <div class="col-md-10">
+            @Html.DropDownList("Nhom")
+        </div>
+    </div>
+
+    <div class="form-group">
+        Đơn vị tính
+        <div class="col-md-10">
+            @Html.DropDownList("Dvt")
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Lưu" class="btn btn-default" />
+            <a href="@Url.Action("DSsanpham","AdminSanPham")" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</div>
 }
 
 <div>

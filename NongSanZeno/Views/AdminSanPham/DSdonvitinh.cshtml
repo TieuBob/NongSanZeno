@@ -20,7 +20,6 @@
     <tr>
         <th style="width: 200px; text-align: center"> Mã đơn vị tính </th>
         <th style="width: 200px; text-align: center"> Tên đơn vị tính </th>
-        <th style="width: 200px; text-align: center"> Mô tả đơn vị tính </th>
         <th style="width: 150px; text-align: center">  </th>
     </tr>
 
@@ -34,9 +33,6 @@
                 @Html.DisplayFor(modelItem => item.TenDVT)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MoTa)
-            </td>
-            <td>
                 @Html.ActionLink("Sửa", "Suadvt", new { id = item.MaDVT }, new { @class = "btn btn-success" }) |
                 @Html.ActionLink("Xóa", "Xoadvt", new { id = item.MaDVT }, new { @class = "btn btn-success" }) |
             </td>
@@ -47,7 +43,7 @@
 
 @*Tao lien ket cac trang*@
 <div class="MenuTrang">
-    @Html.PagedListPager(Model, page => Url.Action("DSdvt", new { page = page }))
+    @Html.PagedListPager(Model, page => Url.Action("DSdonvitinh", new { page = page }))
 </div>
 <style>
     /*.MenuTrang li {

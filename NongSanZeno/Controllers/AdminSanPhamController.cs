@@ -61,8 +61,8 @@ namespace NongSanZeno.Controllers
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
             ViewBag.Loai = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP");
-            ViewBag.MaBK = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
-            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.MaDVT), "MaDVT", "TenDVT");
+            ViewBag.Nhom = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
+            ViewBag.Dvt = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.MaDVT), "MaDVT", "TenDVT");
             return View();
         }
         [HttpPost]
@@ -74,14 +74,14 @@ namespace NongSanZeno.Controllers
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
             ViewBag.Loai = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP");
-            ViewBag.MaBK = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
-            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.MaDVT), "MaDVT", "TenDVT");
+            ViewBag.Nhom = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
+            ViewBag.Dvt = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.MaDVT), "MaDVT", "TenDVT");
             var tensp = collection["Ten"];
             var gia = collection["Gia"];
             var mota = collection["textarea"];
             var date = collection["Date"];
             var loai = collection["Loai"];
-            var nhom = collection["MaBK"];
+            var nhom = collection["Nhom"];
             var dvt = collection["Dvt"];
 
             var filename = Path.GetFileName(fileUpload.FileName);
@@ -160,8 +160,8 @@ namespace NongSanZeno.Controllers
             }
             tbSanPham sp = data.tbSanPhams.SingleOrDefault(n => n.MaSP == id);
             ViewBag.Loai = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP", sp.MaLoaiSP);
-            ViewBag.MaBK = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom", sp.MaNhom);
-            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.MaDVT), "MaDVT", "TenDVT", sp.MaDVT);
+            ViewBag.Nhom = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom", sp.MaNhom);
+            ViewBag.Dvt = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.MaDVT), "MaDVT", "TenDVT", sp.MaDVT);
 
             if (sp == null)
             {
@@ -213,13 +213,13 @@ namespace NongSanZeno.Controllers
             }
 
 
-            tbSanPham ncc = data.tbSanPhams.SingleOrDefault(n => n.MaSP == id);
-            if (ncc == null)
+            tbSanPham sp = data.tbSanPhams.SingleOrDefault(n => n.MaSP == id);
+            if (sp == null)
             {
                 Response.StatusCode = 404;
                 return null;
             }
-            return View(ncc);
+            return View(sp);
         }
 
         //----------------------------------- Loại Sản Phẩm ------------------------------------
@@ -242,7 +242,7 @@ namespace NongSanZeno.Controllers
             {
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
-            ViewBag.MaLoaiSP = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP", "MoTa");
+            ViewBag.MaLoaiSP = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP", "AnhLSP");
             return View();
         }
         [HttpPost]
@@ -252,7 +252,7 @@ namespace NongSanZeno.Controllers
             {
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
-            ViewBag.MaLoaiSP = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP", "MoTa");
+            ViewBag.MaLoaiSP = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP", "AnhLSP");
             if (ModelState.IsValid)
             {
                 data.tbLoaiSanPhams.InsertOnSubmit(lsp);
@@ -268,7 +268,7 @@ namespace NongSanZeno.Controllers
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
             tbLoaiSanPham lsp = data.tbLoaiSanPhams.SingleOrDefault(n => n.MaLoaiSP == id);
-            ViewBag.MaLoaiSP = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP", "MoTa", lsp.MaLoaiSP);
+            ViewBag.MaLoaiSP = new SelectList(data.tbLoaiSanPhams.ToList().OrderBy(n => n.MaLoaiSP), "MaLoaiSP", "TenLoaiSP", "AnhLSP", lsp.MaLoaiSP);
             if (lsp == null)
             {
                 Response.StatusCode = 404;
@@ -363,7 +363,7 @@ namespace NongSanZeno.Controllers
             {
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
-            ViewBag.MaBK = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
+            ViewBag.MaNhom = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
             return View();
         }
         [HttpPost]
@@ -373,7 +373,7 @@ namespace NongSanZeno.Controllers
             {
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
-            ViewBag.MaBK = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
+            ViewBag.MaNhom = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom");
             if (ModelState.IsValid)
             {
                 data.tbNhoms.InsertOnSubmit(bk);
@@ -389,7 +389,7 @@ namespace NongSanZeno.Controllers
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
             tbNhom nsp = data.tbNhoms.SingleOrDefault(n => n.MaNhom == id);
-            ViewBag.MaBK = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom", nsp.MaNhom);
+            ViewBag.MaNhom = new SelectList(data.tbNhoms.ToList().OrderBy(n => n.TenNhom), "MaNhom", "TenNhom", nsp.MaNhom);
             if (nsp == null)
             {
                 Response.StatusCode = 404;
@@ -431,7 +431,7 @@ namespace NongSanZeno.Controllers
             {
                 tbNhom nsp = data.tbNhoms.SingleOrDefault(n => n.MaNhom == id);
 
-                ViewBag.MaBK = nsp.MaNhom;
+                ViewBag.Nhom = nsp.MaNhom;
                 if (nsp == null)
                 {
                     Response.StatusCode = 404;
@@ -450,7 +450,7 @@ namespace NongSanZeno.Controllers
             else
             {
                 tbNhom nsp = data.tbNhoms.SingleOrDefault(n => n.MaNhom == id);
-                ViewBag.MaBK = nsp.MaNhom;
+                ViewBag.MaNhom = nsp.MaNhom;
                 if (nsp == null)
                 {
                     Response.StatusCode = 404;
@@ -603,7 +603,7 @@ namespace NongSanZeno.Controllers
             {
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
-            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.TenDVT), "MaDVT", "TenDVT", "MoTa");
+            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.TenDVT), "MaDVT", "TenDVT");
             return View();
         }
         [HttpPost]
@@ -613,7 +613,7 @@ namespace NongSanZeno.Controllers
             {
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
-            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.TenDVT), "MaDVT", "TenDVT", "MoTa");
+            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.TenDVT), "MaDVT", "TenDVT");
             if (ModelState.IsValid)
             {
                 data.tbDonViTinhs.InsertOnSubmit(dvt);
@@ -629,7 +629,7 @@ namespace NongSanZeno.Controllers
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
             tbDonViTinh dvt = data.tbDonViTinhs.SingleOrDefault(n => n.MaDVT == id);
-            ViewBag.MaBK = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.TenDVT), "MaDVT", "TenDVT", "MoTa", dvt.MaDVT);
+            ViewBag.MaDVT = new SelectList(data.tbDonViTinhs.ToList().OrderBy(n => n.TenDVT), "MaDVT", "TenDVT", dvt.MaDVT);
             if (dvt == null)
             {
                 Response.StatusCode = 404;
@@ -670,7 +670,7 @@ namespace NongSanZeno.Controllers
             {
                 tbDonViTinh dvt = data.tbDonViTinhs.SingleOrDefault(n => n.MaDVT == id);
 
-                ViewBag.MaBK = dvt.MaDVT;
+                ViewBag.MaDVT = dvt.MaDVT;
                 if (dvt == null)
                 {
                     Response.StatusCode = 404;

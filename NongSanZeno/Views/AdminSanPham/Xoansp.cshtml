@@ -5,18 +5,18 @@
     Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
 }
 
-<h1 style="text-align: center; font-size: 28px;">Bạn Thật Sự Chắc Chắn Muốn Xóa Loại Bánh Kem Này?</h1>
+<h1 style="text-align: center; font-size: 28px;">Bạn Thật Sự Chắc Chắn Muốn Xóa Nhóm Sản Phẩm Này?</h1>
 <hr />
 <div>
     <h2 style="text-align: center; font-size: 26px;">Thông Tin Sản Phẩm</h2>
     <dl class="dl-horizontal">
         <dt>
-            Mã Loại Bánh Kem:
-            @Html.DisplayFor(model => model.MaBK)
+            Mã Nhóm Sản Phẩm:
+            @Html.DisplayFor(model => model.MaNhom)
         </dt>
         <dt>
-            Tên Loại Bánh Kem:
-            @Html.DisplayFor(model => model.TenBK)
+            Tên Nhóm Sản Phẩm:
+            @Html.DisplayFor(model => model.TenNhom)
         </dt>
 
     </dl>
@@ -27,7 +27,7 @@
 
         <div class="form-actions no-color">
             <input type="submit" value="Xóa" class="btn btn-default" />
-            <div style="text-align:center"><a class="btn" href="@Url.Action("DSbanhkem","AdminSanPham")"> Trở về</a></div>
+            <div style="text-align:center"><a class="btn" href="@Url.Action("DSnhomsanpham","AdminSanPham")"> Trở về</a></div>
         </div>
     }
 </div>

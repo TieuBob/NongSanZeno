@@ -5,7 +5,7 @@
     Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">THÊM LOẠI BÁNH KEM MỚI</h2>
+<h2 style="text-align:center">THÊM NHÓM SẢN PHẨM MỚI</h2>
 <hr />
 
 @using (Html.BeginForm("Thembanhkem", "AdminSanPham", FormMethod.Post, new { @enctype = "multipart/form-data" }))
@@ -15,10 +15,10 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            <label>Tên Loại Bánh Kem</label>
+            <label>Tên Nhóm Sản Phẩm</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TenBK)
-                @Html.ValidationMessageFor(model => model.TenBK)
+                @Html.EditorFor(model => model.TenNhom)
+                @Html.ValidationMessageFor(model => model.TenNhom)
             </div>
         </div>
 
@@ -28,7 +28,7 @@
                     <input type="submit" value="Thêm Mới" class="btn btn-default" />
                 </div>
                 <div class="return">
-                    @Html.ActionLink("Quay Lại", "DSbanhkem")
+                    @Html.ActionLink("Quay Lại", "DSnhomsanpham")
                 </div>
             </div>
         </div>

@@ -8,18 +8,18 @@
 }
 
 <hr />
-<h2 style="text-align:center">QUẢN LÝ THÔNG TIN BÁNH KEM</h2>
+<h2 style="text-align:center">QUẢN LÝ THÔNG TIN NHÓM SẢN PHẨM</h2>
 <hr />
 
 <a href="@Url.Action("Themnsp","AdminSanPham")" class="ADD-Btn">
-    <p class="text">THÊM BÁNH KEM</p>
+    <p class="text">THÊM NHÓM SẢN PHẨM</p>
     <p class="icon">&#43;</p>
 </a>
 
 <table class="table" border="1">
     <tr>
-        <th style="width: 200px; text-align: center"> Mã Bánh Kem </th>
-        <th style="width: 200px; text-align: center"> Tên Bánh Kem </th>
+        <th style="width: 200px; text-align: center"> Mã Nhóm Sản Phẩm </th>
+        <th style="width: 200px; text-align: center"> Tên Nhóm Sản Phẩm </th>
         <th style="width: 150px; text-align: center">  </th>
     </tr>
 
@@ -27,15 +27,15 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.MaBK)
+                @Html.DisplayFor(modelItem => item.MaNhom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TenBK)
+                @Html.DisplayFor(modelItem => item.TenNhom)
 
             </td>
             <td>
-                @Html.ActionLink("Sửa", "Suansp", new { id = item.MaBK }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Xóa", "Xoansp", new { id = item.MaBK }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Sửa", "Suansp", new { id = item.MaNhom }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "Xoansp", new { id = item.MaNhom }, new { @class = "btn btn-success" }) |
             </td>
         </tr>
     }
