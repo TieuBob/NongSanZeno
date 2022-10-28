@@ -1,0 +1,244 @@
+﻿@model NongSanZeno.Models.tbDonHang
+
+@{
+    ViewBag.Title = "Suadonhang";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<hr />
+<h2>Đơn Đặt Hàng</h2>
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaDH)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NguoiNhan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NguoiNhan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NguoiNhan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaChi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GhiChu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GhiChu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GhiChu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TongTien, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TongTien, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TongTien, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayDat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NgayDat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NgayDat, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgayGiao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NgayGiao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NgayGiao, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaKH, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaKH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaKH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaTTHD, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaTTHD, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MaTTHD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<style>
+    .col-md-10 {
+        color: black
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    input, textarea {
+        color: #000000;
+        outline: none;
+        font-size: .9em;
+        padding: 1em 3em 1em 1em;
+        border: none;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.85);
+        width: 62%;
+        color: #000;
+        border-radius: 30px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+    }
+
+    .form-horizontal {
+        text-align: center;
+        justify-content: center
+    }
+
+    .btn {
+        color: black;
+        background: #bbb37e;
+        border: none;
+        margin: 25px auto;
+        padding: 10px;
+        outline: none;
+        width: 44%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        border-radius: 30px;
+    }
+
+        .btn:hover {
+            color: white;
+            background: #96924f;
+        }
+
+    .return {
+        margin: 25px auto;
+        width: 100px;
+        padding: 14px;
+        color: black;
+        background: #bbb37e;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        border-radius: 30px;
+    }
+
+
+        .return:hover {
+            color: white;
+            background: #96924f;
+        }
+
+    @@media(max-width: 1040px) {
+        .return {
+            margin-left: 28%;
+            padding: 0.7em 135px;
+            margin-top: 0px;
+            width: 44%;
+        }
+    }
+
+    @@media(max-width: 780px) {
+
+
+        .return {
+            margin-left: 28%;
+            padding: 0.7em 75px;
+            margin-top: 0px;
+            width: 44%;
+        }
+    }
+
+    @@media(max-width: 430px) {
+
+
+        .return {
+            margin-left: 28%;
+            margin-top: 0px;
+            width: 44%;
+            padding: 0.7em 55px;
+        }
+    }
+
+    @@media(max-width: 380px) {
+        .return {
+            margin-left: 28%;
+            margin-top: 0px;
+            width: 44%;
+            padding: 0.7em 49px;
+        }
+    }
+
+    @@media(max-width: 320px) {
+        .return {
+            margin-left: 28%;
+            margin-top: 0px;
+            width: 45%;
+            padding: 0.7em 38px;
+        }
+    }
+</style>

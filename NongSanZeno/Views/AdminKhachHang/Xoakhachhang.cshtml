@@ -1,0 +1,171 @@
+﻿@model NongSanZeno.Models.tbKhachHang
+
+@{
+    ViewBag.Title = "Xoakhachhang";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h1 style="text-align: center; font-size: 28px;">Bạn thật sự chắc chắn muốn xóa khách hàng này?</h1>
+<hr />
+<div>
+    <h2 style="text-align: center; font-size: 26px;">Thông tin khách hàng muốn xóa</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            Mã khách hàng:
+            @Html.DisplayFor(model => model.MaKH)
+        </dt>
+        <dt>
+            Tên khách hàng: @Html.DisplayFor(model => model.TenKH)
+        </dt>
+
+        <dt>
+            Email: @Html.DisplayFor(model => model.Email)
+        </dt>
+        <dt>
+            Tên tài khoản: @Html.DisplayFor(model => model.TaiKhoan)
+        </dt>
+        <dt>
+            Số điện thoại khách hàng:  @Html.DisplayFor(model => model.SDT)
+        </dt>
+        <dt>
+            Địa chỉ:  @Html.DisplayFor(model => model.DiaChiKH)
+        </dt>
+        <dt>
+            Ngày sinh:  @Html.DisplayFor(model => model.NgaySinh)
+        </dt>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa" class="btn btn-default" />
+            <div style="text-align:center"><a class="btn" href="@Url.Action("DSkh","AdminHoaDon")"> Trở về</a></div>
+        </div>
+    }
+</div>
+
+<style>
+    .dl-horizontal {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 20%;
+        padding-left: 10%;
+        font-size: 20px;
+        border: solid 2px;
+        box-shadow: 0px 15px 15px 10px #808080;
+    }
+
+    dt {
+        color: black;
+        margin: 20px 10px;
+    }
+
+    .form-actions {
+        margin-top: 80px;
+        margin-left: 18%;
+        width: 100%;
+    }
+
+    .btn {
+        margin-left: 8%;
+        color: white;
+        background: #ea2858;
+        border: none;
+        padding: .7em 20px;
+        outline: none;
+        width: 20%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        float: left;
+    }
+
+        .btn:hover {
+            color: #ea2858;
+            background: white;
+        }
+
+    @@media(max-width: 1040px) {
+        .return {
+            margin-left: 8%;
+            padding: 0.7em 43px;
+            margin-top: 0px;
+            width: 20%;
+        }
+    }
+
+    @@media(max-width: 780px) {
+        label {
+            margin-left: 22%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 4%;
+            padding: 0.7em 47px;
+            margin-top: 0px;
+            width: 28%;
+        }
+    }
+
+    @@media(max-width: 430px) {
+        label {
+            margin-left: 20%;
+        }
+
+        .return {
+            margin-left: 5%;
+            margin-top: 0px;
+            width: 29%;
+            padding: 0.7em 25px;
+        }
+    }
+
+    @@media(max-width: 380px) {
+        label {
+            margin-left: 18%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 3%;
+            margin-top: 0px;
+            width: 31%;
+            padding: 0.7em 24px;
+        }
+    }
+
+    @@media(max-width: 320px) {
+        label {
+            margin-left: 15%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 30%;
+        }
+
+        .return {
+            margin-top: 0px;
+            width: 30%;
+            padding: 0.7em 14px;
+        }
+</style>

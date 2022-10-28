@@ -20,11 +20,11 @@ namespace NongSanZeno.Controllers
 
         // GET: AdminKhachHang
         //------------------------------ Phản  Hồi Khách Hàng ------------------------------------
-        public ActionResult DSPhanHoi(int? page)
+        public ActionResult DSphanhoi(int? page)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             int pagesize = 8;
             int pageNum = (page ?? 1);
@@ -32,11 +32,11 @@ namespace NongSanZeno.Controllers
             return View(list.ToPagedList(pageNum, pagesize));
         }
 
-        public ActionResult ChiTietPhanHoi(int id)
+        public ActionResult ChiTietphanhoi(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             tbPhanHoiKH ph = data.tbPhanHoiKHs.SingleOrDefault(n => n.STT == id);
             if (ph == null)
@@ -47,11 +47,11 @@ namespace NongSanZeno.Controllers
             return View(ph);
         }
         [HttpGet]
-        public ActionResult XoaPhanHoi(int id)
+        public ActionResult Xoaphanhoi(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -65,12 +65,12 @@ namespace NongSanZeno.Controllers
                 return View(ph);
             }
         }
-        [HttpPost, ActionName("XoaPhanHoi")]
-        public ActionResult XacNhanXoaPhanHoi(int id)
+        [HttpPost, ActionName("Xoaphanhoi")]
+        public ActionResult XacNhanXoaphanhoi(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -83,27 +83,27 @@ namespace NongSanZeno.Controllers
                 }
                 data.tbPhanHoiKHs.DeleteOnSubmit(ph);
                 data.SubmitChanges();
-                return RedirectToAction("DSPhanHoi"); ;
+                return RedirectToAction("DSphanhoi"); ;
             }
         }
 
         //--------------------------- Khách Hàng ----------------------------------
-        public ActionResult DSkh(int? page)
+        public ActionResult DSkhachhang(int? page)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             int pagesize = 8;
             int pageNum = (page ?? 1);
             var list = data.tbKhachHangs.OrderByDescending(n => n.MaKH).ToList();
             return View(list.ToPagedList(pageNum, pagesize));
         }
-        public ActionResult ChiTietKH(int id, FormCollection collection)
+        public ActionResult ChiTietkhachhang(int id, FormCollection collection)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             tbKhachHang kh = data.tbKhachHangs.SingleOrDefault(n => n.MaKH == id);
             if (kh == null)
@@ -115,11 +115,11 @@ namespace NongSanZeno.Controllers
         }
 
         [HttpGet]
-        public ActionResult Xoakh(int id)
+        public ActionResult Xoakhachhang(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -133,12 +133,12 @@ namespace NongSanZeno.Controllers
                 return View(kh);
             }
         }
-        [HttpPost, ActionName("Xoakh")]
-        public ActionResult XacNhanXoakh(int id)
+        [HttpPost, ActionName("Xoakhachhang")]
+        public ActionResult XacNhanXoakhachhang(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("SanPham", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -151,7 +151,7 @@ namespace NongSanZeno.Controllers
                 }
                 data.tbKhachHangs.DeleteOnSubmit(kh);
                 data.SubmitChanges();
-                return RedirectToAction("DSkh"); ;
+                return RedirectToAction("DSkhachhang"); ;
             }
         }
     }

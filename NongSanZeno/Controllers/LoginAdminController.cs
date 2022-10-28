@@ -38,7 +38,7 @@ namespace NongSanZeno.Controllers
                 return this.LoginAdmin();
             }
             Session["TKadmin"] = ad;
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("Index", "LoginAdmin");
         }
 
         public ActionResult ForgotPassword()

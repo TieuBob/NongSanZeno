@@ -147,6 +147,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\LoginUser\images\xacnhandonhang.png" />
     <Content Include="Content\sanpham.css" />
     <Content Include="images\cart.jpg" />
     <Content Include="images\contact\fb.png" />
@@ -1924,7 +1925,6 @@
     <Content Include="Content\LoginUser\fonts\icomoon\Read Me.txt" />
     <Content Include="Content\LoginUser\fonts\icomoon\style.css" />
     <Content Include="Content\LoginUser\images\2.jpg" />
-    <Content Include="Content\LoginUser\images\backgrounlogin.jpg" />
     <Content Include="Content\LoginUser\images\bg_1.jpg" />
     <Content Include="Content\LoginUser\js\bootstrap.min.js" />
     <Content Include="Content\LoginUser\js\jquery-3.3.1.min.js" />
@@ -2379,12 +2379,45 @@
     <Content Include="Views\Layout\_LayoutLoginUser.cshtml" />
     <Content Include="Views\Home\TinTuc.cshtml" />
     <Content Include="Views\Home\KhuyenMai.cshtml" />
+    <Content Include="Views\AdminDonHang\DSdonhang.cshtml" />
+    <Content Include="Views\AdminDonHang\ChiTietdonhang.cshtml" />
+    <Content Include="Views\AdminDonHang\Suadonhang.cshtml" />
+    <Content Include="Views\AdminDonHang\XoaChiTietdonhang.cshtml" />
+    <Content Include="Views\AdminDonHang\Xoadonhang.cshtml" />
+    <Content Include="Views\AdminKhachHang\DSphanhoi.cshtml" />
+    <Content Include="Views\AdminKhachHang\ChiTietphanhoi.cshtml" />
+    <Content Include="Views\AdminKhachHang\Xoaphanhoi.cshtml" />
+    <Content Include="Views\AdminKhachHang\DSkhachhang.cshtml" />
+    <Content Include="Views\AdminKhachHang\ChiTietkhachhang.cshtml" />
+    <Content Include="Views\AdminKhachHang\Xoakhachhang.cshtml" />
+    <Content Include="Views\AdminSanPham\DSsanpham.cshtml" />
+    <Content Include="Views\AdminSanPham\Loaisp.cshtml" />
+    <Content Include="Views\AdminSanPham\Nhomsp.cshtml" />
+    <Content Include="Views\AdminSanPham\Nhacungcap.cshtml" />
+    <Content Include="Views\AdminSanPham\Donvitinh.cshtml" />
+    <Content Include="Views\AdminSanPham\Themsanpham.cshtml" />
+    <Content Include="Views\AdminSanPham\Xoasanpham.cshtml" />
+    <Content Include="Views\AdminSanPham\Suasanpham.cshtml" />
+    <Content Include="Views\AdminSanPham\Chitietsanpham.cshtml" />
+    <Content Include="Views\AdminSanPham\DSloaisanpham.cshtml" />
+    <Content Include="Views\AdminSanPham\Themlsp.cshtml" />
+    <Content Include="Views\AdminSanPham\Sualsp.cshtml" />
+    <Content Include="Views\AdminSanPham\Xoalsp.cshtml" />
+    <Content Include="Views\AdminSanPham\DSnhomsanpham.cshtml" />
+    <Content Include="Views\AdminSanPham\Themnsp.cshtml" />
+    <Content Include="Views\AdminSanPham\Suansp.cshtml" />
+    <Content Include="Views\AdminSanPham\Xoansp.cshtml" />
+    <Content Include="Views\AdminSanPham\DSnhacungcap.cshtml" />
+    <Content Include="Views\AdminSanPham\ThemNcc.cshtml" />
+    <Content Include="Views\AdminSanPham\XoaNcc.cshtml" />
+    <Content Include="Views\AdminSanPham\SuaNcc.cshtml" />
+    <Content Include="Views\AdminSanPham\DSdonvitinh.cshtml" />
+    <Content Include="Views\AdminSanPham\ThemDvt.cshtml" />
+    <Content Include="Views\AdminSanPham\Suadvt.cshtml" />
+    <Content Include="Views\AdminSanPham\Xoadvt.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\AdminDonHang\" />
-    <Folder Include="Views\AdminKhachHang\" />
-    <Folder Include="Views\AdminSanPham\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

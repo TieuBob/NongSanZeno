@@ -1,0 +1,180 @@
+﻿@model NongSanZeno.Models.tbSanPham
+
+@{
+    ViewBag.Title = "Themsanpham";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<hr />
+<h2 style="text-align:center">THÊM SẢN PHẨM MỚI</h2>
+<hr />
+
+@using (Html.BeginForm("Themsanpham", "AdminSanPham", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label>Tên Sản Phẩm</label>
+            <div class="col-md-10">
+                <input required type="text" name="Ten" placeholder="Tên Sản Phẩm....." />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Giá</label>
+            <div class="col-md-10">
+                <input required type="text" name="Gia" placeholder="Giá....." />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Mô tả</label>
+            <div class="col-md-10">
+                <textarea required class="textarea" name="textarea" placeholder="Mô tả thông tin sách"></textarea>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Hình</label>
+            <div class="col-md-10">
+                <input type="file" name="fileupload" required />
+                @ViewBag.ThongBaoAnh
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Ngày cập nhật</label>
+            <div class="col-md-10">
+                <input required type="date" name="Date" placeholder="Ngày cập nhật....." />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Loại sản phẩm</label>
+            <div class="col-md-10">
+                @Html.DropDownList("Loai")
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Nhà cung cấp</label>
+            <div class="col-md-10">
+                @Html.DropDownList("MaBK")
+            </div>
+        </div>
+
+        @*<div class="form-group">
+                <label>Đơn vị tính</label>
+                <div class="col-md-10">
+                    @Html.DropDownList("Dvt")
+                </div>
+            </div>*@
+
+        @*<div class="form-group">
+                @Html.LabelFor(model => model.SanPhamKhuyenMai, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SanPhamKhuyenMai, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.SanPhamKhuyenMai, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
+
+        <div class="form-group">
+            <div class="form-actions no-color">
+                <div class="return">
+                    <input type="submit" value="Thêm Mới" class="btn btn-default" />
+                </div>
+                <div class="return">
+                    @Html.ActionLink("Quay Lại", "DSsanpham")
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
+
+<style>
+    .return {
+        margin-left: 39%;
+        margin-top: 25px;
+        margin-bottom: 25px;
+        color: gray;
+        background: #ea2858;
+        border: none;
+        padding: 0.7em 95px;
+        outline: none;
+        width: 22%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        text-align: center
+    }
+
+        .return:hover {
+            color: #ea2858;
+            background: white;
+        }
+
+    @@media(max-width: 1040px) {
+        .return {
+            margin-left: 8%;
+            padding: 0.7em 90px;
+            margin-top: 0px;
+            width: 44%;
+        }
+    }
+
+    @@media(max-width: 780px) {
+
+
+        .return {
+            margin-left: 8%;
+            padding: 0.7em 60px;
+            margin-top: 0px;
+            width: 44%;
+        }
+    }
+
+    @@media(max-width: 430px) {
+
+
+        .return {
+            margin-left: 8%;
+            padding: 0.7em 37px;
+            margin-top: 0px;
+            width: 44%;
+            padding: 0.7em 35px;
+        }
+    }
+
+    @@media(max-width: 380px) {
+
+
+        .return {
+            margin-left: 6%;
+            margin-top: 0px;
+            width: 49%;
+            padding: 0.7em 35px;
+        }
+    }
+
+    @@media(max-width: 320px) {
+
+
+        .return {
+            margin-left: 6%;
+            margin-top: 0px;
+            width: 49%;
+            padding: 0.7em 25px;
+        }
+    }
+</style>

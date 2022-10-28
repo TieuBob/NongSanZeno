@@ -1,0 +1,224 @@
+﻿@model IEnumerable<NongSanZeno.Models.tbChiTietDonHang>
+
+@{
+    ViewBag.Title = "ChiTietdonhang";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên Người Đặt")
+        </th>
+        <th>
+            @Html.DisplayName("Tên Người Nhận")
+        </th>
+        <th>
+            @Html.DisplayName("Sản Phẩm")
+        </th>
+        <th>
+            @Html.DisplayName("Ảnh")
+        </th>
+        <th>
+            @Html.DisplayName("Số Lượng")
+        </th>
+        <th>
+            @Html.DisplayName("Đơn Giá")
+        </th>
+        <th>
+            @Html.DisplayName("Thành Tiền")
+        </th>
+        <th>
+            @Html.DisplayName("Địa Chỉ")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbDonHang.tbKhachHang.TenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbDonHang.NguoiNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbSanPham.TenSP)
+            </td>
+            <td>
+                <img src="~/images/sanpham/@Html.DisplayFor(modelItem => item.tbSanPham.AnhSP)" alt="Alternate Text" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ThanhTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbDonHang.DiaChi)
+            </td>
+            <td>
+                <a href="@Url.Action("XoaChiTietDonDatHang","AdminHoaDon", new { id = item.MaDH })">Xoá</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="space" style="display:flex;justify-content:space-around">
+    <a class="return" href="@Url.Action("DSdonhang","AdminHoaDon")">TRỞ VỀ</a>
+    @*@Html.ActionLink("Xoa chi tiet don dat hang","XoaTatCaChiTiet")*@
+    @*<a class="return" href="@Url.Action("XoaDonDatHang","ChucNang")">Xoá</a>*@
+</div>
+
+<style>
+    table {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    th {
+        height: 50px;
+        background: #fbffdf;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    th, td {
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        margin-right: -100px;
+    }
+
+    tr {
+        color: #777;
+        font-weight: bold;
+    }
+
+        tr:hover {
+            background-color: #777;
+            transition: 0.5s ease all;
+            color: white;
+        }
+
+    .return {
+        color: black;
+        background: #fffbb6;
+        border: none;
+        outline: none;
+        padding: 1% 5% 1% 5%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+    }
+
+        .return:hover {
+            color: #ffffd6;
+            background: #5b5c2f;
+        }
+
+    @@media(max-width: 1024px) {
+        img {
+            width: 250px;
+            height: 150px;
+        }
+
+        .return {
+            margin-left: 32%;
+        }
+    }
+
+    @@media(max-width: 780px) {
+        th, td {
+            padding-left: 20px;
+            padding-right: 0px;
+        }
+
+        img {
+            width: 250px;
+            height: 150px;
+        }
+
+        .return {
+            margin-left: 30%;
+        }
+    }
+
+    @@media(max-width: 430px) {
+        table {
+            font-size: 12px;
+        }
+
+        th, td {
+            padding-left: 20px;
+            padding-right: 10px;
+        }
+
+        img {
+            width: 150px;
+            height: 100px;
+        }
+
+        .return {
+            margin-left: 20%;
+        }
+    }
+
+    @@media(max-width: 380px) {
+        table {
+            font-size: 10px;
+        }
+
+        th, td {
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+
+        img {
+            width: 100px;
+            height: 80px;
+        }
+
+        .return {
+            margin-left: 15%;
+        }
+    }
+
+    @@media(max-width: 320px) {
+        table {
+            font-size: 8px;
+        }
+
+        th, td {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+
+        .return {
+            font-size: 14px;
+            margin-left: 8%;
+        }
+    }
+</style>

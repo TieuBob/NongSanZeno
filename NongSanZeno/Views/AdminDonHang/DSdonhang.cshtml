@@ -1,0 +1,333 @@
+﻿@using NongSanZeno.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<tbDonHang>
+
+@{
+    ViewBag.Title = "DSdonhang";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <input style="color:black" type="date" required name="date" />
+    <input style="text-align:center;color:black;background-color:#feffcd" type="submit" value="Tìm" class="btn btn-default" />
+    <input style="color:black;float:right" type="date" name="date2" />
+}
+<table class="table" border="1">
+    <tr>
+        <th>
+            @Html.DisplayName("Tên Khách Hàng")
+        </th>
+        <th>
+            @Html.DisplayName("Tên Người nhận")
+        </th>
+        <th>
+            @Html.DisplayName("Email")
+        </th>
+        <th>
+            @Html.DisplayName("Số điện thoại")
+        </th>
+        <th>
+            @Html.DisplayName("Địa chỉ")
+        </th>
+        <th>
+            @Html.DisplayName("Ghi chú")
+        </th>
+        <th>
+            @Html.DisplayName("Ngày Đặt")
+        </th>
+        <th>
+            @Html.DisplayName("Ngày Giao")
+        </th>
+        <th>
+            @Html.DisplayName("Tình Trạng Giao Hàng")
+        </th>
+        <th>
+            @Html.DisplayName("Tổng tiền")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tbKhachHang.TenKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NguoiNhan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GhiChu)
+            </td>
+            <td>
+                @String.Format("{0:dd/MM/yyyy}", item.NgayDat)
+            </td>
+            <td>
+                @String.Format("{0:dd/MM/yyyy}", item.NgayGiao)
+            </td>
+            <td style="color: black">
+                @Html.DisplayFor(modelItem => item.tbTinhTrangHoaDon.TenTinhTrang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td class="tool">
+                <a href="@Url.Action("ChiTietdonhang", "AdminHoaDon", new { id = item.MaDH })">Chi tiết</a> |
+                <a href="@Url.Action("Suadonhang", "AdminHoaDon", new { id = item.MaDH })">Sửa</a> |
+                <a href="@Url.Action("Xoadonhang", "AdminHoaDon", new { id = item.MaDH })">Xoá</a>
+            </td>
+        </tr>
+    }
+</table>
+
+@*Tao lien ket cac trang*@
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("DSdonhang", new { page = page }))
+</div>
+<style>
+    form {
+        margin: 20px 20px 50px 20px;
+    }
+
+    input[type="date"] {
+        border-radius: 10px;
+        padding: 10px 10px;
+    }
+
+    input[type="submit"] {
+        margin-left: 25%;
+        width: 200px;
+        color: white;
+        background: #ea2858;
+        border: none;
+        padding: .7em 20px;
+        outline: none;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+    }
+
+    form input[type="submit"]:hover {
+        background: #fff;
+        color: black;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+    }
+
+    .pagination {
+        position: relative;
+        background: #fff;
+        display: flex;
+        padding: 10px 20px;
+        border-radius: 50px;
+        box-shadow: 0 5px 15px rgba(0,0,0,.2);
+        text-align: center;
+        justify-content: center
+    }
+
+        .pagination > li {
+            margin: 0 5px;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+            .pagination > li > a {
+                color: #777;
+                font-weight: 600;
+                border-radius: 50%;
+                display: block;
+            }
+
+            .pagination > li:hover a,
+            .pagination > li.active a {
+                background: #333;
+                color: #fff
+            }
+
+
+    .tool > a:hover {
+        text-decoration: underline;
+    }
+
+    .page {
+        text-align: center;
+        justify-content: center;
+        display: inline;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        height: 50px;
+        background: #fbffdf;
+        color: black;
+        text-transform: uppercase;
+    }
+
+    td {
+        text-align: center;
+    }
+
+    th, td {
+        padding-left: 20px;
+        padding-right: 10px;
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+
+    tr {
+        color: #777;
+        font-weight: bold;
+    }
+
+        tr:hover {
+            background-color: #777;
+            transition: 0.5s ease all;
+            color: white;
+        }
+
+
+    @@media(max-width:1024px) {
+        table {
+            font-size: 10px;
+        }
+
+        form {
+            margin-bottom: 50px;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            font-size: 12px;
+        }
+
+        input[type="submit"] {
+            margin-left: 35%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        th, td {
+            padding-right: 0px;
+            padding-left: 10px;
+        }
+    }
+
+    @@media(max-width: 768px) {
+        form {
+            margin-bottom: 50px;
+        }
+
+        table {
+            font-size: 9px;
+        }
+
+        input[type="submit"] {
+            margin-left: 32%;
+        }
+
+        th, td {
+            padding-right: 0px;
+            padding-left: 5px;
+        }
+    }
+
+    @@media(max-width: 430px) {
+        form {
+            margin-bottom: 50px;
+        }
+
+        table {
+            font-size: 10px;
+        }
+
+        input[type="submit"] {
+            margin-left: 25%;
+        }
+
+        th, td {
+            padding-right: 0px;
+            padding-left: 5px;
+        }
+
+        .pagination {
+            width: 95%;
+            padding: 5px 20px;
+            margin-left: 15px;
+        }
+    }
+
+    @@media(max-width: 380px) {
+        form {
+            margin-bottom: 50px;
+        }
+
+        table {
+            font-size: 9px;
+        }
+
+        input[type="submit"] {
+            margin-left: 20%;
+        }
+    }
+
+    @@media(max-width: 320px) {
+        form {
+            margin-bottom: 50px;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            font-size: 12px;
+        }
+
+        input[type="submit"] {
+            margin-left: 25%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            width: 150px;
+        }
+
+        table {
+            font-size: 8px;
+        }
+
+        .tri-state.list-box {
+            color: black;
+        }
+
+        .pagination {
+            width: 95%;
+            padding: 5px 20px;
+            margin-left: 15px;
+            font-size: 10px;
+        }
+    }
+</style>
+}

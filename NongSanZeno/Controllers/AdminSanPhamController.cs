@@ -205,7 +205,6 @@ namespace NongSanZeno.Controllers
 
         }
 
-
         public ActionResult Chitietsanpham(int id)
         {
             if (Session["TKadmin"] == null)

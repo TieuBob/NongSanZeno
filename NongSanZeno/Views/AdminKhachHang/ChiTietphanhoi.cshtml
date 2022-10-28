@@ -1,0 +1,170 @@
+﻿@model NongSanZeno.Models.tbPhanHoiKH
+
+@{
+    ViewBag.Title = "ChiTietphanhoi";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<hr />
+<div>
+    <h2 style="text-align: center; font-size: 26px;">Thông Tin Phản Hồi</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            Số thứ tự: @Html.DisplayFor(model => model.STT)
+        </dt>
+        <dt>
+            Mã khách hàng: @Html.DisplayFor(model => model.MaKH)
+        </dt>
+        <dt>
+            Tên khách hàng: @Html.DisplayFor(model => model.tbKhachHang.TenKH)
+        </dt>
+
+        <dt>
+            Email: @Html.DisplayFor(model => model.tbKhachHang.Email)
+        </dt>
+        <dt>
+            Ý kiến phản hồi của khách hàng: @Html.DisplayFor(model => model.LyDo)
+        </dt>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div style="text-align:center"><a class="btn" href="@Url.Action("DSPhanHoi","AdminHoaDon")"> Trở về</a></div>
+        </div>
+    }
+</div>
+
+<style>
+    .dl-horizontal {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 22%;
+        padding: 5% 5%;
+        font-size: 20px;
+        border: solid 2px;
+        box-shadow: 0px 15px 15px 10px #808080;
+    }
+
+    dt {
+        color: black;
+        margin: 20px 10px;
+    }
+
+    .form-actions {
+        margin-top: 80px;
+        margin-left: 18%;
+        width: 100%;
+    }
+
+    .btn {
+        margin-left: 22%;
+        margin-bottom: 30px;
+        color: black;
+        background: #bbb37e;
+        border: none;
+        padding: .7em 20px;
+        outline: none;
+        width: 20%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        float: left;
+        font-weight: bold;
+    }
+
+        .btn:hover {
+            color: #333333;
+            background: #96924f;
+        }
+
+    @@media(max-width: 1040px) {
+        .return {
+            margin-left: 8%;
+            padding: 0.7em 43px;
+            margin-top: 0px;
+            width: 20%;
+        }
+    }
+
+    @@media(max-width: 780px) {
+        label {
+            margin-left: 22%;
+        }
+
+        .btn {
+            margin-left: 22%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 4%;
+            padding: 0.7em 47px;
+            margin-top: 0px;
+            width: 28%;
+        }
+    }
+
+    @@media(max-width: 430px) {
+        label {
+            margin-left: 20%;
+        }
+
+        .btn {
+            margin-left: 20%;
+        }
+
+        .return {
+            margin-left: 5%;
+            margin-top: 0px;
+            width: 29%;
+            padding: 0.7em 25px;
+        }
+    }
+
+    @@media(max-width: 380px) {
+        label {
+            margin-left: 18%;
+        }
+
+        .btn {
+            margin-left: 20%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 20%;
+            margin-top: 0px;
+            width: 31%;
+            padding: 0.7em 24px;
+        }
+    }
+
+    @@media(max-width: 320px) {
+        label {
+            margin-left: 15%;
+        }
+
+        .btn {
+            margin-left: 20%;
+            width: 30%;
+        }
+
+        .return {
+            margin-top: 0px;
+            width: 30%;
+            padding: 0.7em 14px;
+        }
+    }
+</style>

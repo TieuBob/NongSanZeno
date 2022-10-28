@@ -126,7 +126,7 @@ namespace NongSanZeno.Controllers
 
             if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
             {
-                return RedirectToAction("Dangnhap", "NguoiDung");
+                return RedirectToAction("Dangnhap", "LoginUser");
             }
             if (Session["GioHang"] == null)
             {
@@ -162,8 +162,7 @@ namespace NongSanZeno.Controllers
 
             ddh.NgayGiao = DateTime.Parse(ngaygiao);
             ddh.TongTien = Decimal.Parse(TongTien().ToString());
-            /*ddh.MaTTHD = '1'*/
-            ;
+            /*ddh.MaTTHD = '1'*/;
             //dONDATHANG.Dathanhtoan = false;
             data.SubmitChanges();
             foreach (var item in gioHangs)

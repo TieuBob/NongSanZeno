@@ -1,0 +1,276 @@
+﻿@model SugarBakery.Models.tbDonHang
+
+@{
+    ViewBag.Title = "Xoadonhang";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<hr />
+<h1 style="text-align: center; font-size: 28px;">Bạn Thật Sự Chắc Chắn Muốn Xóa Đặt Hàng Này?</h1>
+<hr />
+
+<div>
+    <h2 style="text-align: center; font-size: 26px;">Thông Tin Nhà Cung Cấp</h2>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Tên Nhãn Hiệu:   ")
+            @Html.DisplayFor(model => model.tbKhachHang.TenKH)
+        </dt>
+        <dt>
+            @Html.DisplayName("Ngày Đặt:     ")
+            @String.Format("{0:dd/MM/yyyy}", Model.NgayDat)
+        </dt>
+        <dt>
+            @Html.DisplayName("Ngày Giao:   ")
+            @String.Format("{0:dd/MM/yyyy}", Model.NgayGiao)
+        </dt>
+    </dl>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.NguoiNhan)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.NguoiNhan)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.Email)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.Email)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.SDT)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.SDT)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.DiaChi)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.DiaChi)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.GhiChu)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.GhiChu)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.TongTien)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.TongTien)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.NgayDat)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.NgayDat)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.NgayGiao)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.NgayGiao)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.MaKH)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.MaKH)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.MaTTHD)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.MaTTHD)
+    </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        <div class="form-actions no-color">
+            <div style="text-align:center"><a class="btn" href="@Url.Action("DonDatHang","ChucNang")"> Trở về</a></div>
+            <input type="submit" value="XÓA" class="btn btn-default" />
+        </div>
+    }
+</div>
+
+<style>
+    .dl-horizontal {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 20%;
+        padding-left: 10%;
+        font-size: 20px;
+        border: solid 2px;
+        box-shadow: 0px 15px 15px 10px #808080;
+    }
+
+    dt, dd {
+        color: white;
+        margin: 20px 10px;
+    }
+
+    .form-actions {
+        margin-top: 80px;
+        margin-left: 18%;
+        width: 100%;
+    }
+
+    .btn {
+        margin-left: 8%;
+        color: white;
+        background: #ea2858;
+        border: none;
+        padding: .7em 20px;
+        outline: none;
+        width: 20%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        float: left;
+    }
+
+        .btn:hover {
+            color: #ea2858;
+            background: white;
+        }
+
+    .return {
+        margin-left: 8%;
+        color: white;
+        background: #ea2858;
+        border: none;
+        padding: .7em 83px;
+        outline: none;
+        width: 20%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        float: left;
+    }
+
+        .return:hover {
+            color: #ea2858;
+            background: white;
+        }
+
+    @@media(max-width: 1040px) {
+        .return {
+            margin-left: 8%;
+            padding: 0.7em 43px;
+            margin-top: 0px;
+            width: 20%;
+        }
+    }
+
+    @@media(max-width: 780px) {
+        label {
+            margin-left: 22%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 4%;
+            padding: 0.7em 47px;
+            margin-top: 0px;
+            width: 28%;
+        }
+    }
+
+    @@media(max-width: 430px) {
+        label {
+            margin-left: 20%;
+        }
+
+        .return {
+            margin-left: 5%;
+            margin-top: 0px;
+            width: 29%;
+            padding: 0.7em 25px;
+        }
+    }
+
+    @@media(max-width: 380px) {
+        label {
+            margin-left: 18%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 3%;
+            margin-top: 0px;
+            width: 31%;
+            padding: 0.7em 24px;
+        }
+    }
+
+    @@media(max-width: 320px) {
+        label {
+            margin-left: 15%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 30%;
+        }
+
+        .return {
+            margin-top: 0px;
+            width: 30%;
+            padding: 0.7em 14px;
+        }
+</style>

@@ -58,7 +58,7 @@ namespace NongSanZeno.Controllers
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("Index", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             if (id == null)
             {
@@ -73,7 +73,7 @@ namespace NongSanZeno.Controllers
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("Index", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
 
             tbDonHang dh = data.tbDonHangs.SingleOrDefault(n => n.MaDH == id);
@@ -86,11 +86,11 @@ namespace NongSanZeno.Controllers
         }
 
         [HttpPost, ActionName("Suadonhang")]
-        public ActionResult XacNhanSuaDonDatHang(int id)
+        public ActionResult XacNhanSuadonhang(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("Index", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -105,7 +105,7 @@ namespace NongSanZeno.Controllers
                 return RedirectToAction("DSdonhang");
             }
         }
-        public List<tbChiTietDonHang> LayChiTietDonDatHang()
+        public List<tbChiTietDonHang> LayChiTietdonhang()
         {
             List<tbChiTietDonHang> list = Session["chitietdonhang"] as List<tbChiTietDonHang>;
             if (list == null)
@@ -118,15 +118,15 @@ namespace NongSanZeno.Controllers
 
         public ActionResult XoaTatCaChiTiet()
         {
-            List<tbChiTietDonHang> list = LayChiTietDonDatHang();
+            List<tbChiTietDonHang> list = LayChiTietdonhang();
             list.Clear();
-            return RedirectToAction("DonDatHang");
+            return RedirectToAction("tbDonHang");
         }
-        public ActionResult XoaChiTietDonDatHang(int id)
+        public ActionResult XoaChiTietdonhang(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("Index", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -140,12 +140,12 @@ namespace NongSanZeno.Controllers
                 return View(ctdh);
             }
         }
-        [HttpPost, ActionName("XoaChiTietDonDatHang")]
-        public ActionResult XacNhanXoaChiTietDonDatHang(int id)
+        [HttpPost, ActionName("XoaChiTietdonhang")]
+        public ActionResult XacNhanXoaChiTietdonhang(int id)
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("Index", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -166,7 +166,7 @@ namespace NongSanZeno.Controllers
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("Index", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {
@@ -186,7 +186,7 @@ namespace NongSanZeno.Controllers
         {
             if (Session["TKadmin"] == null)
             {
-                return RedirectToAction("Index", "SugarBakery");
+                return RedirectToAction("SanPham", "NongSanZeno");
             }
             else
             {

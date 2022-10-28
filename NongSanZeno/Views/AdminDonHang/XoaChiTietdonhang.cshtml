@@ -1,0 +1,197 @@
+﻿@model NongSanZeno.Models.tbChiTietDonHang
+
+@{
+    ViewBag.Title = "XoaChiTietdonhang";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>CHITIETDONTHANG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThanhTien)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-actions no-color">
+            <input type="submit" value="Xoá" class="btn btn-default" /> |
+        </div>
+    }
+</div>
+
+<style>
+    .dl-horizontal {
+        width: 60%;
+        margin-top: 20px;
+        margin-left: 20%;
+        padding-left: 10%;
+        font-size: 20px;
+        border: solid 2px;
+        box-shadow: 0px 15px 15px 10px #808080;
+    }
+
+    dt, dd {
+        color: white;
+        margin: 20px 10px;
+    }
+
+    .form-actions {
+        margin-top: 80px;
+        margin-left: 18%;
+        width: 100%;
+    }
+
+    .btn {
+        margin-left: 8%;
+        color: white;
+        background: #ea2858;
+        border: none;
+        padding: .7em 20px;
+        outline: none;
+        width: 20%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        float: left;
+    }
+
+        .btn:hover {
+            color: #ea2858;
+            background: white;
+        }
+
+    .return {
+        margin-left: 8%;
+        color: white;
+        background: #ea2858;
+        border: none;
+        padding: .7em 83px;
+        outline: none;
+        width: 20%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+        float: left;
+    }
+
+        .return:hover {
+            color: #ea2858;
+            background: white;
+        }
+
+    @@media(max-width: 1040px) {
+        .return {
+            margin-left: 8%;
+            padding: 0.7em 43px;
+            margin-top: 0px;
+            width: 20%;
+        }
+    }
+
+    @@media(max-width: 780px) {
+        label {
+            margin-left: 22%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 4%;
+            padding: 0.7em 47px;
+            margin-top: 0px;
+            width: 28%;
+        }
+    }
+
+    @@media(max-width: 430px) {
+        label {
+            margin-left: 20%;
+        }
+
+        .return {
+            margin-left: 5%;
+            margin-top: 0px;
+            width: 29%;
+            padding: 0.7em 25px;
+        }
+    }
+
+    @@media(max-width: 380px) {
+        label {
+            margin-left: 18%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 25%;
+        }
+
+        .return {
+            margin-left: 3%;
+            margin-top: 0px;
+            width: 31%;
+            padding: 0.7em 24px;
+        }
+    }
+
+    @@media(max-width: 320px) {
+        label {
+            margin-left: 15%;
+        }
+
+        .btn {
+            margin-left: 2%;
+            width: 30%;
+        }
+
+        .return {
+            margin-top: 0px;
+            width: 30%;
+            padding: 0.7em 14px;
+        }
+</style>

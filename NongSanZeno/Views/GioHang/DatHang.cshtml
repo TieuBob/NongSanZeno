@@ -2,8 +2,7 @@
 @model List<GioHang>
 
 @{
-    ViewBag.Title = "DatHang";
-    Layout = "~/Views/Layout/_Layout.cshtml";
+    Layout = null;
 }
 
 <div class="content-giohang">
@@ -53,7 +52,7 @@
             @Html.ValidationSummary(true)
             <tr style="height:40px">
                 <td>Khách Hàng</td>
-                <td style="font-weight:bold">@kh.HoTen</td>
+                <td style="font-weight:bold">@kh.TenKH</td>
             </tr>
 
             <tr style="height:40px">
