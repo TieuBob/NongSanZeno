@@ -49,13 +49,14 @@ namespace NongSanZeno.Controllers
         {
             if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
             {
-                return RedirectToAction("Dangnhap", "NguoiDung");
+                return RedirectToAction("Dangnhap", "LoginUser");
             }
             else
             {
                 tbPhanHoiKH ht = new tbPhanHoiKH();
                 tbKhachHang kh = (tbKhachHang)Session["Taikhoan"];
                 ht.MaKH = kh.MaKH;
+                ht.Email = kh.Email;
                 string lydo = collection["LyDo"];
                 ht.LyDo = lydo;
                 if (lydo == null)

@@ -22,9 +22,6 @@
             @Html.DisplayName("Tên Người nhận")
         </th>
         <th>
-            @Html.DisplayName("Email")
-        </th>
-        <th>
             @Html.DisplayName("Số điện thoại")
         </th>
         <th>
@@ -58,9 +55,6 @@
                 @Html.DisplayFor(modelItem => item.NguoiNhan)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.SDT)
             </td>
             <td>
@@ -76,15 +70,15 @@
                 @String.Format("{0:dd/MM/yyyy}", item.NgayGiao)
             </td>
             <td style="color: black">
-                @Html.DisplayFor(modelItem => item.tbTinhTrangHoaDon.TenTinhTrang)
+                @Html.DisplayFor(modelItem => item.tbTinhTrangDH.TenTTDH)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TongTien)
             </td>
             <td class="tool">
-                <a href="@Url.Action("ChiTietdonhang", "AdminHoaDon", new { id = item.MaDH })">Chi tiết</a> |
-                <a href="@Url.Action("Suadonhang", "AdminHoaDon", new { id = item.MaDH })">Sửa</a> |
-                <a href="@Url.Action("Xoadonhang", "AdminHoaDon", new { id = item.MaDH })">Xoá</a>
+                <a href="@Url.Action("ChiTietdonhang", "AdminDonHang", new { id = item.MaDH })">Chi tiết</a> |
+                <a href="@Url.Action("Suadonhang", "AdminDonHang", new { id = item.MaDH })">Sửa</a> |
+                <a href="@Url.Action("Xoadonhang", "AdminDonHang", new { id = item.MaDH })">Xoá</a>
             </td>
         </tr>
     }
@@ -330,4 +324,3 @@
         }
     }
 </style>
-}

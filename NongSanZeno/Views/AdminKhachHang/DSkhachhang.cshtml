@@ -48,15 +48,15 @@
             </td>
 
             <td>
-                @Html.ActionLink("Chi tiết", "ChiTietKH", new { id = item.MaKH }, new { @class = "btn btn-success" }) |
-                @Html.ActionLink("Xóa", "Xoakh", new { id = item.MaKH }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Chi tiết", "ChiTietkhachhang", new { id = item.MaKH }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("Xóa", "Xoakhachhang", new { id = item.MaKH }, new { @class = "btn btn-success" }) |
             </td>
         </tr>
     }
 </table>
 
 <div class="MenuTrang">
-    @Html.PagedListPager(Model, page => Url.Action("DSkh", new { page = page }))
+    @Html.PagedListPager(Model, page => Url.Action("DSkhachhang", new { page = page }))
 </div>
 
 <style>

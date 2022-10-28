@@ -1,4 +1,4 @@
-﻿@model SugarBakery.Models.tbDonHang
+﻿@model NongSanZeno.Models.tbDonHang
 
 @{
     ViewBag.Title = "Xoadonhang";
@@ -6,13 +6,13 @@
 }
 
 <hr />
-<h1 style="text-align: center; font-size: 28px;">Bạn Thật Sự Chắc Chắn Muốn Xóa Đặt Hàng Này?</h1>
+<h1 style="text-align: center; font-size: 28px;">Bạn Thật Sự Chắc Chắn Muốn Xóa Đơn Hàng Này?</h1>
 <hr />
 
 <div>
-    <h2 style="text-align: center; font-size: 26px;">Thông Tin Nhà Cung Cấp</h2>
+    <h2 style="text-align: center; font-size: 26px;">Thông Tin Đơn Hàng</h2>
     <dl class="dl-horizontal">
-        <dt>
+        @*<dt>
             @Html.DisplayName("Tên Nhãn Hiệu:   ")
             @Html.DisplayFor(model => model.tbKhachHang.TenKH)
         </dt>
@@ -23,102 +23,40 @@
         <dt>
             @Html.DisplayName("Ngày Giao:   ")
             @String.Format("{0:dd/MM/yyyy}", Model.NgayGiao)
-        </dt>
-    </dl>
+        </dt>*@
+        <dt>@Html.DisplayNameFor(model => model.MaKH)</dt>
+        <dd>@Html.DisplayFor(model => model.MaKH)</dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.NguoiNhan)
-    </dt>
+        <dt>@Html.DisplayNameFor(model => model.NguoiNhan)</dt>
+        <dd>@Html.DisplayFor(model => model.NguoiNhan)</dd>
 
-    <dd>
-        @Html.DisplayFor(model => model.NguoiNhan)
-    </dd>
+        <dt>@Html.DisplayNameFor(model => model.SDT)</dt>
+        <dd>@Html.DisplayFor(model => model.SDT)</dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.Email)
-    </dt>
+        <dt>@Html.DisplayNameFor(model => model.DiaChi)</dt>
+        <dd>@Html.DisplayFor(model => model.DiaChi)</dd>
 
-    <dd>
-        @Html.DisplayFor(model => model.Email)
-    </dd>
+        <dt>@Html.DisplayNameFor(model => model.GhiChu)</dt>
+        <dd>@Html.DisplayFor(model => model.GhiChu)</dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.SDT)
-    </dt>
+        <dt>@Html.DisplayNameFor(model => model.TongTien)</dt>
+        <dd>@Html.DisplayFor(model => model.TongTien)</dd>
 
-    <dd>
-        @Html.DisplayFor(model => model.SDT)
-    </dd>
+        <dt>@Html.DisplayNameFor(model => model.NgayDat)</dt>
+        <dd>@Html.DisplayFor(model => model.NgayDat)</dd>
 
-    <dt>
-        @Html.DisplayNameFor(model => model.DiaChi)
-    </dt>
+        <dt>@Html.DisplayNameFor(model => model.NgayGiao)</dt>
+        <dd>@Html.DisplayFor(model => model.NgayGiao)</dd>
 
-    <dd>
-        @Html.DisplayFor(model => model.DiaChi)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.GhiChu)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.GhiChu)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.TongTien)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.TongTien)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.NgayDat)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.NgayDat)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.NgayGiao)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.NgayGiao)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.MaKH)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.MaKH)
-    </dd>
-
-    <dt>
-        @Html.DisplayNameFor(model => model.MaTTHD)
-    </dt>
-
-    <dd>
-        @Html.DisplayFor(model => model.MaTTHD)
-    </dd>
-
+        <dt>@Html.DisplayNameFor(model => model.tbTinhTrangDH.MaTTDH)</dt>
+        <dd>@Html.DisplayFor(model => model.tbTinhTrangDH.MaTTDH)</dd>
     </dl>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
-
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-
-        <div class="form-actions no-color">
-            <div style="text-align:center"><a class="btn" href="@Url.Action("DonDatHang","ChucNang")"> Trở về</a></div>
+            <div style="text-align:center"><a class="btn" href="@Url.Action("DSdonhang","AdminDonHang")"> Trở về</a></div>
             <input type="submit" value="XÓA" class="btn btn-default" />
         </div>
     }
@@ -136,7 +74,8 @@
     }
 
     dt, dd {
-        color: white;
+        text-align:center;
+        color: black;
         margin: 20px 10px;
     }
 

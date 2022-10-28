@@ -6,15 +6,15 @@
 }
 
 <table class="table">
-    <tr>
+    <tr style="text-align:center">
         <th>
-            @Html.DisplayName("Tên Người Đặt")
+            @Html.DisplayName("Mã Đơn Hàng")
         </th>
         <th>
-            @Html.DisplayName("Tên Người Nhận")
+            @Html.DisplayName("Mã Sản Phảm")
         </th>
         <th>
-            @Html.DisplayName("Sản Phẩm")
+            @Html.DisplayName("Tên Sản Phẩm")
         </th>
         <th>
             @Html.DisplayName("Ảnh")
@@ -25,23 +25,17 @@
         <th>
             @Html.DisplayName("Đơn Giá")
         </th>
-        <th>
-            @Html.DisplayName("Thành Tiền")
-        </th>
-        <th>
-            @Html.DisplayName("Địa Chỉ")
-        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr style="text-align:center">
             <td>
-                @Html.DisplayFor(modelItem => item.tbDonHang.tbKhachHang.TenKH)
+                @Html.DisplayFor(modelItem => item.tbDonHang.MaDH)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.tbDonHang.NguoiNhan)
+                @Html.DisplayFor(modelItem => item.tbSanPham.MaSP)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.tbSanPham.TenSP)
@@ -56,20 +50,14 @@
                 @Html.DisplayFor(modelItem => item.DonGia)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ThanhTien)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.tbDonHang.DiaChi)
-            </td>
-            <td>
-                <a href="@Url.Action("XoaChiTietDonDatHang","AdminHoaDon", new { id = item.MaDH })">Xoá</a>
+                <a href="@Url.Action("XoaChiTietdonhang","AdminDonHang", new { id = item.MaDH })">Xoá</a>
             </td>
         </tr>
     }
 
 </table>
 <div class="space" style="display:flex;justify-content:space-around">
-    <a class="return" href="@Url.Action("DSdonhang","AdminHoaDon")">TRỞ VỀ</a>
+    <a class="return" href="@Url.Action("DSdonhang","AdminDonHang")">TRỞ VỀ</a>
     @*@Html.ActionLink("Xoa chi tiet don dat hang","XoaTatCaChiTiet")*@
     @*<a class="return" href="@Url.Action("XoaDonDatHang","ChucNang")">Xoá</a>*@
 </div>

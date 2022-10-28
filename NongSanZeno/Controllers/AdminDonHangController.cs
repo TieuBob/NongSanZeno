@@ -120,7 +120,7 @@ namespace NongSanZeno.Controllers
         {
             List<tbChiTietDonHang> list = LayChiTietdonhang();
             list.Clear();
-            return RedirectToAction("tbDonHang");
+            return RedirectToAction("DonDatHang");
         }
         public ActionResult XoaChiTietdonhang(int id)
         {
@@ -192,7 +192,7 @@ namespace NongSanZeno.Controllers
             {
                 tbDonHang dh = data.tbDonHangs.Where(n => n.MaDH == id).FirstOrDefault();
 
-                ViewBag.MaDonHang = dh.MaDH;
+                ViewBag.MaDH = dh.MaDH;
                 if (dh == null)
                 {
                     Response.StatusCode = 404;
