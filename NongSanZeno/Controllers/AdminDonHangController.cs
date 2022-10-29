@@ -75,8 +75,9 @@ namespace NongSanZeno.Controllers
             {
                 return RedirectToAction("SanPham", "NongSanZeno");
             }
-
+            
             tbDonHang dh = data.tbDonHangs.SingleOrDefault(n => n.MaDH == id);
+            ViewBag.TTDH = new SelectList(data.tbTinhTrangDHs.ToList().OrderBy(n => n.MaTTDH), "MaTTDH", "TenTTDH", dh.MaTTDH);
             if (dh == null)
             {
                 Response.StatusCode = 404;
