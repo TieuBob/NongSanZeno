@@ -74,13 +74,13 @@
                 @Html.DisplayFor(modelItem => item.NgayCapNhat)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaLoaiSP)
+                @Html.DisplayFor(modelItem => item.tbLoaiSanPham.TenLoaiSP)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaNhom)
+                @Html.DisplayFor(modelItem => item.tbNhom.TenNhom)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaDVT)
+                @Html.DisplayFor(modelItem => item.tbDonViTinh.TenDVT)
             </td>
             <td>
                 @Html.ActionLink("Sửa", "Suasanpham", new { id = item.MaSP }, new { @class = "btn btn-success" }) |

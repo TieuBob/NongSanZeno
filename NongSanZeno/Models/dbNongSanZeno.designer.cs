@@ -1654,8 +1654,6 @@ namespace NongSanZeno.Models
 		
 		private string _TenLoaiSP;
 		
-		private string _AnhLSP;
-		
 		private EntitySet<tbSanPham> _tbSanPhams;
 		
     #region Extensibility Method Definitions
@@ -1666,8 +1664,6 @@ namespace NongSanZeno.Models
     partial void OnMaLoaiSPChanged();
     partial void OnTenLoaiSPChanging(string value);
     partial void OnTenLoaiSPChanged();
-    partial void OnAnhLSPChanging(string value);
-    partial void OnAnhLSPChanged();
     #endregion
 		
 		public tbLoaiSanPham()
@@ -1712,26 +1708,6 @@ namespace NongSanZeno.Models
 					this._TenLoaiSP = value;
 					this.SendPropertyChanged("TenLoaiSP");
 					this.OnTenLoaiSPChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhLSP", DbType="VarChar(50)")]
-		public string AnhLSP
-		{
-			get
-			{
-				return this._AnhLSP;
-			}
-			set
-			{
-				if ((this._AnhLSP != value))
-				{
-					this.OnAnhLSPChanging(value);
-					this.SendPropertyChanging();
-					this._AnhLSP = value;
-					this.SendPropertyChanged("AnhLSP");
-					this.OnAnhLSPChanged();
 				}
 			}
 		}
@@ -2218,8 +2194,6 @@ namespace NongSanZeno.Models
 		
 		private string _TenNhom;
 		
-		private string _AnhNSP;
-		
 		private EntitySet<tbSanPham> _tbSanPhams;
 		
     #region Extensibility Method Definitions
@@ -2230,8 +2204,6 @@ namespace NongSanZeno.Models
     partial void OnMaNhomChanged();
     partial void OnTenNhomChanging(string value);
     partial void OnTenNhomChanged();
-    partial void OnAnhNSPChanging(string value);
-    partial void OnAnhNSPChanged();
     #endregion
 		
 		public tbNhom()
@@ -2276,26 +2248,6 @@ namespace NongSanZeno.Models
 					this._TenNhom = value;
 					this.SendPropertyChanged("TenNhom");
 					this.OnTenNhomChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnhNSP", DbType="VarChar(50)")]
-		public string AnhNSP
-		{
-			get
-			{
-				return this._AnhNSP;
-			}
-			set
-			{
-				if ((this._AnhNSP != value))
-				{
-					this.OnAnhNSPChanging(value);
-					this.SendPropertyChanging();
-					this._AnhNSP = value;
-					this.SendPropertyChanged("AnhNSP");
-					this.OnAnhNSPChanged();
 				}
 			}
 		}

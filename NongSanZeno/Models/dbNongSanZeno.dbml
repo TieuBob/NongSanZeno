@@ -76,7 +76,6 @@
     <Type Name="tbLoaiSanPham">
       <Column Name="MaLoaiSP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenLoaiSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AnhLSP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="tbLoaiSanPham_tbSanPham" Member="tbSanPhams" ThisKey="MaLoaiSP" OtherKey="MaLoaiSP" Type="tbSanPham" />
     </Type>
   </Table>
@@ -105,7 +104,6 @@
     <Type Name="tbNhom">
       <Column Name="MaNhom" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TenNhom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="AnhNSP" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="tbNhom_tbSanPham" Member="tbSanPhams" ThisKey="MaNhom" OtherKey="MaNhom" Type="tbSanPham" />
     </Type>
   </Table>

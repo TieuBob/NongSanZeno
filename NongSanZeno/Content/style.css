@@ -4855,8 +4855,8 @@ background-attachment:fixed;}
  #ttr_page
 {
 max-width:2000px;
-/*min-width:800px;*/
-min-width:1920px;
+min-width:800px;
+/*min-width:1920px;*/
 margin-top:0px;
 margin-bottom:0px;
 border-radius:1px 1px 1px 1px;
