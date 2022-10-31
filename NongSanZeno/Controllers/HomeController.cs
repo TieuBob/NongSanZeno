@@ -14,14 +14,14 @@ namespace NongSanZeno.Controllers
         dbNongSanZenoDataContext data = new dbNongSanZenoDataContext();
         private List<tbSanPham> Laysanpham(int count)
         {
-            return data.tbSanPhams.OrderByDescending(a => a.MaSP).Take(count).ToList();
+            return data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(count).ToList();
         }
         public ActionResult TrangChu()
         {
             //Lay top 6 san pham ban chay nhat
             var sanpham = Laysanpham(4);
             string s = Request.QueryString["s"];
-            if (!string.IsNullOrEmpty(s)) sanpham = data.tbSanPhams.OrderByDescending(a => a.MaSP).Take(4).Where(w => w.TenSP.Contains(s)).ToList();
+            if (!string.IsNullOrEmpty(s)) sanpham = data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(4).Where(w => w.TenSP.Contains(s)).ToList();
             return View(sanpham);
         }
 

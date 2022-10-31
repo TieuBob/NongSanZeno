@@ -15,7 +15,7 @@ namespace NongSanZeno.Controllers
         // GET: NongSanZeno
         private List<tbSanPham> Laysanpham(int count)
         {
-            return data.tbSanPhams.OrderByDescending(a => a.MaSP).Take(count).ToList();
+            return data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(count).ToList();
         }
         public ActionResult SanPham(int? page)
         {
@@ -27,7 +27,7 @@ namespace NongSanZeno.Controllers
             //Lay top 6 san pham ban chay nhat
             var sanphammoi = Laysanpham(30);
             string s = Request.QueryString["s"];
-            if (!string.IsNullOrEmpty(s)) sanphammoi = data.tbSanPhams.OrderByDescending(a => a.MaSP).Take(30).Where(w => w.TenSP.Contains(s)).ToList();
+            if (!string.IsNullOrEmpty(s)) sanphammoi = data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(30).Where(w => w.TenSP.Contains(s)).ToList();
             return View(sanphammoi.ToPagedList(pageNum, pageSize));
         }
 

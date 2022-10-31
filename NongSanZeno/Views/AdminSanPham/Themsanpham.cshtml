@@ -80,27 +80,80 @@
                 </div>
             </div>*@
 
-        <div class="form-group">
-            <div class="form-actions no-color">
-                <div class="return">
-                    <input type="submit" value="Thêm Mới" class="btn btn-default" />
-                </div>
-                <div class="return">
-                    @Html.ActionLink("Quay Lại", "DSsanpham")
-                </div>
-            </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Thêm Mới" class="btn btn-default" />
         </div>
+        
+    </div>
 
     </div>
 }
+<div class="return">
+    @Html.ActionLink("Quay Lại", "DSsanpham")
+</div>
 
 <style>
+    h2 {
+        font-size: 26px;
+    }
+
+    input, #Loai, #MaNCC, textarea {
+        color: #000000;
+        outline: none;
+        font-size: .9em;
+        padding: 1em 3em 1em 1em;
+        border: none;
+        margin-bottom: 20px;
+        margin-top: 10px;
+        background: rgba(255, 255, 255, 0.85);
+        width: 62%;
+        color: #000;
+        border-radius: 30px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+        
+    }
+
+
+    .form-horizontal {
+        text-align: center;
+        justify-content: center
+    }
+
+    .btn {
+        color: white;
+        background: #bbb37e;
+        border: none;
+        padding: .7em 20px;
+        outline: none;
+        width: 34%;
+        font-size: 1em;
+        cursor: pointer;
+        letter-spacing: 1px;
+        font-weight: 400;
+        font-family: 'Open Sans', sans-serif;
+        transition: 0.5s all;
+        -webkit-transition: 0.5s all;
+        -o-transition: 0.5s all;
+        -moz-transition: 0.5s all;
+        -ms-transition: 0.5s all;
+        border-radius: 30px;
+    }
+
+        .btn:hover {
+            color: white;
+            background: #4e4e22;
+        }
+
     .return {
         margin-left: 39%;
         margin-top: 25px;
         margin-bottom: 25px;
-        color: gray;
-        background: #ea2858;
+        color: white;
+        background: #bbb37e;
         border: none;
         padding: 0.7em 95px;
         outline: none;
@@ -116,12 +169,11 @@
         -moz-transition: 0.5s all;
         -ms-transition: 0.5s all;
         border-radius: 30px;
-        text-align: center
     }
 
         .return:hover {
-            color: #ea2858;
-            background: white;
+            color: white;
+            background: #4e4e22;
         }
 
     @@media(max-width: 1040px) {
