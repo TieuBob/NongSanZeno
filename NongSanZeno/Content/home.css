@@ -23,7 +23,7 @@ body {
     margin-top: 1rem;
     display: inline-block;
     padding: .8rem 3rem;
-    background: var(--brown);
+    background: #3c763d;
     color: #fff;
     font-size: 1.7rem;
     cursor: pointer;
