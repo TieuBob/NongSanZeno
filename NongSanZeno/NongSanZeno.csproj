@@ -147,6 +147,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Cart\bundle.771defbd521b8480.css" />
+    <Content Include="Content\Cart\pcmall-cart.ee62cb54bf1e830aff03.css" />
+    <Content Include="Content\Cart\x3.65c58097.50478c53b08055d3ddc5.css" />
     <Content Include="Content\LoginUser\images\xacnhandonhang.png" />
     <Content Include="Content\sanpham.css" />
     <Content Include="images\cart.jpg" />
