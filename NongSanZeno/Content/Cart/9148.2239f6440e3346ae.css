@@ -24,7 +24,7 @@
         background-size: cover;
         background-repeat: no-repeat;
         width: 8.125rem;
-        height: 2.875rem;
+        height: 0.875rem;
         cursor: pointer;
         fill: #ee4d2d
     }
@@ -3357,7 +3357,8 @@
 .dwwHJ- {
     background: #fff;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,.09);
-    border-radius: 3px
+    border-radius: 3px;
+    margin-top: 12px
 }
 
     .dwwHJ- + .dwwHJ-, .ZrE0do {
