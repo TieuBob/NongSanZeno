@@ -2325,6 +2325,7 @@
     <Content Include="Content\LoginUser\scss\bootstrap\_utilities.scss" />
     <Content Include="Content\LoginUser\scss\bootstrap\_variables.scss" />
     <Content Include="Content\LoginUser\scss\style.scss" />
+    <Content Include="Content\Cart\4237.10ec744b41d5b084" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\contactform.js" />
     <Content Include="Scripts\Customjs.js" />
@@ -2418,6 +2419,7 @@
     <Content Include="Views\AdminSanPham\ThemDvt.cshtml" />
     <Content Include="Views\AdminSanPham\Suadvt.cshtml" />
     <Content Include="Views\AdminSanPham\Xoadvt.cshtml" />
+    <Content Include="Views\Layout\_LayoutGioHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
