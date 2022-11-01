@@ -147,6 +147,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Cart\6185.e976c928ead1b370.css" />
+    <Content Include="Content\Cart\9148.2239f6440e3346ae.css" />
     <Content Include="Content\Cart\bundle.771defbd521b8480.css" />
     <Content Include="Content\Cart\pcmall-cart.ee62cb54bf1e830aff03.css" />
     <Content Include="Content\Cart\x3.65c58097.50478c53b08055d3ddc5.css" />
@@ -2325,7 +2327,6 @@
     <Content Include="Content\LoginUser\scss\bootstrap\_utilities.scss" />
     <Content Include="Content\LoginUser\scss\bootstrap\_variables.scss" />
     <Content Include="Content\LoginUser\scss\style.scss" />
-    <Content Include="Content\Cart\4237.10ec744b41d5b084" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\contactform.js" />
     <Content Include="Scripts\Customjs.js" />

@@ -31,8 +31,8 @@
 
 ._4cUwRX {
     margin-left: .9375rem;
-    border-left: .0625rem solid #ee4d2d;
-    color: #ee4d2d;
+    border-left: .0625rem solid #4e4e22;
+    color: #4e4e22;
     font-size: 1.25rem;
     line-height: 1.875rem;
     height: 1.875rem;
@@ -7364,16 +7364,16 @@ td, th {
     }
 
     ._8ZMqxt .stardust-button--primary {
-        background: #ee4d2d;
+        background: #4e4e22;
         color: #fff
     }
 
         ._8ZMqxt .stardust-button--primary:hover {
-            background: #f05d40
+            background: #958d5b
         }
 
         ._8ZMqxt .stardust-button--primary:active {
-            background: #e2492b
+            background: #4e4e22
         }
 
     ._8ZMqxt .stardust-input input {
