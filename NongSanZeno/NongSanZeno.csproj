@@ -154,10 +154,14 @@
     <Content Include="Content\Cart\4237.10ec744b41d5b084.css" />
     <Content Include="Content\Cart\5823.825bbbd5ad2a3966.css" />
     <Content Include="Content\Cart\6185.e976c928ead1b370.css" />
+    <Content Include="Content\Cart\649.e5e34359b351d0bdb6b8.legacy.css" />
     <Content Include="Content\Cart\7464.9b744d99d42b7c54.css" />
     <Content Include="Content\Cart\9148.2239f6440e3346ae.css" />
     <Content Include="Content\Cart\bundle.771defbd521b8480.css" />
     <Content Include="Content\Cart\pcmall-cart.ee62cb54bf1e830aff03.css" />
+    <Content Include="Content\Cart\pcmall-homepage.f85d6475c4de93381fb0.css" />
+    <Content Include="Content\Cart\pcmall-microsite.7083c22b247a2a5e2d33.legacy.css" />
+    <Content Include="Content\Cart\UserProfile.7af98e75f6e37672c1a9.css" />
     <Content Include="Content\Cart\x3.65c58097.50478c53b08055d3ddc5.css" />
     <Content Include="Content\LoginUser\images\xacnhandonhang.png" />
     <Content Include="Content\sanpham.css" />

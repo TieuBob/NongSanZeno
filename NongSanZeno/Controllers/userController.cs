@@ -26,6 +26,14 @@ namespace NongSanZeno.Controllers
         }
 
         dbNongSanZenoDataContext data = new dbNongSanZenoDataContext();
+
+        public string ReturnDateForDisplay
+        {
+            get
+            {
+                return this.ReturnDateForDisplay.ToString();
+            }
+        }
         // GET: user
         public ActionResult profile()
         {

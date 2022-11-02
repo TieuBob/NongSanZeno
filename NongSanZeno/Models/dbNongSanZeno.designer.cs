@@ -1380,6 +1380,8 @@ namespace NongSanZeno.Models
 		
 		private System.Nullable<System.DateTime> _NgaySinh;
 		
+		private string _Avatar;
+		
 		private EntitySet<tbDonHang> _tbDonHangs;
 		
 		private EntitySet<tbPhanHoiKH> _tbPhanHoiKHs;
@@ -1404,6 +1406,8 @@ namespace NongSanZeno.Models
     partial void OnDienThoaiKHChanged();
     partial void OnNgaySinhChanging(System.Nullable<System.DateTime> value);
     partial void OnNgaySinhChanged();
+    partial void OnAvatarChanging(string value);
+    partial void OnAvatarChanged();
     #endregion
 		
 		public tbKhachHang()
@@ -1569,6 +1573,26 @@ namespace NongSanZeno.Models
 					this._NgaySinh = value;
 					this.SendPropertyChanged("NgaySinh");
 					this.OnNgaySinhChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Avatar", DbType="VarChar(100)")]
+		public string Avatar
+		{
+			get
+			{
+				return this._Avatar;
+			}
+			set
+			{
+				if ((this._Avatar != value))
+				{
+					this.OnAvatarChanging(value);
+					this.SendPropertyChanging();
+					this._Avatar = value;
+					this.SendPropertyChanged("Avatar");
+					this.OnAvatarChanged();
 				}
 			}
 		}
