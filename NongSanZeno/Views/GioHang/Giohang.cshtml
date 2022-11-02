@@ -58,7 +58,7 @@
         <div class="tracking-impression-placeholder" style="position: fixed; z-index: 99999; bottom: 0px; left: 0px;"></div>
         <div class="container">
             <div role="main" class="_1nft6V" style="margin-bottom: 0px;">
-                <div class="_2cf99j">
+                @*<div class="_2cf99j">
                     <svg height="12" viewBox="0 0 20 12" width="20" class="shopee-svg-icon _1NxVa_ icon-free-shipping">
                         <g fill="none" fill-rule="evenodd" transform="">
                             <rect fill="#00bfa5" fill-rule="evenodd" height="9" rx="1" width="12" x="4"></rect>
@@ -75,7 +75,7 @@
                         </g>
                     </svg>
                     <span class="_1Xcrmf">Nhấn vào mục Mã giảm giá ở cuối trang để hưởng miễn phí vận chuyển bạn nhé!</span>
-                </div>
+                </div>*@
                 <div class="_1nrPtQ">
                     <div class="_1zPSKE">
                         <label class="stardust-checkbox">
@@ -144,55 +144,66 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="_30hIFE">
-                                        <div class="_3b-8ro">
-                                            <div class="ns42ir" role="button" tabindex="0">
-                                                @* phân loại hàng *@
-                                                <div class="aXmvTj">
-                                                    Phân loại hàng:
-                                                    <button class="_2Ipt-j"></button>
+
+
+                                    @using (Html.BeginForm("CapNhatGioHang", "Giohang", new { @id = item.masp }))
+                                    {
+                                        <div class="_30hIFE">
+                                            <div class="_3b-8ro">
+                                                <div class="ns42ir" role="button" tabindex="0">
+                                                    @* phân loại hàng *@
+                                                    <div class="aXmvTj">
+                                                        @*Phân loại hàng:*@
+                                                        @*<button class="_2Ipt-j"></button>*@
+                                                        <input type="submit" class="btn btn-warning" value="Cập nhật" />@*_2Ipt-j*@
+                                                    </div>
+                                                    <div class="GU_XoN">@*hồng*@</div>
                                                 </div>
-                                                <div class="GU_XoN">@*hồng*@</div>
+                                                <div></div>
                                             </div>
-                                            <div></div>
                                         </div>
-                                    </div>
-                                    <div class="Ra8lP2">
-                                        <div>
-                                            <span class="_1CXksa">₫@String.Format("{0:0,0 }", item.dongia)</span> @*đơn giá*@
+                                        <div class="Ra8lP2">
+                                            <div>
+                                                <span class="_1CXksa">₫@String.Format("{0:0,0 }", item.dongia)</span> @*đơn giá*@
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="_2ZUrV7">
-                                        <div class="_36kVQQ shopee-input-quantity">
-                                            @*<button class="EcPhjV">
-                                                <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">
-                                                    <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
-                                                </svg>
-                                            </button>*@
-                                            <input class="EcPhjV _3cj9Np" type="number" min="1" name="Soluong" role="spinbutton" aria-valuenow="1" value="@item.soluong">
-                                            @*có min bằng 1 để ràng buộc đơn hàng phải có sl 1*@
-                                            @*<button class="EcPhjV">
-                                                <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
-                                                    <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
-                                                </svg>
-                                            </button>*@
-                                        </div><div class="_1hk8u6">@*Còn 2 sản phẩm*@</div>@*số lượng còn lại*@
-                                    </div>
-                                    <div class="dn3H7Y"><span>₫@String.Format("{0:0,0 }", item.thanhtien)</span></div>@*tổng tiền*@
-                                    <input type="submit" class="btn btn-warning" value="Cập nhật" />
+                                        <div class="_2ZUrV7">
+                                            <div class="_36kVQQ shopee-input-quantity">
+                                                @*<button class="EcPhjV">
+                                                    <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon">
+                                                        <polygon points="4.5 4.5 3.5 4.5 0 4.5 0 5.5 3.5 5.5 4.5 5.5 10 5.5 10 4.5"></polygon>
+                                                    </svg>
+                                                </button>*@
+                                                <input class="EcPhjV _3cj9Np" type="number" min="1" name="Soluong" role="spinbutton" aria-valuenow="1" value="@item.soluong">
+                                                @*có min bằng 1 để ràng buộc đơn hàng phải có sl 1*@
+                                                @*<button class="EcPhjV">
+                                                    <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
+                                                        <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
+                                                    </svg>
+                                                </button>*@
+                                            </div><div class="_1hk8u6">@*Còn 2 sản phẩm*@</div>@*số lượng còn lại*@
+                                        </div>
+                                        <div class="dn3H7Y"><span>₫@String.Format("{0:0,0 }", item.thanhtien)</span></div>@*tổng tiền*@
+                                    }
+
+
+
+
+
+
                                     <div class="_2y8iJi _2qPRqW">
                                         @*xóa sản phẩm*@
                                         <button class="RCd1Gx">
                                             <a href="@Url.Action("XoaGioHang", "GioHang", new { id = @item.masp })" style="color:black">Xóa</a>
                                         </button>
                                         @*<div class="_1-rOD0">
-                                            <button class="shopee-button-no-outline NJSFiA">
-                                                <span class="_16a080">Tìm sản phẩm tương tự</span>
-                                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon _27CqwY icon-down-arrow-filled">
-                                                    <path d="m6.5 12.9-6-7.9s-1.4-1.5.5-1.5h13s1.8 0 .6 1.5l-6 7.9c-.1 0-.9 1.3-2.1 0z"></path>
-                                                </svg>
-                                            </button>
-                                        </div>*@
+                <button class="shopee-button-no-outline NJSFiA">
+                    <span class="_16a080">Tìm sản phẩm tương tự</span>
+                    <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon _27CqwY icon-down-arrow-filled">
+                        <path d="m6.5 12.9-6-7.9s-1.4-1.5.5-1.5h13s1.8 0 .6 1.5l-6 7.9c-.1 0-.9 1.3-2.1 0z"></path>
+                    </svg>
+                </button>
+            </div>*@
                                     </div>
                                 </div>
                             </div>
@@ -354,12 +365,12 @@
 
 
 
-<div class="content-giohang">
+<!--<div class="content-giohang">
     <h1 style="text-align:center;margin:40px auto;">Giỏ hàng</h1>
     <table align="center" border="1">
-        <tr style="text-align: center; font-weight: bold;">
+        <tr style="text-align: center; font-weight: bold;">-->
             @*<td width="150px">Mã Sản Phẩm</td>*@
-            <td width="250px">Tên Sản Phẩm</td>
+            <!--<td width="250px">Tên Sản Phẩm</td>
             <td>Ảnh</td>
             <td width="100px">Số Lượng</td>
             <td width="150px">Đơn Giá</td>
@@ -369,39 +380,39 @@
 
         </tr>
 
-        @foreach (var item in Model)
+        foreach (var item in Model)
         {
-            <tr style="text-align:center; ">
+            <tr style="text-align:center; ">-->
                 @*<td>@item.masp</td>*@
-                <td>@item.tensp</td>
-                <td><img src="~/images/sanpham/@item.anhbia" alt="Alternate Text" width="100" /></td>
-                @using (Html.BeginForm("CapNhatGioHang", "Giohang", new { @id = item.masp }))
+                <!--<td>item.tensp</td>
+                <td><img src="~/images/sanpham/item.anhbia" alt="Alternate Text" width="100" /></td>
+                using (Html.BeginForm("CapNhatGioHang", "Giohang", new { id = item.masp }))
                 {
-                    <td><input type="number" min="1" name="Soluong" value="@item.soluong" style="background-color:white" /></td>
+                    <td><input type="number" min="1" name="Soluong" value="item.soluong" style="background-color:white" /></td>-->
                     @*có min bằng 1 để ràng buộc đơn hàng phải có sl 1*@
-                    <td>@String.Format("{0:0,0 }", item.dongia) vnđ</td>
-                    <td>@String.Format("{0:0,0 }", item.thanhtien) vnđ</td>
-                    <td><a class="btn btn-danger" style="background-color: #cecece; border-radius: 5px; font-weight: bold; border-color: #808080; color: black; " href="@Url.Action("XoaGioHang","GioHang", new {id = @item.masp})">Xóa</a></td>
+                    <!--<td>String.Format("{0:0,0 }", item.dongia) vnđ</td>
+                    <td>String.Format("{0:0,0 }", item.thanhtien) vnđ</td>
+                    <td><a class="btn btn-danger" style="background-color: #cecece; border-radius: 5px; font-weight: bold; border-color: #808080; color: black; " href="Url.Action("XoaGioHang","GioHang", new {id = item.masp})">Xóa</a></td>
                     <td><input type="submit" style="background-color: #cecece; border-radius: 5px; border-color: #808080; color: black; font-weight: bold; " class="btn btn-warning" value="Cập nhật" /></td>
                 }
             </tr>
         }
         <tr style="text-align:center;">
-            <td colspan="4"><strong>Số Lượng: @ViewBag.TongSoLuong</strong></td>
-            <td colspan="3"><strong>Tổng Tiền: <p style="color:red; display:inline-block">@String.Format("{0:0,0 }", ViewBag.TongTien) vnđ</p></strong>  </td>
+            <td colspan="4"><strong>Số Lượng: ViewBag.TongSoLuong</strong></td>
+            <td colspan="3"><strong>Tổng Tiền: <p style="color:red; display:inline-block">String.Format("{0:0,0 }", ViewBag.TongTien) vnđ</p></strong>  </td>
             <td></td>
         </tr>
         <tr style="text-align:right; font-weight:bold;">
 
             <td colspan="8">
-                <a style="background-color: #cecece; border-radius: 5px; border-color: #808080; color: black; font-weight: bold;" href="@Url.Action("DatHang","GioHang")" class="btn btn-default">Đặt Hàng</a>
-                <a style="background-color: #cecece; border-radius: 5px; border-color: #808080; color: black; font-weight: bold; " class="btn btn-warning" href="@Url.Action("RemoveAll","GioHang")">Xóa Tất Cả</a>
-                <a style="background-color: #cecece; border-radius: 5px; border-color: #808080; color: black; font-weight: bold;" href="@Url.Action("SanPham","NongSanZeno")" class="btn btn-default">Tiếp Tục Mua Hàng</a>
+                <a style="background-color: #cecece; border-radius: 5px; border-color: #808080; color: black; font-weight: bold;" href="Url.Action("DatHang","GioHang")" class="btn btn-default">Đặt Hàng</a>
+                <a style="background-color: #cecece; border-radius: 5px; border-color: #808080; color: black; font-weight: bold; " class="btn btn-warning" href="Url.Action("RemoveAll","GioHang")">Xóa Tất Cả</a>
+                <a style="background-color: #cecece; border-radius: 5px; border-color: #808080; color: black; font-weight: bold;" href="Url.Action("SanPham","NongSanZeno")" class="btn btn-default">Tiếp Tục Mua Hàng</a>
             </td>
         </tr>
 
     </table>
-</div>
+</div>-->
 <style>
     /*.container {margin-right: auto;margin-left: auto;width: 1200px;}
     ._1nft6V {display: flex;flex-direction: column;color: rgba(0,0,0,.8);padding-top: 20px;}

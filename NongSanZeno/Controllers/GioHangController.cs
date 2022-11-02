@@ -178,7 +178,7 @@ namespace NongSanZeno.Controllers
                 ddh.DiaChi = DiaChi;
 
                 //ddh.Email = kh.Email;
-                ddh.NguoiNhan = NguoiNhan;
+                //ddh.NguoiNhan = NguoiNhan;
                 ddh.SDT = kh.DienThoaiKH;
                 ddh.GhiChu = GhiChu;
 
