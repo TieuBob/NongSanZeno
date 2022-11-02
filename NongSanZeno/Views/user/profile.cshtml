@@ -1,0 +1,112 @@
+﻿@model NongSanZeno.Models.tbKhachHang
+
+@{
+    ViewBag.Title = "profile";
+    Layout = "~/Views/Layout/_LayoutUser.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>tbKhachHang</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaKH)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TenKH, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenKH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenKH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TaiKhoan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TaiKhoan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TaiKhoan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MatKhau, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MatKhau, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaChiKH, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DiaChiKH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiaChiKH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DienThoaiKH, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DienThoaiKH, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DienThoaiKH, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+
+<div class="xMDeox"><div class="Hvae38" role="main"><div style="display: contents;"><div class="TApBFI"><div class="Q5feZb"><h1 class="OomjNA">Hồ sơ của tôi</h1><div class="HJ5nmd">Quản lý thông tin hồ sơ để bảo mật tài khoản</div></div><div class="+eqaLN"><div class="InGfFt"><form><div class="dghdd9"><div class="h4eiAQ"><div class="tBgRZR"><label>Tên đăng nhập</label></div><div class="gV+dPk"><div class="_2NnHla"><div class="Z1Wx1m">birapper123</div><button class="+x-MFb"></button></div></div></div></div><div class="dghdd9"><div class="h4eiAQ"><div class="tBgRZR"><label>Tên</label></div><div class="gV+dPk"><div><div class="ovqcxY"><input type="text" placeholder="" class="y-NK4C" value="Bi"></div></div></div></div></div><div class="dghdd9"><div class="h4eiAQ"><div class="tBgRZR"><label>Email</label></div><div class="gV+dPk"><div class="_2NnHla"><div class="Z1Wx1m">bi*********gmail.com</div><button class="+x-MFb">Thay đổi</button></div></div></div></div><div class="dghdd9"><div class="h4eiAQ"><div class="tBgRZR"><label>Số điện thoại</label></div><div class="gV+dPk"><div class="_2NnHla"><div class="Z1Wx1m">*********16</div><button class="+x-MFb">Thay đổi</button></div></div></div></div><div class="dghdd9"><div class="h4eiAQ"><div class="tBgRZR"><label>Giới tính</label></div><div class="gV+dPk"><div class="vidoEC"><div class="stardust-radio-group" role="radiogroup"><div class="stardust-radio stardust-radio--checked" tabindex="0" role="radio" aria-checked="true"><div class="stardust-radio-button stardust-radio-button--checked"><div class="stardust-radio-button__outer-circle"><div class="stardust-radio-button__inner-circle"></div></div></div><div class="stardust-radio__content"><div class="stardust-radio__label">Nam</div></div></div><div class="stardust-radio" tabindex="0" role="radio" aria-checked="false"><div class="stardust-radio-button"><div class="stardust-radio-button__outer-circle"><div class="stardust-radio-button__inner-circle"></div></div></div><div class="stardust-radio__content"><div class="stardust-radio__label">Nữ</div></div></div><div class="stardust-radio" tabindex="0" role="radio" aria-checked="false"><div class="stardust-radio-button"><div class="stardust-radio-button__outer-circle"><div class="stardust-radio-button__inner-circle"></div></div></div><div class="stardust-radio__content"><div class="stardust-radio__label">Khác</div></div></div></div></div></div></div></div><div class="dghdd9"><div class="h4eiAQ"><div class="tBgRZR"><label>Ngày sinh</label></div><div class="gV+dPk"><div class="MWGELC"><div class="shopee-dropdown shopee-dropdown--has-selected"><div class="shopee-dropdown__entry shopee-dropdown__entry--selected"><span>16</span><svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down"><g><path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path></g></svg></div></div><div class="shopee-dropdown shopee-dropdown--has-selected"><div class="shopee-dropdown__entry shopee-dropdown__entry--selected"><span>Tháng 1</span><svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down"><g><path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path></g></svg></div></div><div class="shopee-dropdown shopee-dropdown--has-selected"><div class="shopee-dropdown__entry shopee-dropdown__entry--selected"><span>2001</span><svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down"><g><path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path></g></svg></div></div></div></div></div></div><div class="X9w211"><button type="button" class="btn btn-solid-primary btn--m btn--inline" aria-disabled="false">Lưu</button></div></form></div><div class="_6-dPdd"><div class="DyzGC5"><div class="miizbf"><div class="qpNcUn" style="background-image: url(&quot;https://cf.shopee.vn/file/a79273da4ba63074f758aca5888d28b2&quot;);"></div></div><input class="_8LDVUy" type="file" accept=".jpg,.jpeg,.png"><button type="button" class="btn btn-light btn--m btn--inline">Chọn ảnh</button><div class="dWItVn"><div class="ayiXAf">Dụng lượng file tối đa 1 MB</div><div class="ayiXAf">Định dạng:.JPEG, .PNG</div></div></div></div></div></div></div></div></div>
+
+@*<div class="text-center mb-5">
+        <h3 class="text-uppercase">THÔNG TIN CỦA BẠN</h3>
+    </div>
+    <form action="#" method="post">
+        <div class="form-group first">
+            <label>
+                Tên khách hàng: @Html.DisplayFor(model => model.TenKH)
+            </label>
+            <label>
+                Tên Đăng Nhập: @Html.DisplayFor(model => model.TaiKhoan)
+            </label>
+            <label>
+                Email: @Html.DisplayFor(model => model.Email)
+            </label>
+            <br />
+            <label>
+                Số điện thoại: @Html.DisplayFor(model => model.DienThoaiKH)
+            </label>
+            <br />
+            <label>
+                Dịa Chỉ: @Html.DisplayFor(model => model.DiaChiKH)
+            </label>
+        </div>
+
+        <div>
+            <input type="submit" value="Chỉnh sửa thông tin" class="btn btn-block py-2 btn-primary">
+        </div>
+    </form>*@

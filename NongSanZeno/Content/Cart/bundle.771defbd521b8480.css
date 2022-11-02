@@ -3161,7 +3161,7 @@
 
 .shopee-top {
     background: #f53d2d;
-    background: linear-gradient(-180deg,#f53d2d,#f63);
+    background: linear-gradient(-180deg,#3c763d,#3c763d);
     transition: transform .2s cubic-bezier(.4,0,.2,1)
 }
 

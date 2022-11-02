@@ -135,6 +135,7 @@
     <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\LoginUserController.cs" />
     <Compile Include="Controllers\NongSanZenoController.cs" />
+    <Compile Include="Controllers\userController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -147,7 +148,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Cart\1179.d5dff76d181a796c.css" />
+    <Content Include="Content\Cart\1714.89473d0cae7fbe83.css" />
+    <Content Include="Content\Cart\2601.49ec27198e45bed5.css" />
+    <Content Include="Content\Cart\4237.10ec744b41d5b084.css" />
+    <Content Include="Content\Cart\5823.825bbbd5ad2a3966.css" />
     <Content Include="Content\Cart\6185.e976c928ead1b370.css" />
+    <Content Include="Content\Cart\7464.9b744d99d42b7c54.css" />
     <Content Include="Content\Cart\9148.2239f6440e3346ae.css" />
     <Content Include="Content\Cart\bundle.771defbd521b8480.css" />
     <Content Include="Content\Cart\pcmall-cart.ee62cb54bf1e830aff03.css" />
@@ -2421,6 +2428,11 @@
     <Content Include="Views\AdminSanPham\Suadvt.cshtml" />
     <Content Include="Views\AdminSanPham\Xoadvt.cshtml" />
     <Content Include="Views\Layout\_LayoutGioHang.cshtml" />
+    <Content Include="Views\Layout\_LayoutUser.cshtml" />
+    <Content Include="Views\user\password.cshtml" />
+    <Content Include="Views\user\address.cshtml" />
+    <Content Include="Views\user\purchase.cshtml" />
+    <Content Include="Views\user\profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,222 @@
+﻿.stardust-dropdown {
+    position: relative
+}
+
+.stardust-dropdown__item-body {
+    transition: height .4s cubic-bezier(.4,0,.2,1),opacity .4s cubic-bezier(.4,0,.2,1);
+    height: 0;
+    opacity: 0;
+    overflow: hidden
+}
+
+.stardust-dropdown__item-body--open {
+    height: auto;
+    opacity: 1
+}
+
+.FEE-3D {
+    text-decoration: none;
+    color: rgba(0,0,0,.87);
+    display: block;
+    margin-bottom: .9375rem;
+    color: rgba(0,0,0,.65)
+}
+
+.qyt-aY:hover, .tH0d6d {
+    color: #ee4d2d
+}
+
+.qyt-aY {
+    font-size: .875rem;
+    display: block
+}
+
+.\+1U02e, .qyt-aY {
+    text-transform: capitalize;
+    transition: color .1s cubic-bezier(.4,0,.2,1)
+}
+
+.\+1U02e {
+    text-decoration: none;
+    color: rgba(0,0,0,.87);
+    display: flex;
+    align-items: center;
+    margin-bottom: .9375rem
+}
+
+    .\+1U02e.wkLUkx, .\+1U02e:hover {
+        color: #ee4d2d
+    }
+
+.bfikuD {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.25rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    flex-shrink: 0;
+    margin-right: .625rem
+}
+
+    .bfikuD > img {
+        width: 100%;
+        height: 100%
+    }
+
+.DlL0zX {
+    line-height: 1rem
+}
+
+.adF7Xs {
+    font-weight: 500;
+    margin-right: .3125rem
+}
+
+._7udlQ7 {
+    vertical-align: middle;
+    position: absolute
+}
+
+.Yu7gVR {
+    display: block;
+    padding: 0 0 .1875rem 2.125rem
+}
+
+.AmWkJQ {
+    display: flex;
+    padding: 15px 0;
+    border-bottom: 1px solid #efefef
+}
+
+._1O4r\+C, .shopee-avatar {
+    width: 50px;
+    height: 50px
+}
+
+.miwGmI {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15px;
+    overflow: hidden
+}
+
+.mC1Llc {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-height: 1rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333
+}
+
+._78QHr1 {
+    color: #888;
+    text-transform: capitalize;
+    text-decoration: none
+}
+
+._6ojOQx {
+    margin-top: .9375rem;
+    display: flex;
+    align-items: center
+}
+
+    ._6ojOQx + .xieZbA {
+        margin-top: 1.25rem
+    }
+
+.xieZbA {
+    margin-top: .9375rem
+}
+
+    .xieZbA .BZDrJG {
+        margin-left: 2.125rem
+    }
+
+.AQ3Jmi {
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    margin-right: .625rem
+}
+
+.BZDrJG {
+    height: 1rem;
+    width: 8.75rem
+}
+
+._2ZEaD {
+    background-color: #a4aaaa;
+    background-image: linear-gradient(90deg,#a4aaaa,#000 25%,#a4aaaa 50%);
+    background-repeat: no-repeat;
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    animation: _2ZEaD 1.5s infinite;
+    transform: translateZ(0)
+}
+
+    ._2ZEaD .geCJg {
+        background: #fff;
+        isolation: isolate;
+        mix-blend-mode: screen
+    }
+
+    ._2ZEaD .M6lQx {
+        background: #f1f0f0
+    }
+
+@keyframes _2ZEaD {
+    0% {
+        background-position: 100% 0
+    }
+
+    to {
+        background-position: -100% 0
+    }
+}
+
+.kul4\+s {
+    display: block;
+    width: 180px;
+    flex-shrink: 0
+}
+
+.rhmIbk {
+    list-style: none;
+    padding: 0;
+    margin: 27px 0 0;
+    cursor: pointer
+}
+
+.pIHdXn {
+    display: flex;
+    padding: 1.25rem 0 3.125rem
+}
+
+.xMDeox {
+    position: relative;
+    flex-grow: 1;
+    width: 980px;
+    box-sizing: border-box;
+    margin-left: 1.6875rem;
+    min-width: 0;
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.13);
+    border-radius: .125rem
+}
+
+.LwnLHU {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: transparent
+}
+/*# sourceMappingURL=https://shopee.sg/assets/1714.89473d0cae7fbe83.css.map*/

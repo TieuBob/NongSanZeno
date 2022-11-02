@@ -96,18 +96,14 @@
                             </li>
                             @if (Session["User"] == null)
                             {
-                                @*<li>
-                                    <a href="@Url.Action("DangKy","LoginUser")"><span class="menuchildicon"></span>Đăng Ký</a>
-                                </li>*@
                                 <li>
                                     <a href="@Url.Action("Dangnhap","LoginUser")" class="ttr_menu_items_parent_link" ><i class="fa fa-user icon"></i></a>
                                 </li>
                             }
                             else
                             {
-                                <li class="Login"><a href="@Url.Action("TrangChu","Home")">Đăng Xuất</a></li>
                                 <li class="Login">
-                                    <a href="@Url.Action("Thongtintk","LoginUser")">Xin Chào @Session["User"]</a>
+                                    <a href="@Url.Action("profile","user")">@Session["User"]</a>
                                 </li>
 
                             }

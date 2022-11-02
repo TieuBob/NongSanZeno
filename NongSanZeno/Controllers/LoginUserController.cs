@@ -133,12 +133,5 @@ namespace NongSanZeno.Controllers
             Session["Taikhoan"] = null;
             return RedirectToAction("SanPham", "NongSanZeno");
         }
-
-
-        public ActionResult Thongtintk()
-        {
-            tbKhachHang kh = (tbKhachHang)Session["Taikhoan"];
-            return View(kh);
-        }
     }
 }
