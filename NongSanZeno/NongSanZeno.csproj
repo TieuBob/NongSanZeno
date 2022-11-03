@@ -2437,6 +2437,7 @@
     <Content Include="Views\user\address.cshtml" />
     <Content Include="Views\user\purchase.cshtml" />
     <Content Include="Views\user\profile.cshtml" />
+    <Content Include="Views\GioHang\GioHangNull.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -72,7 +72,8 @@ namespace NongSanZeno.Controllers
             List<GioHang> gioHangs = LayGioHang();
             if (gioHangs.Count == 0)
             {
-                return RedirectToAction("SanPham", "NongSanZeno");
+                //return RedirectToAction("SanPham", "NongSanZeno");
+                return RedirectToAction("GioHangNull", "GioHang");
             }
             ViewBag.TongSoLuong = TongSoLuong();
             ViewBag.TongTien = TongTien();
@@ -97,7 +98,7 @@ namespace NongSanZeno.Controllers
             }
             if (gioHangs.Count == 0)
             {
-                return RedirectToAction("SanPham", "NongSanZeno");
+                return RedirectToAction("GioHangNull", "GioHang");
             }
             return RedirectToAction("GioHang");
         }
@@ -118,7 +119,7 @@ namespace NongSanZeno.Controllers
         {
             List<GioHang> gioHangs = LayGioHang();
             gioHangs.Clear();
-            return RedirectToAction("SanPham", "NongSanZeno");
+            return RedirectToAction("GioHangNull", "GioHang");
         }
         [HttpGet]
         public ActionResult DatHang()
@@ -191,6 +192,11 @@ namespace NongSanZeno.Controllers
         }
 
         public ActionResult XacNhanDonHang()
+        {
+            return View();
+        }
+
+        public ActionResult GioHangNull()
         {
             return View();
         }
