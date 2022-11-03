@@ -866,8 +866,6 @@ namespace NongSanZeno.Models
 		
 		private int _MaKH;
 		
-		private string _NguoiNhan;
-		
 		private string _DiaChi;
 		
 		private string _SDT;
@@ -896,8 +894,6 @@ namespace NongSanZeno.Models
     partial void OnMaDHChanged();
     partial void OnMaKHChanging(int value);
     partial void OnMaKHChanged();
-    partial void OnNguoiNhanChanging(string value);
-    partial void OnNguoiNhanChanged();
     partial void OnDiaChiChanging(string value);
     partial void OnDiaChiChanged();
     partial void OnSDTChanging(string value);
@@ -962,26 +958,6 @@ namespace NongSanZeno.Models
 					this._MaKH = value;
 					this.SendPropertyChanged("MaKH");
 					this.OnMaKHChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NguoiNhan", DbType="NVarChar(50)")]
-		public string NguoiNhan
-		{
-			get
-			{
-				return this._NguoiNhan;
-			}
-			set
-			{
-				if ((this._NguoiNhan != value))
-				{
-					this.OnNguoiNhanChanging(value);
-					this.SendPropertyChanging();
-					this._NguoiNhan = value;
-					this.SendPropertyChanged("NguoiNhan");
-					this.OnNguoiNhanChanged();
 				}
 			}
 		}

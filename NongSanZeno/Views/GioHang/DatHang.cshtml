@@ -6,332 +6,338 @@
     Layout = "~/Views/Layout/_LayoutGioHang.cshtml";
 }
 
-<div class="dYFPlI">
+@using (Html.BeginForm())
+{
+    @{
+        tbKhachHang kh = (tbKhachHang)Session["Taikhoan"];
+        tbDonHang dh = new tbDonHang();
+
+    }
     @Html.ValidationSummary(true)
-    <div class="_6UhhZd">
-        <div class="container">
-            <div class="vVXcyt">
-                <a class="pCI2Oe" href="/">
-                    <svg viewBox="0 0 192 65" class="shopee-svg-icon icon-shopee-logo">
-                        <g fill-rule="evenodd">
-                            <a href="@Url.Action("TrangChu","Home")" target="_self">
-                                <img class="ttr_menu_logo" src="~/images/logo.png" style="width:50px; height:30px">
-                            </a>
-                        </g>
-                    </svg>
-                    <div class="_4cUwRX">Thanh toán</div>
-                </a>
+    <div class="dYFPlI">
+
+        <div class="_6UhhZd">
+            <div class="container">
+                <div class="vVXcyt">
+                    <a class="pCI2Oe" href="/">
+                        <svg viewBox="0 0 192 65" class="shopee-svg-icon icon-shopee-logo">
+                            <g fill-rule="evenodd">
+                                <a href="@Url.Action("TrangChu","Home")" target="_self">
+                                    <img class="ttr_menu_logo" src="~/images/logo.png" style="width:50px; height:30px">
+                                </a>
+                            </g>
+                        </svg>
+                        <div class="_4cUwRX">Thanh toán</div>
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-    <div role="main" class="_8ZMqxt">
-        @{
-            tbKhachHang kh = (tbKhachHang)Session["Taikhoan"];
-            tbDonHang dh = new tbDonHang();
-
-        }
-        @using (Html.BeginForm())
-        { 
-            <div class="KbJ00X">
-                <div class="NxjxYL"></div>
-                <div class="EQBEfe">
-                    <div class="_7ZP-sx">
-                        <div class="Kh34EJ">
-                            <div class="_9VHkyQ">
-                                <svg height="16" viewBox="0 0 12 16" width="12" class="shopee-svg-icon icon-location-marker">
-                                    <path d="M6 3.2c1.506 0 2.727 1.195 2.727 2.667 0 1.473-1.22 2.666-2.727 2.666S3.273 7.34 3.273 5.867C3.273 4.395 4.493 3.2 6 3.2zM0 6c0-3.315 2.686-6 6-6s6 2.685 6 6c0 2.498-1.964 5.742-6 9.933C1.613 11.743 0 8.498 0 6z" fill-rule="evenodd"></path>
-                                </svg>
-                            </div>
-                            <div>Địa chỉ nhận hàng</div>
-                        </div>
-                    </div>
-                    <div class="fnands">
-                        <div>
-                            <div class="Y3QA5S">
-                                <div class="_3yvPt8">@kh.TenKH (+84) @kh.DienThoaiKH</div>
-                                <div class="iXqine">@kh.DiaChiKH</div>
-                                @*<div class="j3tnPu">Mặc định</div>*@
-                            </div>
-                        </div>
-                        <div class="g3BSHI">Thay đổi</div>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-        <div class="ZrE0do">
-            <div class="w6riq3">
-                <div class="-JzzK5">
-                    <div class="HTDM2R OiE33Y">
-                        <div class="wXtDZ+">Sản phẩm</div>
-                    </div>
-                    <div class="HTDM2R obwca8"></div>
-                    <div class="HTDM2R">Đơn giá</div>
-                    <div class="HTDM2R">Số lượng</div>
-                    <div class="HTDM2R eiM3n1">Thành tiền</div>
-                </div>
-            </div>
-
-            @foreach (var item in Model)
+        <div role="main" class="_8ZMqxt">
+            @using (Html.BeginForm())
             {
-                <div>
-                    <div class="dwwHJ-">
-                        <div>
-                            <div class="nF6yNn">
-                                <div class="yknSi4">
-                                    <div>
-                                        <svg width="17" height="16" viewBox="0 0 17 16" class="Vqonym">
-                                            <path d="M1.95 6.6c.156.804.7 1.867 1.357 1.867.654 0 1.43 0 1.43-.933h.932s0 .933 1.155.933c1.176 0 1.15-.933 1.15-.933h.984s-.027.933 1.148.933c1.157 0 1.15-.933 1.15-.933h.94s0 .933 1.43.933c1.368 0 1.356-1.867 1.356-1.867H1.95zm11.49-4.666H3.493L2.248 5.667h12.437L13.44 1.934zM2.853 14.066h11.22l-.01-4.782c-.148.02-.295.042-.465.042-.7 0-1.436-.324-1.866-.86-.376.53-.88.86-1.622.86-.667 0-1.255-.417-1.64-.86-.39.443-.976.86-1.643.86-.74 0-1.246-.33-1.623-.86-.43.536-1.195.86-1.895.86-.152 0-.297-.02-.436-.05l-.018 4.79zM14.996 12.2v.933L14.984 15H1.94l-.002-1.867V8.84C1.355 8.306 1.003 7.456 1 6.6L2.87 1h11.193l1.866 5.6c0 .943-.225 1.876-.934 2.39v3.21z" stroke-width=".3" stroke="#333" fill="#333" fill-rule="evenodd"></path>
-                                        </svg>
-                                    </div>
-                                    <span class="WJIXj0">@*Bond Kids-Đồ chơi cao cấp*@@item.tensp</span>
-                                    <div class="+-FqSc">
-                                        <svg viewBox="0 0 16 16" class="shopee-svg-icon +Nu1h5">
-                                            <g fill-rule="evenodd">
-                                                <path d="M15 4a1 1 0 01.993.883L16 5v9.932a.5.5 0 01-.82.385l-2.061-1.718-8.199.001a1 1 0 01-.98-.8l-.016-.117-.108-1.284 8.058.001a2 2 0 001.976-1.692l.018-.155L14.293 4H15zm-2.48-4a1 1 0 011 1l-.003.077-.646 8.4a1 1 0 01-.997.923l-8.994-.001-2.06 1.718a.5.5 0 01-.233.108l-.087.007a.5.5 0 01-.492-.41L0 11.732V1a1 1 0 011-1h11.52zM3.646 4.246a.5.5 0 000 .708c.305.304.694.526 1.146.682A4.936 4.936 0 006.4 5.9c.464 0 1.02-.062 1.608-.264.452-.156.841-.378 1.146-.682a.5.5 0 10-.708-.708c-.185.186-.445.335-.764.444a4.004 4.004 0 01-2.564 0c-.319-.11-.579-.258-.764-.444a.5.5 0 00-.708 0z"></path>
-                                            </g>
-                                        </svg>Chat ngay
-                                    </div>
+                <div class="KbJ00X">
+                    <div class="NxjxYL"></div>
+                    <div class="EQBEfe">
+                        <div class="_7ZP-sx">
+                            <div class="Kh34EJ">
+                                <div class="_9VHkyQ">
+                                    <svg height="16" viewBox="0 0 12 16" width="12" class="shopee-svg-icon icon-location-marker">
+                                        <path d="M6 3.2c1.506 0 2.727 1.195 2.727 2.667 0 1.473-1.22 2.666-2.727 2.666S3.273 7.34 3.273 5.867C3.273 4.395 4.493 3.2 6 3.2zM0 6c0-3.315 2.686-6 6-6s6 2.685 6 6c0 2.498-1.964 5.742-6 9.933C1.613 11.743 0 8.498 0 6z" fill-rule="evenodd"></path>
+                                    </svg>
                                 </div>
-                                <div class="CZ6uu2">
-                                    <div class="_6kMvNg ka6CzP">
-                                        <div class="_4MGXB1 c7N4lb">
-                                            <img class="GCGEKm" src="~/images/sanpham/@item.anhbia" alt="Alternate Text" width="40" height="40">
-                                            <span class="F8X-cZ">
-                                                <span class="tPzkNt">@item.tensp</span>
-                                            </span>
-                                        </div>
-                                        <div class="_4MGXB1 wE0Rsh">
-                                            <span class="KYRrlx">@*Loại: hồng*@</span>
-                                        </div>
-                                        <div class="_4MGXB1">₫@String.Format("{0:0,0 }", @item.dongia)</div>
-                                        <div class="_4MGXB1">@item.soluong</div>
-                                        <div class="_4MGXB1 _8fgmps">₫@String.Format("{0:0,0 }", @item.thanhtien)</div>
-                                    </div>
-                                </div>
+                                <div>Địa chỉ nhận hàng</div>
                             </div>
                         </div>
-                        <div class="kfKL6K">
-                            <div class="wWp9Rn _7-SGSz">
-                                <div class="-bFs2Q">
-                                    <span>Lời nhắn:</span>
-                                    <div class="jSc1M9">
-                                        <div class="l7vuWW XfjvIa">
-                                            <div class="bue9pr XtXldU">
-                                                <input class="_6E2RgG" type="text" placeholder="Lưu ý cho Người bán..." name="GhiChu" required="" value="">
-                                                <span class="icon2"><i aria-hidden="true"></i></span>
+                        <div class="fnands">
+                            <div>
+                                <div class="Y3QA5S">
+                                    <div class="_3yvPt8">@kh.TenKH (+84) @kh.DienThoaiKH</div>
+                                    <div class="iXqine">@kh.DiaChiKH</div>
+                                    @*<div class="j3tnPu">Mặc định</div>*@
+                                </div>
+                            </div>
+                            <div class="g3BSHI">Thay đổi</div>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="ZrE0do">
+                    <div class="w6riq3">
+                        <div class="-JzzK5">
+                            <div class="HTDM2R OiE33Y">
+                                <div class="wXtDZ+">Sản phẩm</div>
+                            </div>
+                            <div class="HTDM2R obwca8"></div>
+                            <div class="HTDM2R">Đơn giá</div>
+                            <div class="HTDM2R">Số lượng</div>
+                            <div class="HTDM2R eiM3n1">Thành tiền</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dwwHJ-">
+                            @foreach (var item in Model)
+                            {
+                                <div>
+                                    <div class="nF6yNn">
+                                        <div class="yknSi4">
+                                            <div>
+                                                <svg width="17" height="16" viewBox="0 0 17 16" class="Vqonym">
+                                                    <path d="M1.95 6.6c.156.804.7 1.867 1.357 1.867.654 0 1.43 0 1.43-.933h.932s0 .933 1.155.933c1.176 0 1.15-.933 1.15-.933h.984s-.027.933 1.148.933c1.157 0 1.15-.933 1.15-.933h.94s0 .933 1.43.933c1.368 0 1.356-1.867 1.356-1.867H1.95zm11.49-4.666H3.493L2.248 5.667h12.437L13.44 1.934zM2.853 14.066h11.22l-.01-4.782c-.148.02-.295.042-.465.042-.7 0-1.436-.324-1.866-.86-.376.53-.88.86-1.622.86-.667 0-1.255-.417-1.64-.86-.39.443-.976.86-1.643.86-.74 0-1.246-.33-1.623-.86-.43.536-1.195.86-1.895.86-.152 0-.297-.02-.436-.05l-.018 4.79zM14.996 12.2v.933L14.984 15H1.94l-.002-1.867V8.84C1.355 8.306 1.003 7.456 1 6.6L2.87 1h11.193l1.866 5.6c0 .943-.225 1.876-.934 2.39v3.21z" stroke-width=".3" stroke="#333" fill="#333" fill-rule="evenodd"></path>
+                                                </svg>
                                             </div>
-                                            <div></div>
+                                            <span class="WJIXj0">@*Bond Kids-Đồ chơi cao cấp*@@item.tensp</span>
+                                            <div class="+-FqSc">
+                                                <svg viewBox="0 0 16 16" class="shopee-svg-icon +Nu1h5">
+                                                    <g fill-rule="evenodd">
+                                                        <path d="M15 4a1 1 0 01.993.883L16 5v9.932a.5.5 0 01-.82.385l-2.061-1.718-8.199.001a1 1 0 01-.98-.8l-.016-.117-.108-1.284 8.058.001a2 2 0 001.976-1.692l.018-.155L14.293 4H15zm-2.48-4a1 1 0 011 1l-.003.077-.646 8.4a1 1 0 01-.997.923l-8.994-.001-2.06 1.718a.5.5 0 01-.233.108l-.087.007a.5.5 0 01-.492-.41L0 11.732V1a1 1 0 011-1h11.52zM3.646 4.246a.5.5 0 000 .708c.305.304.694.526 1.146.682A4.936 4.936 0 006.4 5.9c.464 0 1.02-.062 1.608-.264.452-.156.841-.378 1.146-.682a.5.5 0 10-.708-.708c-.185.186-.445.335-.764.444a4.004 4.004 0 01-2.564 0c-.319-.11-.579-.258-.764-.444a.5.5 0 00-.708 0z"></path>
+                                                    </g>
+                                                </svg>@*Chat ngay*@
+                                            </div>
+                                        </div>
+                                        <div class="CZ6uu2">
+                                            <div class="_6kMvNg ka6CzP">
+                                                <div class="_4MGXB1 c7N4lb">
+                                                    <img class="GCGEKm" src="~/images/sanpham/@item.anhbia" alt="Alternate Text" width="40" height="40">
+                                                    <span class="F8X-cZ">
+                                                        <span class="tPzkNt">@item.tensp</span>
+                                                    </span>
+                                                </div>
+                                                <div class="_4MGXB1 wE0Rsh">
+                                                    <span class="KYRrlx">@*Loại: hồng*@</span>
+                                                </div>
+                                                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { id = item.masp }))
+                                                {
+                                                    <div class="_4MGXB1">₫@String.Format("{0:0,0 }", @item.dongia)</div>
+                                                    <div class="_4MGXB1">@item.soluong</div>
+                                                    <div class="_4MGXB1 _8fgmps">₫@String.Format("{0:0,0 }", @item.thanhtien)</div>
+                                                }
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            }
+                            <div class="kfKL6K">
+                                <div class="wWp9Rn _7-SGSz">
+                                    <div class="-bFs2Q">
+                                        <span>Lời nhắn:</span>
+                                        <div class="jSc1M9">
+                                            <div class="l7vuWW XfjvIa">
+                                                <div class="bue9pr XtXldU">
+                                                    <input class="_6E2RgG" type="text" placeholder="Lưu ý cho Người bán..." name="GhiChu" required="" value="">
+                                                    <span class="icon2"><i aria-hidden="true"></i></span>
+                                                </div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wWp9Rn GoSC7d">
+                                    <div class="sYTSo9">Đơn vị vận chuyển:</div>
+                                    <div class="TrbqGd"><div>GHN EXPRESS</div></div>
+                                    <div class="_2grHQK"></div>
+                                    <div class="NWGbOL" style="color: #ee4d2d">Nhận hàng vào <input type="date" name="Ngaygiao" /></div>
+                                    <div class="_3Gb6E1">Ngày đặt @DateTime.Now.ToShortDateString()</div>
+                                    <div class="pM3XnN"></div>
+                                    @*<div class="_3Gb6E1">(Đừng quên vào "Shopee Voucher" để săn thêm mã ưu đãi bạn nhé!)</div>*@
+                                    @*<div class="DIvIij">Thay đổi</div>*@
+                                    <div class="uneQgd">₫50.000</div>
+                                </div>
                             </div>
-                            <div class="wWp9Rn GoSC7d">
-                                <div class="sYTSo9">Đơn vị vận chuyển:</div>
-                                <div class="TrbqGd"><div>GHN EXPRESS</div></div>
-                                <div class="_2grHQK"></div>
-                                <div class="NWGbOL" style="color: #ee4d2d">Nhận hàng vào <input type="date" name="Ngaygiao" /></div>
-                                <div class="_3Gb6E1">Ngày đặt @DateTime.Now.ToShortDateString()</div>
-                                <div class="pM3XnN"></div>
-                                @*<div class="_3Gb6E1">(Đừng quên vào "Shopee Voucher" để săn thêm mã ưu đãi bạn nhé!)</div>*@
-                                @*<div class="DIvIij">Thay đổi</div>*@
-                                <div class="uneQgd">₫50.000</div>
+                            <div class="BbOmi+">
+                                <div class="lYtB1r">
+                                    <div class="_4nelpz">Tổng số tiền (@ViewBag.TongSoLuong sản phẩm):</div>
+                                    <div class="_31ayp3">₫@String.Format("{0:0,0 }", ViewBag.TongTien)</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="BbOmi+">
-                            <div class="lYtB1r">
-                                <div class="_4nelpz">Tổng số tiền (@ViewBag.TongSoLuong sản phẩm):</div>
-                                <div class="_31ayp3">₫@String.Format("{0:0,0 }", ViewBag.TongTien)</div>
+                    </div>
+                </div>
+                @*<div class="+0Lry3">
+                        <div class="mRngyc">
+                            <div class="_7tqQVb">
+                                <div class="c4nuxa">
+                                    <div class="uhcw35">
+                                        <svg fill="none" viewBox="0 -2 23 22" class="shopee-svg-icon icon-voucher-line">
+                                            <g filter="url(#voucher-filter0_d)">
+                                                <mask id="a" fill="#fff">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 2h18v2.32a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75V16H1v-2.12a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75V2z"></path>
+                                                </mask>
+                                                <path d="M19 2h1V1h-1v1zM1 2V1H0v1h1zm18 2.32l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zM19 16v1h1v-1h-1zM1 16H0v1h1v-1zm0-2.12l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zM19 1H1v2h18V1zm1 3.32V2h-2v2.32h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zM20 16v-2.13h-2V16h2zM1 17h18v-2H1v2zm-1-3.12V16h2v-2.12H0zm1.4.91a2.5 2.5 0 001.5-2.29h-2a.5.5 0 01-.3.46l.8 1.83zm1.5-2.29a2.5 2.5 0 00-1.5-2.3l-.8 1.84c.18.08.3.26.3.46h2zM0 10.48v.65h2v-.65H0zM.9 9.1a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 9.1h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 8.65zM0 7.08v.65h2v-.65H0zM.9 5.7a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 5.7h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 5.25zM0 2v2.33h2V2H0z" mask="url(#a)"></path>
+                                            </g>
+                                            <path clip-rule="evenodd" d="M6.49 14.18h.86v-1.6h-.86v1.6zM6.49 11.18h.86v-1.6h-.86v1.6zM6.49 8.18h.86v-1.6h-.86v1.6zM6.49 5.18h.86v-1.6h-.86v1.6z"></path>
+                                            <defs>
+                                                <filter id="voucher-filter0_d" x="0" y="1" width="20" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                    <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+                                                    <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
+                                                    <feOffset></feOffset>
+                                                    <feGaussianBlur stdDeviation=".5"></feGaussianBlur>
+                                                    <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"></feColorMatrix>
+                                                    <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
+                                                    <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
+                                                </filter>
+                                            </defs>
+                                        </svg>
+                                        <span class="c17ZV6">Zeno Voucher</span>
+                                    </div>
+                                </div>
                             </div>
+                            <div class="v84Pv8">
+                                <button class="_6dwQij">Chọn Voucher</button>
+                            </div>
+                        </div>
+                        <div class="qNL6jV">
+                            <div class="UhhKbh">
+                                <svg fill="none" viewBox="0 0 18 18" class="shopee-svg-icon UkgpNV icon-coin-line">
+                                    <path stroke="#FFA600" stroke-width="1.3" d="M17.35 9A8.35 8.35 0 11.65 9a8.35 8.35 0 0116.7 0z"></path>
+                                    <path fill="#FFA600" fill-rule="evenodd" stroke="#FFA600" stroke-width=".2" d="M6.86 4.723c-.683.576-.998 1.627-.75 2.464.215.725.85 1.258 1.522 1.608.37.193.77.355 1.177.463.1.027.2.051.3.08.098.03.196.062.294.096.06.021.121.044.182.067.017.006.107.041.04.014-.07-.028.071.03.087.037.286.124.56.27.82.44.114.076.045.024.151.111a2.942 2.942 0 01.322.303c.087.093.046.042.114.146.18.275.245.478.235.8-.01.328-.14.659-.325.867-.47.53-1.232.73-1.934.696a4.727 4.727 0 01-1.487-.307c-.45-.182-.852-.462-1.242-.737-.25-.176-.643-.04-.788.197-.17.279-.044.574.207.75.753.532 1.539.946 2.474 1.098.885.144 1.731.124 2.563-.224.78-.326 1.416-.966 1.607-1.772.198-.838-.023-1.644-.61-2.29-.683-.753-1.722-1.17-2.706-1.43a4.563 4.563 0 01-.543-.183c.122.048-.044-.02-.078-.035a4.77 4.77 0 01-.422-.212c-.594-.338-.955-.722-.872-1.369.105-.816.757-1.221 1.555-1.28.808-.06 1.648.135 2.297.554.614.398 1.19-.553.58-.947-1.33-.86-3.504-1.074-4.77-.005z" clip-rule="evenodd"></path>
+                                </svg>
+                                <div class="hJwfo5">Shopee Xu</div>
+                                <div class="smzy+M">Số tiền được giảm</div>
+                            </div>
+                            <div class="srd3PH">
+                                <div class="BHcV9m">[-₫0]</div>
+                                <label class="stardust-checkbox">
+                                    <input class="stardust-checkbox__input" type="checkbox">
+                                    <div class="stardust-checkbox__box"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="kRed1l">
+                    <div class="HgQ4yt">
+                        <div>
+                            <div class="checkout-payment-method-view__current checkout-payment-setting">
+                                <div class="checkout-payment-method-view__current-title">Phương thức thanh toán</div>
+                                <div class="checkout-payment-setting__payment-methods-tab">
+                                    <span tabindex="0">
+                                        <button class="product-variation" aria-label="Ví ShopeePay" aria-disabled="false">
+                                            Ví Momo
+                                        </button>
+                                    </span>
+                                    <span tabindex="0">
+                                        <button class="product-variation" aria-label="Thẻ Tín dụng/Ghi nợ" aria-disabled="false">Thẻ Tín dụng/Ghi nợ</button>
+                                    </span>
+                                    <span tabindex="0">
+                                        <button class="product-variation" aria-label="" aria-disabled="true">
+                                            <div class="voucher-container">
+                                                <span>VNPay</span>
+                                            </div>
+                                        </button>
+                                    </span>
+                                    <span tabindex="0">
+                                        <button class="product-variation product-variation--selected" aria-label="Thanh toán khi nhận hàng" aria-disabled="false">
+                                            Thanh toán khi nhận hàng
+                                            <div class="product-variation__tick">
+                                                <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="shopee-svg-icon icon-tick-bold">
+                                                    <g>
+                                                        <path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        </button>
+
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="_3hU2wO">
+                                <div class="hVo8me">
+                                    <div class="WHQQMV">Thanh toán khi nhận hàng</div>
+                                    <div class="g5caBa">
+                                        <div class="cOrEtX">Phí thu hộ: ₫0 VNĐ. Ưu đãi về phí vận chuyển (nếu có) áp dụng cả với phí thu hộ.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-payment-setting__payment-method-options">
+                                @*<div class="checkout-payment-setting__banners">
+                                        <div class="channel-banner channel-banner__single" style="background-color: rgb(238, 77, 45);">
+                                            <div class="channel-banner__icon" style="background-image: url(&quot;http://f.shopee.vn/file/2d02419347d8bc6b55d64743d1f7c394&quot;);"></div>
+                                            <div class="channel-banner__logo" style="background-image: url(&quot;http://f.shopee.vn/file/46607a2f79a5efc2047129486e63747a&quot;);"></div>
+                                            <div class="channel-banner__main-desc">
+                                                <div>Giảm đến 40K</div>
+                                            </div>
+                                            <div class="channel-banner__sub-desc">Ưu đãi Ví ShopeePay</div>
+                                        </div>
+                                    </div>
+                                    <div class="bank-transfer-category">
+                                        <div class="bank-transfer-category__body">
+                                            <div class="checkout-bank-transfer-item checkout-bank-transfer-item--disabled">
+                                                <div class="stardust-radio" tabindex="0" role="radio" aria-checked="false" aria-disabled="false">
+                                                    <div class="stardust-radio-button">
+                                                        <div class="stardust-radio-button__outer-circle">
+                                                            <div class="stardust-radio-button__inner-circle"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stardust-radio__content">
+                                                        <div class="stardust-radio__label">
+                                                            <div class="checkout-bank-transfer-item__card">
+                                                                <div class="checkout-bank-transfer-item__icon-container">
+                                                                    <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/37110bc844b571f80e7dd14beb5415e9.png" class="checkout-bank-transfer-item__icon">
+                                                                </div>
+                                                                <div class="checkout-bank-transfer-item__main">
+                                                                    <div class="checkout-bank-transfer-item__title">Ví ShopeePay Số dư</div>
+                                                                    <div class="checkout-bank-transfer-item__subtitle">₫805.062</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bank-transfer-category">
+                                        <div class="bank-transfer-category__body">
+                                            <div class="checkout-bank-transfer-item">
+                                                <div class="stardust-radio" tabindex="0" role="radio" aria-checked="false">
+                                                    <div class="stardust-radio-button">
+                                                        <div class="stardust-radio-button__outer-circle">
+                                                            <div class="stardust-radio-button__inner-circle"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="stardust-radio__content">
+                                                        <div class="stardust-radio__label">
+                                                            <div class="checkout-bank-transfer-item__card">
+                                                                <div class="checkout-bank-transfer-item__icon-container">
+                                                                    <img src="http://cdn.airpay.vn/images_v1/c134/icon_c13401_v001.png" class="checkout-bank-transfer-item__icon">
+                                                                </div>
+                                                                <div class="checkout-bank-transfer-item__main">
+                                                                    <div class="checkout-bank-transfer-item__title">VCB</div>
+                                                                    <div class="checkout-bank-transfer-item__subtitle checkout-bank-account-item__number">*7533</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="KqH1Px">
+                        @*<div class="lhwDvd Exv9ow c5Dezq">Tổng tiền hàng</div>
+                            <div class="lhwDvd Uu2y3K c5Dezq">₫2.400.000</div>*@
+                        <div class="lhwDvd Exv9ow B6k-vE">Phí vận chuyển</div>
+                        <div class="lhwDvd Uu2y3K B6k-vE">₫50.000</div>
+                        <div class="lhwDvd Exv9ow lvfiUV">Tổng thanh toán:</div>
+                        <div class="lhwDvd +0tdvp Uu2y3K lvfiUV">₫@String.Format("{0:0,0 }", ViewBag.TongTien)</div>
+                        <div class="Ql2fz0">
+                            <div class="FXKjae">
+                                <div class="gLbpKW">
+                                    Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo
+                                    <a href="" target="_blank" rel="noopener noreferrer">Điều khoản của Nông Sản Zeno</a> @*https://help.shopee.vn/portal/article/77242*@
+                                </div>
+                            </div>
+                            <input class="stardust-button stardust-button--primary stardust-button--large gG-FcK _5POGMB" type="submit" value="Đặt Hàng" />
+                            <!--<button class="stardust-button stardust-button--primary stardust-button--large gG-FcK _5POGMB" type="submit" value="Đặt Hàng">-->
+                            @*Đặt hàng*@
+                            <!--</button>-->
                         </div>
                     </div>
                 </div>
             }
         </div>
-        @*<div class="+0Lry3">
-            <div class="mRngyc">
-                <div class="_7tqQVb">
-                    <div class="c4nuxa">
-                        <div class="uhcw35">
-                            <svg fill="none" viewBox="0 -2 23 22" class="shopee-svg-icon icon-voucher-line">
-                                <g filter="url(#voucher-filter0_d)">
-                                    <mask id="a" fill="#fff">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 2h18v2.32a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75v.65a1.5 1.5 0 000 2.75V16H1v-2.12a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75v-.65a1.5 1.5 0 000-2.75V2z"></path>
-                                    </mask>
-                                    <path d="M19 2h1V1h-1v1zM1 2V1H0v1h1zm18 2.32l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zm0 .65l.4.92.6-.26v-.66h-1zm0 2.75h1v-.65l-.6-.26-.4.91zM19 16v1h1v-1h-1zM1 16H0v1h1v-1zm0-2.12l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zm0-.65l-.4-.92-.6.26v.66h1zm0-2.75H0v.65l.6.26.4-.91zM19 1H1v2h18V1zm1 3.32V2h-2v2.32h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zm.6 1.56v-.65h-2v.65h2zm-.9 1.38c0-.2.12-.38.3-.46l-.8-1.83a2.5 2.5 0 00-1.5 2.29h2zm.3.46a.5.5 0 01-.3-.46h-2c0 1.03.62 1.9 1.5 2.3l.8-1.84zM20 16v-2.13h-2V16h2zM1 17h18v-2H1v2zm-1-3.12V16h2v-2.12H0zm1.4.91a2.5 2.5 0 001.5-2.29h-2a.5.5 0 01-.3.46l.8 1.83zm1.5-2.29a2.5 2.5 0 00-1.5-2.3l-.8 1.84c.18.08.3.26.3.46h2zM0 10.48v.65h2v-.65H0zM.9 9.1a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 9.1h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 8.65zM0 7.08v.65h2v-.65H0zM.9 5.7a.5.5 0 01-.3.46l.8 1.83A2.5 2.5 0 002.9 5.7h-2zm-.3-.46c.18.08.3.26.3.46h2a2.5 2.5 0 00-1.5-2.3L.6 5.25zM0 2v2.33h2V2H0z" mask="url(#a)"></path>
-                                </g>
-                                <path clip-rule="evenodd" d="M6.49 14.18h.86v-1.6h-.86v1.6zM6.49 11.18h.86v-1.6h-.86v1.6zM6.49 8.18h.86v-1.6h-.86v1.6zM6.49 5.18h.86v-1.6h-.86v1.6z"></path>
-                                <defs>
-                                    <filter id="voucher-filter0_d" x="0" y="1" width="20" height="16" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                        <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-                                        <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"></feColorMatrix>
-                                        <feOffset></feOffset>
-                                        <feGaussianBlur stdDeviation=".5"></feGaussianBlur>
-                                        <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.09 0"></feColorMatrix>
-                                        <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"></feBlend>
-                                        <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"></feBlend>
-                                    </filter>
-                                </defs>
-                            </svg>
-                            <span class="c17ZV6">Zeno Voucher</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="v84Pv8">
-                    <button class="_6dwQij">Chọn Voucher</button>
-                </div>
-            </div>
-            <div class="qNL6jV">
-                <div class="UhhKbh">
-                    <svg fill="none" viewBox="0 0 18 18" class="shopee-svg-icon UkgpNV icon-coin-line">
-                        <path stroke="#FFA600" stroke-width="1.3" d="M17.35 9A8.35 8.35 0 11.65 9a8.35 8.35 0 0116.7 0z"></path>
-                        <path fill="#FFA600" fill-rule="evenodd" stroke="#FFA600" stroke-width=".2" d="M6.86 4.723c-.683.576-.998 1.627-.75 2.464.215.725.85 1.258 1.522 1.608.37.193.77.355 1.177.463.1.027.2.051.3.08.098.03.196.062.294.096.06.021.121.044.182.067.017.006.107.041.04.014-.07-.028.071.03.087.037.286.124.56.27.82.44.114.076.045.024.151.111a2.942 2.942 0 01.322.303c.087.093.046.042.114.146.18.275.245.478.235.8-.01.328-.14.659-.325.867-.47.53-1.232.73-1.934.696a4.727 4.727 0 01-1.487-.307c-.45-.182-.852-.462-1.242-.737-.25-.176-.643-.04-.788.197-.17.279-.044.574.207.75.753.532 1.539.946 2.474 1.098.885.144 1.731.124 2.563-.224.78-.326 1.416-.966 1.607-1.772.198-.838-.023-1.644-.61-2.29-.683-.753-1.722-1.17-2.706-1.43a4.563 4.563 0 01-.543-.183c.122.048-.044-.02-.078-.035a4.77 4.77 0 01-.422-.212c-.594-.338-.955-.722-.872-1.369.105-.816.757-1.221 1.555-1.28.808-.06 1.648.135 2.297.554.614.398 1.19-.553.58-.947-1.33-.86-3.504-1.074-4.77-.005z" clip-rule="evenodd"></path>
-                    </svg>
-                    <div class="hJwfo5">Shopee Xu</div>
-                    <div class="smzy+M">Số tiền được giảm</div>
-                </div>
-                <div class="srd3PH">
-                    <div class="BHcV9m">[-₫0]</div>
-                    <label class="stardust-checkbox">
-                        <input class="stardust-checkbox__input" type="checkbox">
-                        <div class="stardust-checkbox__box"></div>
-                    </label>
-                </div>
-            </div>
-        </div>*@
-        <div class="kRed1l">
-            <div class="HgQ4yt">
-                <div>
-                    <div class="checkout-payment-method-view__current checkout-payment-setting">
-                        <div class="checkout-payment-method-view__current-title">Phương thức thanh toán</div>
-                        <div class="checkout-payment-setting__payment-methods-tab">
-                            <span tabindex="0">
-                                <button class="product-variation" aria-label="Ví ShopeePay" aria-disabled="false">
-                                    Ví Momo
-                                </button>
-                            </span>
-                            <span tabindex="0">
-                                <button class="product-variation" aria-label="Thẻ Tín dụng/Ghi nợ" aria-disabled="false">Thẻ Tín dụng/Ghi nợ</button>
-                            </span>
-                            <span tabindex="0">
-                                <button class="product-variation" aria-label="" aria-disabled="true">
-                                    <div class="voucher-container">
-                                        <span>VNPay</span>
-                                    </div>
-                                </button>
-                            </span>
-                            <span tabindex="0">
-                                <button class="product-variation product-variation--selected" aria-label="Thanh toán khi nhận hàng" aria-disabled="false">
-                                    Thanh toán khi nhận hàng
-                                    <div class="product-variation__tick">
-                                        <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="shopee-svg-icon icon-tick-bold">
-                                            <g>
-                                                <path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path>
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </button>
-
-                            </span>
-                        </div>
-                    </div>
-                    <div class="_3hU2wO">
-                        <div class="hVo8me">
-                            <div class="WHQQMV">Thanh toán khi nhận hàng</div>
-                            <div class="g5caBa">
-                                <div class="cOrEtX">Phí thu hộ: ₫0 VNĐ. Ưu đãi về phí vận chuyển (nếu có) áp dụng cả với phí thu hộ.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="checkout-payment-setting__payment-method-options">
-                        @*<div class="checkout-payment-setting__banners">
-                            <div class="channel-banner channel-banner__single" style="background-color: rgb(238, 77, 45);">
-                                <div class="channel-banner__icon" style="background-image: url(&quot;http://f.shopee.vn/file/2d02419347d8bc6b55d64743d1f7c394&quot;);"></div>
-                                <div class="channel-banner__logo" style="background-image: url(&quot;http://f.shopee.vn/file/46607a2f79a5efc2047129486e63747a&quot;);"></div>
-                                <div class="channel-banner__main-desc">
-                                    <div>Giảm đến 40K</div>
-                                </div>
-                                <div class="channel-banner__sub-desc">Ưu đãi Ví ShopeePay</div>
-                            </div>
-                        </div>
-                        <div class="bank-transfer-category">
-                            <div class="bank-transfer-category__body">
-                                <div class="checkout-bank-transfer-item checkout-bank-transfer-item--disabled">
-                                    <div class="stardust-radio" tabindex="0" role="radio" aria-checked="false" aria-disabled="false">
-                                        <div class="stardust-radio-button">
-                                            <div class="stardust-radio-button__outer-circle">
-                                                <div class="stardust-radio-button__inner-circle"></div>
-                                            </div>
-                                        </div>
-                                        <div class="stardust-radio__content">
-                                            <div class="stardust-radio__label">
-                                                <div class="checkout-bank-transfer-item__card">
-                                                    <div class="checkout-bank-transfer-item__icon-container">
-                                                        <img src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/37110bc844b571f80e7dd14beb5415e9.png" class="checkout-bank-transfer-item__icon">
-                                                    </div>
-                                                    <div class="checkout-bank-transfer-item__main">
-                                                        <div class="checkout-bank-transfer-item__title">Ví ShopeePay Số dư</div>
-                                                        <div class="checkout-bank-transfer-item__subtitle">₫805.062</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="bank-transfer-category">
-                            <div class="bank-transfer-category__body">
-                                <div class="checkout-bank-transfer-item">
-                                    <div class="stardust-radio" tabindex="0" role="radio" aria-checked="false">
-                                        <div class="stardust-radio-button">
-                                            <div class="stardust-radio-button__outer-circle">
-                                                <div class="stardust-radio-button__inner-circle"></div>
-                                            </div>
-                                        </div>
-                                        <div class="stardust-radio__content">
-                                            <div class="stardust-radio__label">
-                                                <div class="checkout-bank-transfer-item__card">
-                                                    <div class="checkout-bank-transfer-item__icon-container">
-                                                        <img src="http://cdn.airpay.vn/images_v1/c134/icon_c13401_v001.png" class="checkout-bank-transfer-item__icon">
-                                                    </div>
-                                                    <div class="checkout-bank-transfer-item__main">
-                                                        <div class="checkout-bank-transfer-item__title">VCB</div>
-                                                        <div class="checkout-bank-transfer-item__subtitle checkout-bank-account-item__number">*7533</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>*@
-                    </div>
-                </div>
-            </div>
-            <div class="KqH1Px">
-                @*<div class="lhwDvd Exv9ow c5Dezq">Tổng tiền hàng</div>
-                <div class="lhwDvd Uu2y3K c5Dezq">₫2.400.000</div>*@
-                <div class="lhwDvd Exv9ow B6k-vE">Phí vận chuyển</div>
-                <div class="lhwDvd Uu2y3K B6k-vE">₫50.000</div>
-                <div class="lhwDvd Exv9ow lvfiUV">Tổng thanh toán:</div>
-                <div class="lhwDvd +0tdvp Uu2y3K lvfiUV">₫@String.Format("{0:0,0 }", ViewBag.TongTien)</div>
-                <div class="Ql2fz0">
-                    <div class="FXKjae">
-                        <div class="gLbpKW">
-                            Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo
-                            <a href="" target="_blank" rel="noopener noreferrer">Điều khoản của Nông Sản Zeno</a> @*https://help.shopee.vn/portal/article/77242*@
-                        </div>
-                    </div>
-                    <button class="stardust-button stardust-button--primary stardust-button--large gG-FcK _5POGMB" type="submit" value="Đồng Ý Đặt Hàng">
-                        @*Đặt hàng*@
-                        <input type="submit" value="Đặt Hàng" />
-                    </button>
-                </div>
-            </div>
-        </div>
-        }
     </div>
-</div>
+}
 
 
 
@@ -346,23 +352,23 @@
             <td>Đơn Giá</td>
             <td>Thành Tiền</td>
         </tr>
-        @foreach (var item in Model)
+        foreach (var item in Model)
         {
             <tr style="text-align:center; font-weight:bold">
-                <td>@item.masp</td>
-                <td>@item.tensp</td>
-                <td><img src="~/images/sanpham/@item.anhbia" alt="Alternate Text" width="100" /></td>
-                @using (Html.BeginForm("CapNhatGioHang", "GioHang", new { id = item.masp }))
+                <td>item.masp</td>
+                <td>item.tensp</td>
+                <td><img src="~/images/sanpham/item.anhbia" alt="Alternate Text" width="100" /></td>
+                using (Html.BeginForm("CapNhatGioHang", "GioHang", new { id = item.masp }))
                 {
-                    <td>@item.soluong</td>
-                    <td>@String.Format("{0:0,0 }", @item.dongia)</td>
-                    <td>@String.Format("{0:0,0 }", @item.thanhtien)</td>
+                    <td>item.soluong</td>
+                    <td>String.Format("{0:0,0 }", item.dongia)</td>
+                    <td>String.Format("{0:0,0 }", item.thanhtien)</td>
                 }
             </tr>
         }
         <tr style="text-align:center; font-weight:bold">
-            <td colspan="4">Số Lượng : @ViewBag.TongSoLuong</td>
-            <td colspan="5">Tổng Tiền : @String.Format("{0:0,0 }", ViewBag.TongTien) VNĐ</td>
+            <td colspan="4">Số Lượng : ViewBag.TongSoLuong</td>
+            <td colspan="5">Tổng Tiền : String.Format("{0:0,0 }", ViewBag.TongTien) VNĐ</td>
         </tr>
         <tr style="text-align:right; font-weight:bold">
             <td colspan="9"><a class="btn btn-warning" style="background-color: #cecece; border-radius: 10px; border-color: #808080; color: black; font-weight: bold; " href="@Url.Action("GioHang","GioHang")">Về Giỏ Hàng</a></td>
@@ -371,18 +377,18 @@
 </div>
 <div class="content-giohang" style="margin-top: 100px;">
     <h1 style="text-align:center">Thông Tin Đặt Hàng</h1>-->
-    @*@{
+@*@{
         tbKhachHang kh = (tbKhachHang)Session["Taikhoan"];
         tbDonHang dh = new tbDonHang();
 
     }*@
-    <!--<table align="center">
-        @using (Html.BeginForm())
+<!--<table align="center">
+        using (Html.BeginForm())
         {
-            @Html.ValidationSummary(true)
+            Html.ValidationSummary(true)
             <tr style="height:40px">
                 <td>Khách Hàng</td>
-                <td style="font-weight:bold">@kh.TenKH</td>
+                <td style="font-weight:bold">kh.TenKH</td>
             </tr>
 
             <tr style="height:40px">
@@ -397,17 +403,17 @@
 
             <tr style="height:40px">
                 <td>Địa Chỉ</td>
-                <td style="font-weight:bold">@kh.DiaChiKH</td>
+                <td style="font-weight:bold">kh.DiaChiKH</td>
             </tr>
 
             <tr style="height:40px">
                 <td>Số Điện Thoại</td>
-                <td style="font-weight:bold">@kh.DienThoaiKH</td>
+                <td style="font-weight:bold">kh.DienThoaiKH</td>
             </tr>
 
             <tr style="height:40px">
                 <td>Ngày Đặt</td>
-                <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
+                <td style="font-weight:bold">DateTime.Now.ToShortDateString()</td>
             </tr>
 
             <tr style="height:40px">
@@ -443,64 +449,63 @@
         }
     </table>
 </div>-->
+@*<style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-<style>
-    * {
-        padding: 0;
-        margin: 0;
-    }
+        h1 {
+            width: 85%;
+            color: black;
+            margin-top: 100px;
+            text-align: center;
+            margin: 0 auto;
+        }
 
-    h1 {
-        width: 85%;
-        color: black;
-        margin-top: 100px;
-        text-align: center;
-        margin: 0 auto;
-    }
+        .content-giohang {
+            width: 100%;
+            margin-top: 100px;
+            font-size: 20px;
+        }
 
-    .content-giohang {
-        width: 100%;
-        margin-top: 100px;
-        font-size: 20px;
-    }
+        table {
+            width: 85%;
+            box-shadow: 0px 15px 25px 5px rgb(0 0 0 / 25%);
+            border: 0.5px;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
 
-    table {
-        width: 85%;
-        box-shadow: 0px 15px 25px 5px rgb(0 0 0 / 25%);
-        border: 0.5px;
-        border-radius: 15px;
-        margin: 0 auto;
-    }
+        td {
+            padding: 10px;
+            border: solid;
+        }
 
-    td {
-        padding: 10px;
-        border: solid;
-    }
+        tr:first-child {
+            background: #808080;
+        }
 
-    tr:first-child {
-        background: #808080;
-    }
+        tr btn {
+            margin: 10px 10px;
+        }
 
-    tr btn {
-        margin: 10px 10px;
-    }
+        media (max-width: 1024px) {
+            content-giohang
 
-    media (max-width: 1024px) {
-        content-giohang
+        {
+            margin-top: 70px;
+            font-size: 12px;
+        }
 
-    {
-        margin-top: 70px;
-        font-size: 12px;
-    }
+        }
 
-    }
+        media (max-width: 430px) {
+            content-giohang
 
-    media (max-width: 430px) {
-        content-giohang
-
-    {
-        width: 50%;
-        font-size: 8px;
-    }
-    }
-</style>
+        {
+            width: 50%;
+            font-size: 8px;
+        }
+        }
+    </style>*@

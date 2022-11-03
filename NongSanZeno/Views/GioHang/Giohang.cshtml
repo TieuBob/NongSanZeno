@@ -100,7 +100,7 @@
                                         <div class="stardust-checkbox__box"></div>
                                     </label>
                                 </div>
-                                <a class="eQP4g3" href="/bondkids.94?categoryId=100632&amp;entryPoint=cart&amp;itemId=14917578148">
+                                <a class="eQP4g3" href="@Url.Action("ChiTiet", "NongSanZeno", new { id = @item.masp })">
                                     @* link nhà cung cấp *@
                                     <svg width="17" height="16" viewBox="0 0 17 16" class="_2fmKjA">
                                         <path d="M1.95 6.6c.156.804.7 1.867 1.357 1.867.654 0 1.43 0 1.43-.933h.932s0 .933 1.155.933c1.176 0 1.15-.933 1.15-.933h.984s-.027.933 1.148.933c1.157 0 1.15-.933 1.15-.933h.94s0 .933 1.43.933c1.368 0 1.356-1.867 1.356-1.867H1.95zm11.49-4.666H3.493L2.248 5.667h12.437L13.44 1.934zM2.853 14.066h11.22l-.01-4.782c-.148.02-.295.042-.465.042-.7 0-1.436-.324-1.866-.86-.376.53-.88.86-1.622.86-.667 0-1.255-.417-1.64-.86-.39.443-.976.86-1.643.86-.74 0-1.246-.33-1.623-.86-.43.536-1.195.86-1.895.86-.152 0-.297-.02-.436-.05l-.018 4.79zM14.996 12.2v.933L14.984 15H1.94l-.002-1.867V8.84C1.355 8.306 1.003 7.456 1 6.6L2.87 1h11.193l1.866 5.6c0 .943-.225 1.876-.934 2.39v3.21z" stroke-width=".3" stroke="#333" fill="#333" fill-rule="evenodd"></path>
@@ -128,7 +128,7 @@
                                     </div>
                                     <div class="_2pPbjQ">
                                         <div class="YxpsCR">
-                                            <a title="Xe máy điện trẻ em hình chú chó bằng điện full đủ phụ kiện điều khiển cho bé từ 2-6 tuổi - Bond Kids" href="/Xe-máy-điện-trẻ-em-hình-chú-chó-bằng-điện-full-đủ-phụ-kiện-điều-khiển-cho-bé-từ-2-6-tuổi-Bond-Kids-i.46452829.14917578148?xptdk=97b5d979-9af7-473e-ba6a-0aee47773ba6">
+                                            <a title="" href="@Url.Action("ChiTiet", "NongSanZeno", new { id = @item.masp })">
                                                 <div class="_3SWf-5" style="background-image: url(&quot;https://cf.shopee.vn/file/c80613f4f8ef98e2ba1c489d06e1274d_tn&quot;);">
                                                     <img src="~/images/sanpham/@item.anhbia" alt="Alternate Text" width="80" />
                                                     @* hình sản phẩm *@
@@ -144,27 +144,27 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div style="margin-left:340px"></div>
-                                    @*<div class="_30hIFE">
-                                        <div class="_3b-8ro">
-                                            <div class="ns42ir" role="button" tabindex="0">
-                                                 phân loại hàng 
-                                                <div class="aXmvTj">
-                                                    Phân loại hàng:
-                                                    <button class="_2Ipt-j"></button>
-                                                    <input type="submit" class="btn btn-warning" value="Cập nhật" />_2Ipt-j
-                                                </div>
-                                                <div class="GU_XoN">hồng</div>
+                                    <div class="_30hIFE">
+                                        <!--<div class="_3b-8ro">
+                                            <div class="ns42ir" role="button" tabindex="0">-->
+                                                 @*phân loại hàng*@ 
+                                                <!--<div class="aXmvTj">-->
+                                                    @*Phân loại hàng:*@
+                                                    @*<button class="_2Ipt-j"></button>*@
+                                                    <!--<input type="submit" class="btn btn-warning" value="Cập nhật" />-->@*_2Ipt-j*@
+                                                <!--</div>
+                                                <div class="GU_XoN">-->@*hồng*@<!--</div>
                                             </div>
                                             <div></div>
-                                        </div>
-                                    </div>*@
+                                        </div>-->
+                                    </div>
+                                    <div style="margin-left:1px; margin-right:80px"></div>
                                     <div class="Ra8lP2">
                                         <div>
                                             <span class="_1CXksa">₫@String.Format("{0:0,0 }", item.dongia)</span> @*đơn giá*@
                                         </div>
                                     </div>
-                                    <div style="margin-left:100px"></div>
+                                    <div style="margin-left:1px; margin-right:100px"></div>
                                     @using (Html.BeginForm("CapNhatGioHang", "Giohang", new { @id = item.masp }))
                                     {
                                         <div class="_2ZUrV7">
@@ -178,7 +178,7 @@
                                                 @*có min bằng 1 để ràng buộc đơn hàng phải có sl 1*@
                                                 <button class="EcPhjV">
                                                     <svg enable-background="new 0 0 10 10" viewBox="0 0 10 10" x="0" y="0" class="shopee-svg-icon icon-plus-sign">
-                                                        <polygon points="@item.soluong"></polygon>
+                                                        <polygon points="10 4.5 5.5 4.5 5.5 0 4.5 0 4.5 4.5 0 4.5 0 5.5 4.5 5.5 4.5 10 5.5 10 5.5 5.5 10 5.5"></polygon>
                                                     </svg>
                                                 </button>
                                             </div><div class="_1hk8u6">@*Còn 2 sản phẩm*@</div>@*số lượng còn lại*@
