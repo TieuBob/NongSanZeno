@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=1240,shrink-to-fit=no">
     <meta name="shopee:git-sha" content="e5d239214aed0b07b89117865f871c165df6a5e3">
     <meta name="shopee:version" content="pc-v5.26.0">
-    <link rel="preload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/bundle.771defbd521b8480.css" as="style" data-modern="true">
+    <link rel="preload" href="~/Content/Cart/bundle.771defbd521b8480.css" as="style" data-modern="true">
     <link rel="modulepreload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/webpack-runtime.2a12239ada5ee50b.js" data-modern="true">
     <link rel="modulepreload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/785.0e338541bc71e4db.js" data-modern="true">
     <link rel="modulepreload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/bundle.d708e928e3fd455c.js" data-modern="true">
@@ -33,8 +33,8 @@
     <link rel="dns-prefetch" href="//cv.shopee.vn/">
     <script src="https://deo.shopeemobile.com/shopee/shopee-trackingsdk-live-sg/index.js"></script>
     <script id="gtm-script" data-locale="vn" data-gtm-id="GTM-WJZQSJF">!function (t, e, a, n) { t[n] = []; var o = ["PL", "ES"].indexOf(__LOCALE__) >= 0, r = o ? "denied" : "granted"; !function () { dataLayer.push(arguments) }("consent", "default", { consent_analytical: r, consent_functional: r, consent_advertising: r, consent_thirdparty_google: r, consent_thirdparty_tiktok: r, wait_for_update: o ? 15e3 : 0 }); var d = document.currentScript || document.getElementById("gtm-script"); if (d) { var i = d.getAttribute("data-locale"), c = d.getAttribute("data-gtm-id"), s = d.getAttribute("data-delay-load"), u = "", g = 0; s && (u = "delay", g = 5e3), t[n] = t[n] || []; var m = Date.now(), _ = { "gtm.start": m, event: "gtm.js", country: i }; u && (_.userGroup = u), t[n].push(_); var l = !1; t.__shopeeLoadGTM = function () { l || (l = !0, g = Math.max(0, Math.min(g, g - (Date.now() - m))), setTimeout((function () { var t = e.getElementsByTagName(a)[0], n = e.createElement(a); n.async = !0, n.src = "https://www.googletagmanager.com/gtm.js?id=" + c, t.parentNode.insertBefore(n, t) }), g)) }, o || t.__shopeeLoadGTM() } }(window, document, "script", "dataLayer");</script>
-    <link rel="stylesheet" data-modern="true" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/bundle.771defbd521b8480.css">
-    <link rel="stylesheet" href="~/Content/Cart/bundle.771defbd521b8480.css">
+    <link rel="stylesheet" data-modern="true" href="~/Content/Cart/bundle.771defbd521b8480.css">
+    @*<link rel="stylesheet" href="~/Content/Cart/bundle.771defbd521b8480.css">*@
     <link rel="stylesheet" href="~/Content/Cart/pcmall-cart.ee62cb54bf1e830aff03.css">
     <link rel="stylesheet" href="~/Content/Cart/x3.65c58097.50478c53b08055d3ddc5.css">
     <link rel="stylesheet" href="~/Content/Cart/9148.2239f6440e3346ae.css">
@@ -267,7 +267,9 @@
                                                     </div>
                                                     <img class="shopee-avatar__img" src="https://cf.shopee.vn/file/a79273da4ba63074f758aca5888d28b2_tn">
                                                 </div>
-                                                <div class="navbar__username">birapper123</div>
+                                                <div class="navbar__username">
+                                                    <a style="color:white" href="@Url.Action("profile","user")">@Session["User"]</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
