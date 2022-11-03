@@ -24,10 +24,10 @@ namespace NongSanZeno.Controllers
             //tao bien so trang
             int pageNum = (page ?? 1);
 
-            //Lay top 6 san pham ban chay nhat
-            var sanphammoi = Laysanpham(30);
+            //Lay top san pham moi nhat
+            var sanphammoi = Laysanpham(100);
             string s = Request.QueryString["s"];
-            if (!string.IsNullOrEmpty(s)) sanphammoi = data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(30).Where(w => w.TenSP.Contains(s)).ToList();
+            if (!string.IsNullOrEmpty(s)) sanphammoi = data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(100).Where(w => w.TenSP.Contains(s)).ToList();
             return View(sanphammoi.ToPagedList(pageNum, pageSize));
         }
 
