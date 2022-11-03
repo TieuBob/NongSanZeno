@@ -67,6 +67,17 @@ namespace NongSanZeno.Controllers
             return tongtien;
         }
 
+        //private double TongHoaDon()
+        //{
+        //    double tonghoadon = 0;
+        //    List<GioHang> gioHangs = Session["GioHang"] as List<GioHang>;
+        //    if (gioHangs != null)
+        //    {
+        //        tonghoadon = gioHangs.Sum(n => n.tonghoadon);
+        //    }
+        //    return tonghoadon;
+        //}
+
         public ActionResult Giohang()
         {
             List<GioHang> gioHangs = LayGioHang();
@@ -77,6 +88,7 @@ namespace NongSanZeno.Controllers
             }
             ViewBag.TongSoLuong = TongSoLuong();
             ViewBag.TongTien = TongTien();
+            //ViewBag.TongHoaDon = TongHoaDon();
             return View(gioHangs);
         }
 
@@ -84,6 +96,7 @@ namespace NongSanZeno.Controllers
         {
             ViewBag.TongSoLuong = TongSoLuong();
             ViewBag.TongTien = TongTien();
+            //ViewBag.TongHoaDon = TongHoaDon();
             return PartialView();
         }
 
@@ -136,6 +149,7 @@ namespace NongSanZeno.Controllers
             List<GioHang> gioHangs = LayGioHang();
             ViewBag.TongSoLuong = TongSoLuong();
             ViewBag.TongTien = TongTien();
+            //ViewBag.TongHoaDon = TongHoaDon();
             return View(gioHangs);
         }
         [HttpPost]
@@ -157,12 +171,14 @@ namespace NongSanZeno.Controllers
             data.tbDonHangs.InsertOnSubmit(ddh);
             //data.tbTinhTrangHoaDons.InsertOnSubmit(tthd);
 
-            string NguoiNhan = collection["NguoiNhan"];
+            //string NguoiNhan = collection["NguoiNhan"];
             ddh.SDT = kh.DienThoaiKH;
+            ddh.DiaChi = kh.DiaChiKH;
             string GhiChu = collection["GhiChu"];
 
             ddh.NgayGiao = DateTime.Parse(ngaygiao);
             ddh.TongTien = Decimal.Parse(TongTien().ToString());
+            //ddh.TongTien = decimal.Parse(TongHoaDon().ToString());
             /*ddh.MaTTHD = '1'*/;
             //dONDATHANG.Dathanhtoan = false;
             data.SubmitChanges();
@@ -176,7 +192,8 @@ namespace NongSanZeno.Controllers
                 CT.SoLuong = item.soluong;
                 CT.DonGia = (decimal)item.dongia;
                 //CT.ThanhTien = (decimal)item.thanhtien;
-                ddh.DiaChi = DiaChi;
+                //ddh.DiaChi = DiaChi;
+                ddh.DiaChi = kh.DiaChiKH;
 
                 //ddh.Email = kh.Email;
                 //ddh.NguoiNhan = NguoiNhan;

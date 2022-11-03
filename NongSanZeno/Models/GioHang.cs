@@ -18,6 +18,7 @@ namespace NongSanZeno.Models
         public int soluong { set; get; }
         public int soluongton { set; get; }
         public double thanhtien { get { return dongia * soluong; } }
+        public double tonghoadon { get { return thanhtien + 50000; } }
         public string diachi { set; get; }
 
         public string tenvc { set; get; }
