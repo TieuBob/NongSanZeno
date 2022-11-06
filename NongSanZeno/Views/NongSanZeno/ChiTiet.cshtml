@@ -1,4 +1,4 @@
-﻿
+﻿@using NongSanZeno.Models
 @{
     ViewBag.Title = "ChiTiet";
     Layout = "~/Views/Layout/_Layout1.cshtml";
@@ -6,6 +6,12 @@
 
 <div class="page-product">
     <div role="main" class="container">
+        @{
+            tbKhachHang kh = (tbKhachHang)Session["Taikhoan"];
+            tbDonHang dh = new tbDonHang();
+            tbNhaCungCap ncc = new tbNhaCungCap();
+
+        }
         <div class="product-briefing flex card _2qM0Iy">
             <div></div>
             <div class="jexb7x">
@@ -157,13 +163,14 @@
                                 <div class="flex items-center">
                                     <div class="flex items-center _34BHKe">
                                         <div class="flex items-center">
-                                            <div class="_2Shl1j">₫@Model.GiaBan</div> @*giá bán*@
+                                            <div class="_2Shl1j">₫@String.Format("{0:0,0 }", @Model.GiaBan)</div> @*giá bán*@
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                     <div class="_3rFQYx">
                         <div class="flex flex-column">
                             <div class="flex VrhRS0 uBD5Gu">
@@ -189,7 +196,7 @@
                                                     <div class="flex items-center">
                                                         <div class="DrJqe7">
                                                             <div class="flex items-center">
-                                                                <span class="_2fJrvA">Phường Tăng Nhơn Phú A, Thành Phố Thủ Đức</span>
+                                                                <span class="_2fJrvA">@kh.DiaChiKH</span>
                                                                 <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down">
                                                                     <g>
                                                                         <path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path>
@@ -282,7 +289,7 @@
                                     </a>
                                 </button>
                                 @*<button type="button" class="btn btn-solid-primary btn--l _3f7_YI" aria-disabled="false">
-                                    
+
                                     <a href="@Url.Action("DatHang","GioHang")">
                                         <span>Mua ngay</span>
                                     </a>
@@ -421,8 +428,9 @@
                                     </div>
                                 </div>
                                 <div class="product-rating-overview__filters">
-                                <div class="product-rating-overview__filter product-rating-overview__filter--active product-rating-overview__filter--all">tất cả</div>
-                                <div class="product-rating-overview__filter">5 Sao (0)</div><div class="product-rating-overview__filter">4 Sao (0)</div><div class="product-rating-overview__filter">3 Sao (0)</div><div class="product-rating-overview__filter">2 Sao (0)</div><div class="product-rating-overview__filter">1 Sao (0)</div><div class="product-rating-overview__filter product-rating-overview__filter--with-comment">Có Bình luận (1)</div><div class="product-rating-overview__filter product-rating-overview__filter--with-photo">Có hình ảnh / video (1)</div></div>
+                                    <div class="product-rating-overview__filter product-rating-overview__filter--active product-rating-overview__filter--all">tất cả</div>
+                                    <div class="product-rating-overview__filter">5 Sao (0)</div><div class="product-rating-overview__filter">4 Sao (0)</div><div class="product-rating-overview__filter">3 Sao (0)</div><div class="product-rating-overview__filter">2 Sao (0)</div><div class="product-rating-overview__filter">1 Sao (0)</div><div class="product-rating-overview__filter product-rating-overview__filter--with-comment">Có Bình luận (1)</div><div class="product-rating-overview__filter product-rating-overview__filter--with-photo">Có hình ảnh / video (1)</div>
+                                </div>
                             </div>
                             <div class="product-ratings__list">
                                 <div class="shopee-product-comment-list">
@@ -519,8 +527,8 @@
                                             <div class="_3lF5CE">
                                                 <div class="_1rc11Y">phản hồi của Người Bán</div>
                                                 <div class="_2w33Zs">
-                                                    Cảm ơn bạn đã tin tưởng ủng hộ Nông Sản Zeno, Chúc bạn và gia đình luôn mạnh khỏe! 
-                                                    Mong bạn ủng hộ shop nhiều hơn nhé. Cảm ơn bạn đã mua hàng tại shop! 
+                                                    Cảm ơn bạn đã tin tưởng ủng hộ Nông Sản Zeno, Chúc bạn và gia đình luôn mạnh khỏe!
+                                                    Mong bạn ủng hộ shop nhiều hơn nhé. Cảm ơn bạn đã mua hàng tại shop!
                                                     Cần bất kỳ thông tin hay vấn đề thắc mắc bạn  hãy nhắn tin cho shop nhé!!!
                                                 </div>
                                             </div>
@@ -594,52 +602,52 @@
 </div>
 
 @*<h2>THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
-<div>
-    <div style="width:40%; float:left; border-left:dotted 1px; border-color:azure">
-        <img src="~/images/sanpham/@Model.AnhSP" width="100%" />
+    <div>
+        <div style="width:40%; float:left; border-left:dotted 1px; border-color:azure">
+            <img src="~/images/sanpham/@Model.AnhSP" width="100%" />
+        </div>
+        <div style="width:60%; float:left; padding:10px">
+            <h4 style="font-weight:bold; color:red">
+                Tên sản phẩm: @Model.TenSP
+            </h4>
+            <p style="text-align:justify">
+                <span style="font-weight:bold">
+                    Mô tả:
+                </span>
+                @Model.MoTa
+            </p>
+            <p style="font-weight:bold">
+                Giá bán:
+                <span style="color:red; font-size:16pt">
+                    @Model.GiaBan VNĐ
+                </span>
+            </p>
+        </div>
+        <div id="Datmua">
+            <a href="@Url.Action("ThemGiohang", "GioHang", new {@masp = @Model.MaSP, @strURL=Request.Url.ToString() })">
+                ĐẶT MUA
+            </a>
+        </div>
     </div>
-    <div style="width:60%; float:left; padding:10px">
-        <h4 style="font-weight:bold; color:red">
-            Tên sản phẩm: @Model.TenSP
-        </h4>
-        <p style="text-align:justify">
-            <span style="font-weight:bold">
-                Mô tả:
-            </span>
-            @Model.MoTa
-        </p>
-        <p style="font-weight:bold">
-            Giá bán:
-            <span style="color:red; font-size:16pt">
-                @Model.GiaBan VNĐ
-            </span>
-        </p>
-    </div>
-    <div id="Datmua">
-        <a href="@Url.Action("ThemGiohang", "GioHang", new {@masp = @Model.MaSP, @strURL=Request.Url.ToString() })">
-            ĐẶT MUA
-        </a>
-    </div>
-</div>
 
 
-<style type="text/css">
-    #Datmua a {
-        clear: both;
-        background-color: red;
-        color: white;
-        width: 120px;
-        height: 35px;
-        display: block;
-        float: right;
-        text-align: center;
-        padding-top: 10px;
-        text-decoration: none;
-        font-weight: bold;
-    }
-
-        #Datmua a:hover {
-            background-color: gray;
-            color: red;
+    <style type="text/css">
+        #Datmua a {
+            clear: both;
+            background-color: red;
+            color: white;
+            width: 120px;
+            height: 35px;
+            display: block;
+            float: right;
+            text-align: center;
+            padding-top: 10px;
+            text-decoration: none;
+            font-weight: bold;
         }
-</style>*@
+
+            #Datmua a:hover {
+                background-color: gray;
+                color: red;
+            }
+    </style>*@
