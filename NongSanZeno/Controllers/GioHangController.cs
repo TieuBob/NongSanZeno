@@ -100,6 +100,14 @@ namespace NongSanZeno.Controllers
             return PartialView();
         }
 
+        public ActionResult GiohangPartial1()
+        {
+            ViewBag.TongSoLuong = TongSoLuong();
+            ViewBag.TongTien = TongTien();
+            //ViewBag.TongHoaDon = TongHoaDon();
+            return PartialView();
+        }
+
         public ActionResult XoaGioHang(int id)
         {
             List<GioHang> gioHangs = LayGioHang();

@@ -2449,6 +2449,7 @@
     <Content Include="Views\user\profile.cshtml" />
     <Content Include="Views\GioHang\GioHangNull.cshtml" />
     <Content Include="Views\Layout\_Layout1.cshtml" />
+    <Content Include="Views\GioHang\GiohangPartial1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <head>
     <style>
         body {
@@ -5762,11 +5763,18 @@
                         </div>*@
                                 </div>
                                 <div class="header-with-search__cart-wrapper">
+                                    
                                     <div class="stardust-popover" id="cart_drawer_target_id">
                                         <div role="button" class="stardust-popover__target">
                                             <div class="cart-drawer-container">
-                                                <a class="cart-drawer flex v-center" id="cart_drawer_target_id" href="/cart">
-                                                    <svg viewBox="0 0 26.6 25.6" class="shopee-svg-icon navbar__link-icon icon-shopping-cart-2"><polyline fill="none" points="2 1.7 5.5 1.7 9.6 18.3 21.2 18.3 24.6 6.1 7 6.1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"></polyline><circle cx="10.7" cy="23" r="2.2" stroke="none"></circle><circle cx="19.7" cy="23" r="2.2" stroke="none"></circle></svg><div class="shopee-cart-number-badge">41</div>
+                                                <a class="cart-drawer flex v-center" id="cart_drawer_target_id" href="@Url.Action("Giohang","GioHang")">
+                                                    @*<svg viewBox="0 0 26.6 25.6" class="shopee-svg-icon navbar__link-icon icon-shopping-cart-2" color="white">
+                                                        <polyline fill="none" points="2 1.7 5.5 1.7 9.6 18.3 21.2 18.3 24.6 6.1 7 6.1" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"></polyline>
+                                                        <circle cx="10.7" cy="23" r="2.2" stroke="none"></circle>
+                                                        <circle cx="19.7" cy="23" r="2.2" stroke="none"></circle>
+                                                    </svg>
+                                                    <div class="shopee-cart-number-badge"></div>*@
+                                                    @Html.Action("GiohangPartial1", "GioHang")
                                                 </a>
                                             </div>
                                         </div>
