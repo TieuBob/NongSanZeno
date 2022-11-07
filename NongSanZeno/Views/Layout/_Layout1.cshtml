@@ -5695,28 +5695,41 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link--account">
-                                        <div class="stardust-popover" id="stardust-popover69" tabindex="0">
-                                            <div role="button" class="stardust-popover__target">
-                                                <div class="navbar__link--account__container">
-                                                    <div class="shopee-avatar">
-                                                        <div class="shopee-avatar__placeholder">
-                                                            <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon icon-headshot">
-                                                                <g>
-                                                                    <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
-                                                                    <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path>
-                                                                </g>
-                                                            </svg>
+                                    @if (Session["User"] == null)
+                                    {
+                                        <a class="navbar__link navbar__link--account navbar__link--signup navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium navbar__link-text--normal-case" href="/LoginUser/DangKy">
+                                            Đăng Ký
+                                        </a>
+                                        <div class="navbar__link-separator"></div>
+                                        <a class="navbar__link navbar__link--account navbar__link--login navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium navbar__link-text--normal-case" href="/LoginUser/Dangnhap">
+                                            Đăng Nhập
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link--account">
+                                            <div class="stardust-popover" id="stardust-popover69" tabindex="0">
+                                                <div role="button" class="stardust-popover__target">
+                                                    <div class="navbar__link--account__container">
+                                                        <div class="shopee-avatar">
+                                                            <div class="shopee-avatar__placeholder">
+                                                                <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon icon-headshot">
+                                                                    <g>
+                                                                        <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
+                                                                        <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path>
+                                                                    </g>
+                                                                </svg>
+                                                            </div>
+                                                            <img class="shopee-avatar__img" src="https://cf.shopee.vn/file/a79273da4ba63074f758aca5888d28b2_tn">
                                                         </div>
-                                                        <img class="shopee-avatar__img" src="https://cf.shopee.vn/file/a79273da4ba63074f758aca5888d28b2_tn">
-                                                    </div>
-                                                    <div class="navbar__username">
-                                                        <a style="color:white" href="@Url.Action("profile","user")">@Session["User"]</a>
+                                                        <div class="navbar__username">
+                                                            <a style="color:white" href="@Url.Action("profile","user")">@Session["User"]</a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </li>
+                                        </li>
+                                    }
                                 </ul>
                             </nav>
                         </div>

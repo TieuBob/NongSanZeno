@@ -23,11 +23,16 @@
             </a>
             <div class="caption" style="margin-bottom:10px">
                 <p><strong> Giá: </strong> @String.Format("{0:0,0}", sanpham.GiaBan) VNĐ</p>
-                <div id="Datmua">
+                @*<div id="Datmua">
                     <a href="@Url.Action("ThemGiohang", "GioHang", new {@masp = sanpham.MaSP, @strURL=Request.Url.ToString() })">
                         thêm vào giỏ hàng
                     </a>
-                </div>
+                </div>*@
+                <button type="button" class="btn btn-tinted btn--l _3f7_YI _1TpzVc" aria-disabled="false">
+                    <a href="@Url.Action("ThemGiohang", "GioHang", new {@masp = sanpham.MaSP, @strURL=Request.Url.ToString() })">
+                        thêm vào giỏ hàng
+                    </a>
+                </button>
             </div>
             <div class="ratings">
                 <p class="pull-right">15 reviews</p>

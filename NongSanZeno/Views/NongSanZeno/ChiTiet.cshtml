@@ -196,7 +196,18 @@
                                                     <div class="flex items-center">
                                                         <div class="DrJqe7">
                                                             <div class="flex items-center">
-                                                                <span class="_2fJrvA">@kh.DiaChiKH</span>
+                                                                @if (Session["User"] == null)
+                                                                {
+                                                                    <span class="_2fJrvA">
+                                                                        10/80C XL Hà Nội, Phường Tân Phú, Thủ Đức, Thành phố Hồ Chí Minh
+                                                                    </span>
+                                                                }
+                                                                else
+                                                                {
+                                                                    <span class="_2fJrvA">
+                                                                        @kh.DiaChiKH
+                                                                    </span>
+                                                                }
                                                                 <svg enable-background="new 0 0 11 11" viewBox="0 0 11 11" x="0" y="0" class="shopee-svg-icon icon-arrow-down">
                                                                     <g>
                                                                         <path d="m11 2.5c0 .1 0 .2-.1.3l-5 6c-.1.1-.3.2-.4.2s-.3-.1-.4-.2l-5-6c-.2-.2-.1-.5.1-.7s.5-.1.7.1l4.6 5.5 4.6-5.5c.2-.2.5-.2.7-.1.1.1.2.3.2.4z"></path>
@@ -231,17 +242,11 @@
                                     <div class="flex items-center" style="margin-bottom: 8px; align-items: baseline;">
                                         <label class="_34CHXV">Đơn vị</label>
                                         <div class="flex items-center _3Bh7nx">
-                                            @*<button class="product-variation product-variation--disabled" aria-label="cam" aria-disabled="true">cam</button>*@
+                                            @*<button class="product-variation product-variation--disabled" aria-label="cam" aria-disabled="true">cam</button>*@                                  
                                             <button class="product-variation product-variation--selected" aria-label="hồng" aria-disabled="false">
-                                                Kg
-                                                <div class="product-variation__tick">
-                                                    <svg enable-background="new 0 0 12 12" viewBox="0 0 12 12" x="0" y="0" class="shopee-svg-icon icon-tick-bold">
-                                                        <g>
-                                                            <path d="m5.2 10.9c-.2 0-.5-.1-.7-.2l-4.2-3.7c-.4-.4-.5-1-.1-1.4s1-.5 1.4-.1l3.4 3 5.1-7c .3-.4 1-.5 1.4-.2s.5 1 .2 1.4l-5.7 7.9c-.2.2-.4.4-.7.4 0-.1 0-.1-.1-.1z"></path>
-                                                        </g>
-                                                    </svg>
-                                                </div>
-                                            </button>
+                                                hồng
+                                                @Model.MaDVT
+                                            </button>                                          
                                         </div>
                                     </div>
                                     <div class="flex items-center _283ldj">
@@ -429,13 +434,19 @@
                                 </div>
                                 <div class="product-rating-overview__filters">
                                     <div class="product-rating-overview__filter product-rating-overview__filter--active product-rating-overview__filter--all">tất cả</div>
-                                    <div class="product-rating-overview__filter">5 Sao (0)</div><div class="product-rating-overview__filter">4 Sao (0)</div><div class="product-rating-overview__filter">3 Sao (0)</div><div class="product-rating-overview__filter">2 Sao (0)</div><div class="product-rating-overview__filter">1 Sao (0)</div><div class="product-rating-overview__filter product-rating-overview__filter--with-comment">Có Bình luận (1)</div><div class="product-rating-overview__filter product-rating-overview__filter--with-photo">Có hình ảnh / video (1)</div>
+                                    <div class="product-rating-overview__filter">5 Sao (0)</div>
+                                    <div class="product-rating-overview__filter">4 Sao (0)</div>
+                                    <div class="product-rating-overview__filter">3 Sao (0)</div>
+                                    <div class="product-rating-overview__filter">2 Sao (0)</div>
+                                    <div class="product-rating-overview__filter">1 Sao (0)</div>
+                                    <div class="product-rating-overview__filter product-rating-overview__filter--with-comment">Có Bình luận (1)</div>
+                                    <div class="product-rating-overview__filter product-rating-overview__filter--with-photo">Có hình ảnh / video (1)</div>
                                 </div>
                             </div>
                             <div class="product-ratings__list">
                                 <div class="shopee-product-comment-list">
                                     <div class="shopee-product-rating">
-                                        <a class="shopee-product-rating__avatar" href="/shop/173167258">
+                                        <a class="shopee-product-rating__avatar" href="/user/profile">
                                             <div class="shopee-avatar">
                                                 <div class="shopee-avatar__placeholder">
                                                     <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon icon-headshot">
@@ -448,7 +459,7 @@
                                             </div>
                                         </a>
                                         <div class="shopee-product-rating__main">
-                                            <a class="shopee-product-rating__author-name" href="/shop/173167258">cocamint</a>
+                                            <a class="shopee-product-rating__author-name" href="/user/profile">dinhtruong</a>
                                             <div class="repeat-purchase-con">
                                                 <div class="shopee-product-rating__rating">
                                                     <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon icon-rating-solid--active icon-rating-solid">
@@ -468,8 +479,8 @@
                                                     </svg>
                                                 </div>
                                             </div>
-                                            <div class="shopee-product-rating__time">2022-01-04 21:05 | Phân loại hàng: cam</div>
-                                            <div class="_280jKz">Xe rất là đẹp và xịn sò luôn . Chủ shop lại rất nhiệt tình có tâm nữa . 5 sao , thật sự k có gì để mà chê đc cả . Perfect 🌟</div>
+                                            <div class="shopee-product-rating__time">2022-11-04 21:05 | Phân loại hàng: Kilogram</div>
+                                            <div class="_280jKz">Rau rất là sạch và tươi . Chủ shop lại rất nhiệt tình có tâm nữa . 5 sao , thật sự k có gì để mà chê đc cả . Perfect</div>
                                             <div class="shopee-product-rating__image-list-wrapper">
                                                 <div class="rating-media-list">
                                                     <div class="rating-media-list__container">
@@ -488,7 +499,8 @@
                                                                         </g>
                                                                     </svg>
                                                                 </div>
-                                                                <div class="shopee-rating-media-list-image__content" style="background-image: url(&quot;https://cf.shopee.vn/file/d9c3267119a0cf537cf352ae955896f9_tn&quot;);">
+                                                                <div class="shopee-rating-media-list-image__content">
+                                                                    <img src="~/images/sanpham/@Model.AnhSP" style="width: 82px; height: 82px; background-size: contain; background-repeat: no-repeat;" />
                                                                     <div class="shopee-rating-media-list-image__content--blur"> </div>
                                                                 </div>
                                                             </div>
@@ -554,7 +566,7 @@
                                                             </g>
                                                         </svg>
                                                     </div>
-                                                    <div class="shopee-product-rating__like-count">31</div>
+                                                    <div class="shopee-product-rating__like-count">0</div>
                                                 </div>
                                                 <div style="display: flex;">
                                                     <div class="shopee-product-rating__report-menu-button">
