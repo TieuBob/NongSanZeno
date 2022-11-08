@@ -5,6 +5,8 @@
     Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
 }
 
+<link rel="stylesheet" href="~/Content/Admin/admin.css">
+
 <h2 style="font-size: 26px; text-align: center;">Điều Chỉnh Thông Tin Loại Sản Phẩm</h2>
  
 @using (Html.BeginForm())
@@ -20,156 +22,10 @@
                 <input required type="text" name="TenLoaiSP" value="@Model.TenLoaiSP" />
             </div>
         </div>
+
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Lưu" class="btn btn-default" />
-                <a href="@Url.Action("DSloaisanpham","AdminSanPham")" class="btn btn-default">Back</a>
-            </div>
+            <div><input style="font-weight: bold" type="submit" value="Lưu" class="btn btn-default" /></div>
+            <div class="btn btn-default" style="font-weight:bold; color:white"><a href="/AdminSanPham/DSloaisanpham">Quay Lại</a></div>
         </div>
     </div>
 }
-
-
-<style>
-    h2 {
-        font-size: 26px;
-    }
-
-    .clear {
-        clear: both;
-    }
-
-    .tenanh {
-        width: 20%;
-    }
-
-    textarea, input, #MaloaiSP, #MaNCC {
-        color: #000000;
-        outline: none;
-        font-size: .9em;
-        padding: 1em 3em 1em 1em;
-        border: none;
-        margin-bottom: 20px;
-        margin-top: 10px;
-        background: rgba(255, 255, 255, 0.85);
-        width: 62%;
-        color: #000;
-        border-radius: 30px;
-        font-weight: 400;
-        font-family: 'Open Sans', sans-serif;
-        letter-spacing: 1px;
-        text-align: center
-    }
-
-
-
-    .tenanh:hover {
-        transform: none
-    }
-
-    .form-horizontal {
-        text-align: center;
-        justify-content: center;
-    }
-
-    .btn {
-        color: black;
-        background: #bbb37e;
-        border: none;
-        padding: .7em 20px;
-        outline: none;
-        width: 8%;
-        font-size: 1em;
-        cursor: pointer;
-        letter-spacing: 1px;
-        font-weight: 400;
-        font-family: 'Open Sans', sans-serif;
-        transition: 0.5s all;
-        -webkit-transition: 0.5s all;
-        -o-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -ms-transition: 0.5s all;
-        border-radius: 30px;
-        font-weight: bold;
-    }
-
-        .btn:hover {
-            color: #333333;
-            background: #96924f;
-        }
-
-    .return {
-        margin-left: 19%;
-        margin-top: 25px;
-        color: white;
-        background: #ea2858;
-        border: none;
-        padding: .7em 40px;
-        outline: none;
-        width: 22%;
-        font-size: 1em;
-        cursor: pointer;
-        letter-spacing: 1px;
-        font-weight: 400;
-        font-family: 'Open Sans', sans-serif;
-        transition: 0.5s all;
-        -webkit-transition: 0.5s all;
-        -o-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -ms-transition: 0.5s all;
-        border-radius: 30px;
-    }
-
-        .return:hover {
-            color: #ea2858;
-            background: white;
-        }
-
-    @@media(max-width: 1040px) {
-        .return {
-            padding: 0.7em 75px;
-            margin-top: 0px;
-            width: 44%;
-        }
-    }
-
-    @@media(max-width: 780px) {
-
-
-        .return {
-            padding: 0.7em 47px;
-            margin-top: 0px;
-            width: 44%;
-        }
-    }
-
-    @@media(max-width: 430px) {
-
-
-        .return {
-            margin-top: 0px;
-            width: 44%;
-            padding: 0.7em 25px;
-        }
-    }
-
-    @@media(max-width: 380px) {
-
-
-        .return {
-            margin-top: 0px;
-            width: 49%;
-            padding: 0.7em 24px;
-        }
-    }
-
-    @@media(max-width: 320px) {
-
-
-        .return {
-            margin-top: 0px;
-            width: 49%;
-            padding: 0.7em 14px;
-        }
-    }
-</style>

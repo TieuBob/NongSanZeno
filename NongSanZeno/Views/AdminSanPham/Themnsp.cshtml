@@ -5,7 +5,9 @@
     Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">THÊM NHÓM SẢN PHẨM MỚI</h2>
+<link rel="stylesheet" href="~/Content/Admin/admin.css">
+
+<h2 style="text-align:center">THÊM NHÓM SẢN PHẨM</h2>
 <hr />
 
 @using (Html.BeginForm("Thembanhkem", "AdminSanPham", FormMethod.Post, new { @enctype = "multipart/form-data" }))
@@ -21,102 +23,11 @@
                 @Html.ValidationMessageFor(model => model.TenNhom)
             </div>
         </div>
-
+        
         <div class="form-group">
-            <div class="form-actions no-color">
-                <div class="return">
-                    <input type="submit" value="Thêm Mới" class="btn btn-default" />
-                </div>
-                <div class="return">
-                    @Html.ActionLink("Quay Lại", "DSnhomsanpham")
-                </div>
-            </div>
+            <div><input style="font-weight: bold" type="submit" value="Thêm Mới" class="btn btn-default" /></div>
+            <div class="btn btn-default" style="font-weight:bold; color:white"><a href="/AdminSanPham/DSnhomsanpham">Quay Lại</a></div>
         </div>
 
     </div>
 }
-
-<style>
-    .return {
-        margin-left: 39%;
-        margin-top: 25px;
-        margin-bottom: 25px;
-        color: gray;
-        background: #ea2858;
-        border: none;
-        padding: 0.7em 95px;
-        outline: none;
-        width: 22%;
-        font-size: 1em;
-        cursor: pointer;
-        letter-spacing: 1px;
-        font-weight: 400;
-        font-family: 'Open Sans', sans-serif;
-        transition: 0.5s all;
-        -webkit-transition: 0.5s all;
-        -o-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -ms-transition: 0.5s all;
-        border-radius: 30px;
-        text-align: center
-    }
-
-        .return:hover {
-            color: #ea2858;
-            background: white;
-        }
-
-    @@media(max-width: 1040px) {
-        .return {
-            margin-left: 8%;
-            padding: 0.7em 90px;
-            margin-top: 0px;
-            width: 44%;
-        }
-    }
-
-    @@media(max-width: 780px) {
-
-
-        .return {
-            margin-left: 8%;
-            padding: 0.7em 60px;
-            margin-top: 0px;
-            width: 44%;
-        }
-    }
-
-    @@media(max-width: 430px) {
-
-
-        .return {
-            margin-left: 8%;
-            padding: 0.7em 37px;
-            margin-top: 0px;
-            width: 44%;
-            padding: 0.7em 35px;
-        }
-    }
-
-    @@media(max-width: 380px) {
-
-
-        .return {
-            margin-left: 6%;
-            margin-top: 0px;
-            width: 49%;
-            padding: 0.7em 35px;
-        }
-    }
-
-    @@media(max-width: 320px) {
-
-
-        .return {
-            margin-left: 6%;
-            margin-top: 0px;
-            width: 49%;
-            padding: 0.7em 25px;
-        }
-    }
-</style>

@@ -51,6 +51,7 @@
             </td>
             <td>
                 <a href="@Url.Action("XoaChiTietdonhang","AdminDonHang", new { id = item.MaDH })">Xoá</a>
+
             </td>
         </tr>
     }
@@ -58,8 +59,6 @@
 </table>
 <div class="space" style="display:flex;justify-content:space-around">
     <a class="return" href="@Url.Action("DSdonhang","AdminDonHang")">TRỞ VỀ</a>
-    @*@Html.ActionLink("Xoa chi tiet don dat hang","XoaTatCaChiTiet")*@
-    @*<a class="return" href="@Url.Action("XoaDonDatHang","ChucNang")">Xoá</a>*@
 </div>
 
 <style>
@@ -105,7 +104,7 @@
 
     .return {
         color: black;
-        background: #fffbb6;
+        background: #4e4e22;
         border: none;
         outline: none;
         padding: 1% 5% 1% 5%;
@@ -124,7 +123,7 @@
 
         .return:hover {
             color: #ffffd6;
-            background: #5b5c2f;
+            background: #958d5b;
         }
 
     @@media(max-width: 1024px) {

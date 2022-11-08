@@ -5,7 +5,9 @@
     Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
 }
 
-<h2 style="text-align:center">THÊM NHÀ CUNG CẤP MỚI</h2>
+<link rel="stylesheet" href="~/Content/Admin/admin.css">
+
+<h2 style="text-align:center">THÊM NHÀ CUNG CẤP</h2>
 <hr />
 
 @using (Html.BeginForm("ThemNcc", "AdminSanPham", FormMethod.Post, new { @enctype = "multipart/form-data" }))
@@ -23,14 +25,8 @@
         </div>
 
         <div class="form-group">
-            <div class="form-actions no-color">
-                <div class="return">
-                    <input type="submit" value="Thêm Mới" class="btn btn-default" />
-                </div>
-                <div class="return">
-                    @Html.ActionLink("Quay Lại", "DSnhacungcap")
-                </div>
-            </div>
+            <div><input style="font-weight: bold" type="submit" value="Thêm Mới" class="btn btn-default" /></div>
+            <div class="btn btn-default" style="font-weight:bold; color:white"><a href="/AdminSanPham/DSnhacungcap">Quay Lại</a></div>
         </div>
 
     </div>

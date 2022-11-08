@@ -148,6 +148,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Admin\admin.css" />
     <Content Include="Content\Cart\1179.d5dff76d181a796c.css" />
     <Content Include="Content\Cart\1714.89473d0cae7fbe83.css" />
     <Content Include="Content\Cart\2601.49ec27198e45bed5.css" />
