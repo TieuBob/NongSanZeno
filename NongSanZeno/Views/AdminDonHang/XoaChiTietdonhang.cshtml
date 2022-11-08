@@ -5,47 +5,36 @@
     Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
 }
 
+<link rel="stylesheet" href="~/Content/Admin/admin.css">
+
 <h3>Bạn chắc chắn muốn xóa chi tiết đơn hàng này ?</h3>
 <div>
     <h4>Chi tiết đơn hàng</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.MaDH)
+            Mã đơn hàng: @Html.DisplayFor(model => model.MaDH)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MaDH)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.MaSP)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MaSP)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.SoLuong)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.SoLuong)
-        </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DonGia)
+            Mã sản phẩm: @Html.DisplayFor(model => model.MaSP)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.DonGia)
-        </dd>
+        <dt>
+            Số lượng: @Html.DisplayFor(model => model.SoLuong)
+        </dt>
+
+        <dt>
+            Đơn giá: @Html.DisplayFor(model => model.DonGia)
+        </dt>
     </dl>
 
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
         <div class="form-actions no-color">
-            <input type="submit" value="Xoá" class="btn btn-default" /> |
+            <input type="submit" value="Xóa" class="btn btn-default" />
+            <div style="text-align:center"><a class="btn" href="/AdminDonHang/DSdonhang"> Trở về</a></div>
         </div>
     }
 </div>
@@ -61,8 +50,8 @@
         box-shadow: 0px 15px 15px 10px #808080;
     }
 
-    dt, dd {
-        color: white;
+    dt {
+        color: black;
         margin: 20px 10px;
     }
 
@@ -75,7 +64,7 @@
     .btn {
         margin-left: 8%;
         color: white;
-        background: #ea2858;
+        background: #4e4e22;
         border: none;
         padding: .7em 20px;
         outline: none;
@@ -95,35 +84,8 @@
     }
 
         .btn:hover {
-            color: #ea2858;
-            background: white;
-        }
-
-    .return {
-        margin-left: 8%;
-        color: white;
-        background: #ea2858;
-        border: none;
-        padding: .7em 83px;
-        outline: none;
-        width: 20%;
-        font-size: 1em;
-        cursor: pointer;
-        letter-spacing: 1px;
-        font-weight: 400;
-        font-family: 'Open Sans', sans-serif;
-        transition: 0.5s all;
-        -webkit-transition: 0.5s all;
-        -o-transition: 0.5s all;
-        -moz-transition: 0.5s all;
-        -ms-transition: 0.5s all;
-        border-radius: 30px;
-        float: left;
-    }
-
-        .return:hover {
-            color: #ea2858;
-            background: white;
+            color: white;
+            background: #958d5b;
         }
 
     @@media(max-width: 1040px) {

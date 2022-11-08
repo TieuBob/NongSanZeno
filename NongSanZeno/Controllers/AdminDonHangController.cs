@@ -31,7 +31,7 @@ namespace NongSanZeno.Controllers
         [HttpGet]
         public ActionResult DSdonhang(int? page)
         {
-            int pagesize = 5;
+            int pagesize = 8;
             int pageNum = (page ?? 1);
             var GioHienTai = DateTime.Today;
             var list = data.tbDonHangs.Where(s => s.NgayDat >= GioHienTai).OrderByDescending(i => i.NgayDat).ToList();
@@ -40,7 +40,7 @@ namespace NongSanZeno.Controllers
         [HttpPost]
         public ActionResult DSdonhang(string date, string date2, int? page)
         {
-            int pagesize = 5;
+            int pagesize = 8;
             int pageNum = (page ?? 1);
             var Date = DateTime.Parse(date);
 

@@ -67,7 +67,8 @@
                 @Html.DisplayFor(modelItem => item.tbTinhTrangDH.TenTTDH)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TongTien)
+                @*@Html.DisplayFor(modelItem => item.TongTien)*@
+                ₫@String.Format("{0:0,0 }", item.TongTien)
             </td>
             @*<td class="tool">
                 <a href="@Url.Action("ChiTietdonhang", "AdminDonHang", new { id = item.MaDH })">Chi tiết</a> |

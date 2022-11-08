@@ -47,11 +47,11 @@
                 @Html.DisplayFor(modelItem => item.SoLuong)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DonGia)
+                ₫@String.Format("{0:0,0 }", item.DonGia)
             </td>
             <td>
-                <a href="@Url.Action("XoaChiTietdonhang","AdminDonHang", new { id = item.MaDH })">Xoá</a>
-
+                @*<a href="@Url.Action("XoaChiTietdonhang","AdminDonHang", new { id = item.MaDH })">Xoá</a>*@
+                @Html.ActionLink("Xóa", "XoaChiTietdonhang", new { id = item.MaDH }, new { @class = "btn btn-success" })
             </td>
         </tr>
     }
@@ -62,6 +62,11 @@
 </div>
 
 <style>
+    .btn-success {
+        color: #fff;
+        background-color: #006400;
+        border-color: #006400;
+    }
     table {
         width: 100%;
         margin-bottom: 50px;
@@ -103,7 +108,7 @@
         }
 
     .return {
-        color: black;
+        color: white;
         background: #4e4e22;
         border: none;
         outline: none;
@@ -122,7 +127,7 @@
     }
 
         .return:hover {
-            color: #ffffd6;
+            color: white;
             background: #958d5b;
         }
 
