@@ -17,11 +17,10 @@
   <Table Name="dbo.tbBinhLuan" Member="tbBinhLuans">
     <Type Name="tbBinhLuan">
       <Column Name="MaBL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenBL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TenKH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NoiDung" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
-      <Column Name="MaSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbSanPham_tbBinhLuan" Member="tbSanPham" ThisKey="MaSP" OtherKey="MaSP" Type="tbSanPham" IsForeignKey="true" />
+      <Column Name="MaDH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tbDonHang_tbBinhLuan" Member="tbDonHang" ThisKey="MaDH" OtherKey="MaDH" Type="tbDonHang" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.tbChiTietDonHang" Member="tbChiTietDonHangs">
@@ -45,6 +44,7 @@
       <Column Name="GhiChu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
       <Column Name="TongTien" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="MaTTDH" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tbDonHang_tbBinhLuan" Member="tbBinhLuans" ThisKey="MaDH" OtherKey="MaDH" Type="tbBinhLuan" />
       <Association Name="tbDonHang_tbChiTietDonHang" Member="tbChiTietDonHangs" ThisKey="MaDH" OtherKey="MaDH" Type="tbChiTietDonHang" />
       <Association Name="tbTinhTrangDH_tbDonHang" Member="tbTinhTrangDH" ThisKey="MaTTDH" OtherKey="MaTTDH" Type="tbTinhTrangDH" IsForeignKey="true" />
       <Association Name="tbKhachHang_tbDonHang" Member="tbKhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="tbKhachHang" IsForeignKey="true" />
@@ -116,12 +116,6 @@
       <Association Name="tbKhachHang_tbPhanHoiKH" Member="tbKhachHang" ThisKey="MaKH" OtherKey="MaKH" Type="tbKhachHang" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.tbQuangCao" Member="tbQuangCaos">
-    <Type Name="tbQuangCao">
-      <Column Name="MaQuangCao" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Anh" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.tbSanPham" Member="tbSanPhams">
     <Type Name="tbSanPham">
       <Column Name="MaSP" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -133,7 +127,6 @@
       <Column Name="MaNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaLoaiSP" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MaDVT" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="tbSanPham_tbBinhLuan" Member="tbBinhLuans" ThisKey="MaSP" OtherKey="MaSP" Type="tbBinhLuan" />
       <Association Name="tbSanPham_tbChiTietDonHang" Member="tbChiTietDonHangs" ThisKey="MaSP" OtherKey="MaSP" Type="tbChiTietDonHang" />
       <Association Name="tbSanPham_tbLoHang" Member="tbLoHangs" ThisKey="MaSP" OtherKey="MaSP" Type="tbLoHang" />
       <Association Name="tbDonViTinh_tbSanPham" Member="tbDonViTinh" ThisKey="MaDVT" OtherKey="MaDVT" Type="tbDonViTinh" IsForeignKey="true" />

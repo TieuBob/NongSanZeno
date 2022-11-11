@@ -66,9 +66,6 @@ namespace NongSanZeno.Models
     partial void InserttbPhanHoiKH(tbPhanHoiKH instance);
     partial void UpdatetbPhanHoiKH(tbPhanHoiKH instance);
     partial void DeletetbPhanHoiKH(tbPhanHoiKH instance);
-    partial void InserttbQuangCao(tbQuangCao instance);
-    partial void UpdatetbQuangCao(tbQuangCao instance);
-    partial void DeletetbQuangCao(tbQuangCao instance);
     partial void InserttbSanPham(tbSanPham instance);
     partial void UpdatetbSanPham(tbSanPham instance);
     partial void DeletetbSanPham(tbSanPham instance);
@@ -197,14 +194,6 @@ namespace NongSanZeno.Models
 			get
 			{
 				return this.GetTable<tbPhanHoiKH>();
-			}
-		}
-		
-		public System.Data.Linq.Table<tbQuangCao> tbQuangCaos
-		{
-			get
-			{
-				return this.GetTable<tbQuangCao>();
 			}
 		}
 		
@@ -449,15 +438,13 @@ namespace NongSanZeno.Models
 		
 		private int _MaBL;
 		
-		private string _TenBL;
-		
-		private string _Email;
+		private string _TenKH;
 		
 		private string _NoiDung;
 		
-		private System.Nullable<int> _MaSP;
+		private System.Nullable<int> _MaDH;
 		
-		private EntityRef<tbSanPham> _tbSanPham;
+		private EntityRef<tbDonHang> _tbDonHang;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -465,19 +452,17 @@ namespace NongSanZeno.Models
     partial void OnCreated();
     partial void OnMaBLChanging(int value);
     partial void OnMaBLChanged();
-    partial void OnTenBLChanging(string value);
-    partial void OnTenBLChanged();
-    partial void OnEmailChanging(string value);
-    partial void OnEmailChanged();
+    partial void OnTenKHChanging(string value);
+    partial void OnTenKHChanged();
     partial void OnNoiDungChanging(string value);
     partial void OnNoiDungChanged();
-    partial void OnMaSPChanging(System.Nullable<int> value);
-    partial void OnMaSPChanged();
+    partial void OnMaDHChanging(System.Nullable<int> value);
+    partial void OnMaDHChanged();
     #endregion
 		
 		public tbBinhLuan()
 		{
-			this._tbSanPham = default(EntityRef<tbSanPham>);
+			this._tbDonHang = default(EntityRef<tbDonHang>);
 			OnCreated();
 		}
 		
@@ -501,42 +486,22 @@ namespace NongSanZeno.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenBL", DbType="NVarChar(50)")]
-		public string TenBL
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKH", DbType="NVarChar(50)")]
+		public string TenKH
 		{
 			get
 			{
-				return this._TenBL;
+				return this._TenKH;
 			}
 			set
 			{
-				if ((this._TenBL != value))
+				if ((this._TenKH != value))
 				{
-					this.OnTenBLChanging(value);
+					this.OnTenKHChanging(value);
 					this.SendPropertyChanging();
-					this._TenBL = value;
-					this.SendPropertyChanged("TenBL");
-					this.OnTenBLChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this.OnEmailChanging(value);
-					this.SendPropertyChanging();
-					this._Email = value;
-					this.SendPropertyChanged("Email");
-					this.OnEmailChanged();
+					this._TenKH = value;
+					this.SendPropertyChanged("TenKH");
+					this.OnTenKHChanged();
 				}
 			}
 		}
@@ -561,60 +526,60 @@ namespace NongSanZeno.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaSP", DbType="Int")]
-		public System.Nullable<int> MaSP
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaDH", DbType="Int")]
+		public System.Nullable<int> MaDH
 		{
 			get
 			{
-				return this._MaSP;
+				return this._MaDH;
 			}
 			set
 			{
-				if ((this._MaSP != value))
+				if ((this._MaDH != value))
 				{
-					if (this._tbSanPham.HasLoadedOrAssignedValue)
+					if (this._tbDonHang.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnMaSPChanging(value);
+					this.OnMaDHChanging(value);
 					this.SendPropertyChanging();
-					this._MaSP = value;
-					this.SendPropertyChanged("MaSP");
-					this.OnMaSPChanged();
+					this._MaDH = value;
+					this.SendPropertyChanged("MaDH");
+					this.OnMaDHChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbSanPham_tbBinhLuan", Storage="_tbSanPham", ThisKey="MaSP", OtherKey="MaSP", IsForeignKey=true)]
-		public tbSanPham tbSanPham
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbDonHang_tbBinhLuan", Storage="_tbDonHang", ThisKey="MaDH", OtherKey="MaDH", IsForeignKey=true)]
+		public tbDonHang tbDonHang
 		{
 			get
 			{
-				return this._tbSanPham.Entity;
+				return this._tbDonHang.Entity;
 			}
 			set
 			{
-				tbSanPham previousValue = this._tbSanPham.Entity;
+				tbDonHang previousValue = this._tbDonHang.Entity;
 				if (((previousValue != value) 
-							|| (this._tbSanPham.HasLoadedOrAssignedValue == false)))
+							|| (this._tbDonHang.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._tbSanPham.Entity = null;
+						this._tbDonHang.Entity = null;
 						previousValue.tbBinhLuans.Remove(this);
 					}
-					this._tbSanPham.Entity = value;
+					this._tbDonHang.Entity = value;
 					if ((value != null))
 					{
 						value.tbBinhLuans.Add(this);
-						this._MaSP = value.MaSP;
+						this._MaDH = value.MaDH;
 					}
 					else
 					{
-						this._MaSP = default(Nullable<int>);
+						this._MaDH = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("tbSanPham");
+					this.SendPropertyChanged("tbDonHang");
 				}
 			}
 		}
@@ -880,6 +845,8 @@ namespace NongSanZeno.Models
 		
 		private int _MaTTDH;
 		
+		private EntitySet<tbBinhLuan> _tbBinhLuans;
+		
 		private EntitySet<tbChiTietDonHang> _tbChiTietDonHangs;
 		
 		private EntityRef<tbTinhTrangDH> _tbTinhTrangDH;
@@ -912,6 +879,7 @@ namespace NongSanZeno.Models
 		
 		public tbDonHang()
 		{
+			this._tbBinhLuans = new EntitySet<tbBinhLuan>(new Action<tbBinhLuan>(this.attach_tbBinhLuans), new Action<tbBinhLuan>(this.detach_tbBinhLuans));
 			this._tbChiTietDonHangs = new EntitySet<tbChiTietDonHang>(new Action<tbChiTietDonHang>(this.attach_tbChiTietDonHangs), new Action<tbChiTietDonHang>(this.detach_tbChiTietDonHangs));
 			this._tbTinhTrangDH = default(EntityRef<tbTinhTrangDH>);
 			this._tbKhachHang = default(EntityRef<tbKhachHang>);
@@ -1106,6 +1074,19 @@ namespace NongSanZeno.Models
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbDonHang_tbBinhLuan", Storage="_tbBinhLuans", ThisKey="MaDH", OtherKey="MaDH")]
+		public EntitySet<tbBinhLuan> tbBinhLuans
+		{
+			get
+			{
+				return this._tbBinhLuans;
+			}
+			set
+			{
+				this._tbBinhLuans.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbDonHang_tbChiTietDonHang", Storage="_tbChiTietDonHangs", ThisKey="MaDH", OtherKey="MaDH")]
 		public EntitySet<tbChiTietDonHang> tbChiTietDonHangs
 		{
@@ -1205,6 +1186,18 @@ namespace NongSanZeno.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_tbBinhLuans(tbBinhLuan entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbDonHang = this;
+		}
+		
+		private void detach_tbBinhLuans(tbBinhLuan entity)
+		{
+			this.SendPropertyChanging();
+			entity.tbDonHang = null;
 		}
 		
 		private void attach_tbChiTietDonHangs(tbChiTietDonHang entity)
@@ -2473,92 +2466,6 @@ namespace NongSanZeno.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbQuangCao")]
-	public partial class tbQuangCao : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _MaQuangCao;
-		
-		private string _Anh;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaQuangCaoChanging(int value);
-    partial void OnMaQuangCaoChanged();
-    partial void OnAnhChanging(string value);
-    partial void OnAnhChanged();
-    #endregion
-		
-		public tbQuangCao()
-		{
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaQuangCao", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int MaQuangCao
-		{
-			get
-			{
-				return this._MaQuangCao;
-			}
-			set
-			{
-				if ((this._MaQuangCao != value))
-				{
-					this.OnMaQuangCaoChanging(value);
-					this.SendPropertyChanging();
-					this._MaQuangCao = value;
-					this.SendPropertyChanged("MaQuangCao");
-					this.OnMaQuangCaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Anh", DbType="NVarChar(50)")]
-		public string Anh
-		{
-			get
-			{
-				return this._Anh;
-			}
-			set
-			{
-				if ((this._Anh != value))
-				{
-					this.OnAnhChanging(value);
-					this.SendPropertyChanging();
-					this._Anh = value;
-					this.SendPropertyChanged("Anh");
-					this.OnAnhChanged();
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbSanPham")]
 	public partial class tbSanPham : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2582,8 +2489,6 @@ namespace NongSanZeno.Models
 		private System.Nullable<int> _MaLoaiSP;
 		
 		private System.Nullable<int> _MaDVT;
-		
-		private EntitySet<tbBinhLuan> _tbBinhLuans;
 		
 		private EntitySet<tbChiTietDonHang> _tbChiTietDonHangs;
 		
@@ -2621,7 +2526,6 @@ namespace NongSanZeno.Models
 		
 		public tbSanPham()
 		{
-			this._tbBinhLuans = new EntitySet<tbBinhLuan>(new Action<tbBinhLuan>(this.attach_tbBinhLuans), new Action<tbBinhLuan>(this.detach_tbBinhLuans));
 			this._tbChiTietDonHangs = new EntitySet<tbChiTietDonHang>(new Action<tbChiTietDonHang>(this.attach_tbChiTietDonHangs), new Action<tbChiTietDonHang>(this.detach_tbChiTietDonHangs));
 			this._tbLoHangs = new EntitySet<tbLoHang>(new Action<tbLoHang>(this.attach_tbLoHangs), new Action<tbLoHang>(this.detach_tbLoHangs));
 			this._tbDonViTinh = default(EntityRef<tbDonViTinh>);
@@ -2822,19 +2726,6 @@ namespace NongSanZeno.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbSanPham_tbBinhLuan", Storage="_tbBinhLuans", ThisKey="MaSP", OtherKey="MaSP")]
-		public EntitySet<tbBinhLuan> tbBinhLuans
-		{
-			get
-			{
-				return this._tbBinhLuans;
-			}
-			set
-			{
-				this._tbBinhLuans.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="tbSanPham_tbChiTietDonHang", Storage="_tbChiTietDonHangs", ThisKey="MaSP", OtherKey="MaSP")]
 		public EntitySet<tbChiTietDonHang> tbChiTietDonHangs
 		{
@@ -2981,18 +2872,6 @@ namespace NongSanZeno.Models
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
-		}
-		
-		private void attach_tbBinhLuans(tbBinhLuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbSanPham = this;
-		}
-		
-		private void detach_tbBinhLuans(tbBinhLuan entity)
-		{
-			this.SendPropertyChanging();
-			entity.tbSanPham = null;
 		}
 		
 		private void attach_tbChiTietDonHangs(tbChiTietDonHang entity)
