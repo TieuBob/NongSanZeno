@@ -37,7 +37,10 @@ namespace NongSanZeno.Controllers
 
         public ActionResult KhuyenMai()
         {
-            return View();
+            var sanpham = Laysanpham(42);
+            string s = Request.QueryString["s"];
+            if (!string.IsNullOrEmpty(s)) sanpham = data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(42).Where(w => w.TenSP.Contains(s)).ToList();
+            return View(sanpham);
         }
         [HttpGet]
         public ActionResult LienHe()
