@@ -19,14 +19,10 @@
     <meta name="viewport" content="width=1240,shrink-to-fit=no">
     <meta name="shopee:git-sha" content="e5d239214aed0b07b89117865f871c165df6a5e3">
     <meta name="shopee:version" content="pc-v5.26.0">
-    <link rel="preload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/bundle.771defbd521b8480.css" as="style" data-modern="true">
-    <link rel="modulepreload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/webpack-runtime.2a12239ada5ee50b.js" data-modern="true">
-    <link rel="modulepreload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/785.0e338541bc71e4db.js" data-modern="true">
-    <link rel="modulepreload" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/bundle.d708e928e3fd455c.js" data-modern="true">
-    @*<link rel="preload" href="~/shopee/shopee-pcmall-live-sg//assets/bundle.771defbd521b8480.css" as="style" data-modern="true">
-        <link rel="modulepreload" href="~/shopee/shopee-pcmall-live-sg//assets/webpack-runtime.2a12239ada5ee50b.js" data-modern="true">
-        <link rel="modulepreload" href="~/shopee/shopee-pcmall-live-sg//assets/785.0e338541bc71e4db.js" data-modern="true">
-        <link rel="modulepreload" href="~/shopee/shopee-pcmall-live-sg//assets/bundle.d708e928e3fd455c.js" data-modern="true">*@
+    <link rel="preload" href="~/Content/shop/shopee-pcmall-live-sg/assets/bundle.771defbd521b8480.css" as="style" data-modern="true">
+    <link rel="modulepreload" href="~/Content/shop/shopee-pcmall-live-sg/assets/webpack-runtime.2a12239ada5ee50b.js" data-modern="true">
+    <link rel="modulepreload" href="~/Content/shop/shopee-pcmall-live-sg/assets/785.0e338541bc71e4db.js" data-modern="true">
+    <link rel="modulepreload" href="~/Content/shop/shopee-pcmall-live-sg/assets/bundle.d708e928e3fd455c.js" data-modern="true">
 
     <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/linkid.js"></script>
     <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-M32T05RVZT&amp;l=dataLayer&amp;cx=c"></script>
@@ -184,56 +180,42 @@
     </script>
     <script>!function () { if (self.document) { var e = self.document.createElement("script"), t = "noModule" in e, n = t; Object.defineProperty(self, "SUPPORT_MODULE", { get: function () { return n }, configurable: !1, enumerable: !1 }), !t && "onbeforeload" in e && (self.document.addEventListener("beforeload", (function (t) { if (t.target === e) n = !0; else if (!t.target.hasAttribute("nomodule") || !n) return; t.preventDefault() }), !0), e.type = "module", e.src = ".", self.document.head.appendChild(e), e.remove()) } }();</script>
     <script nomodule="">document.documentMode <= 10 && location.replace("/unsupported.html")</script>
-    <script nomodule="" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/polyfill-legacy.001061db45c9310f.legacy.js"></script>
-    @*<script nomodule="" src="~/shopee/shopee-pcmall-live-sg//assets/polyfill-legacy.001061db45c9310f.legacy.js"></script>*@
+    <script nomodule="" src="~/Content/shop/shopee-pcmall-live-sg/assets/polyfill-legacy.001061db45c9310f.legacy.js"></script>
 
-    <script>!function () { var t = document && document.querySelector('script[type^="text/shopee-short-url-checked"]'), e = !(!t || "1" !== t.textContent), o = (location && location.origin || "").replace(/^(https?:\/\/)lite\./, (function (t, e) { return e })); function n() { document && document.body && (document.body.style.visibility = "visible") } function a(t, e) { void 0 === e && (e = !1); var a = function (t) { var e = document.createElement("a"); return e.href = t, { pathname: e.pathname, hash: e.hash, search: e.search, protocol: e.protocol } }(t), r = a.pathname, i = a.hash; if (e && (document && document.body && (document.body.style.visibility = "hidden"), setTimeout(n, 5e3)), "/" !== r && !function (t) { return "/supermarket" === t || "/supermarket/" === t }(r) && function (t) { return 1 === t.split("/").filter(Boolean).length }(r) && r.length < 256 && "" === i && 0 === r.lastIndexOf("/")) { var s = new XMLHttpRequest; s.open("GET", o + "/api/v4/pages/is_short_url/?path=" + r.replace("/", "")), s.setRequestHeader("Content-Type", "application/json"), s.setRequestHeader("Accept", "application/json"), s.onreadystatechange = function () { if (4 === this.readyState) if (200 === this.status) { var t = JSON.parse(this.responseText); t && t.data && t.data.url ? (console.log("Redirecting via short url to: res.data.url"), location.href = t.data.url) : e && n() } else e && n() }, s.send() } } var r = window.history.pushState; window.history.pushState = function () { var t = arguments[2]; t && a(t), r.apply(history, arguments) }; var i = window.history.replaceState; window.history.replaceState = function () { var t = arguments[2]; t && a(t), i.apply(history, arguments) }, e || a(location.href, !0) }();</script>
+    <script>
+        !function () { var t = document && document.querySelector('script[type^="text/shopee-short-url-checked"]'), e = !(!t || "1" !== t.textContent), o = (location && location.origin || "").replace(/^(https?:\/\/)lite\./, (function (t, e) { return e })); function n() { document && document.body && (document.body.style.visibility = "visible") } function a(t, e) { void 0 === e && (e = !1); var a = function (t) { var e = document.createElement("a"); return e.href = t, { pathname: e.pathname, hash: e.hash, search: e.search, protocol: e.protocol } }(t), r = a.pathname, i = a.hash; if (e && (document && document.body && (document.body.style.visibility = "hidden"), setTimeout(n, 5e3)), "/" !== r && !function (t) { return "/supermarket" === t || "/supermarket/" === t }(r) && function (t) { return 1 === t.split("/").filter(Boolean).length }(r) && r.length < 256 && "" === i && 0 === r.lastIndexOf("/")) { var s = new XMLHttpRequest; s.open("GET", o + "/api/v4/pages/is_short_url/?path=" + r.replace("/", "")), s.setRequestHeader("Content-Type", "application/json"), s.setRequestHeader("Accept", "application/json"), s.onreadystatechange = function () { if (4 === this.readyState) if (200 === this.status) { var t = JSON.parse(this.responseText); t && t.data && t.data.url ? (console.log("Redirecting via short url to: res.data.url"), location.href = t.data.url) : e && n() } else e && n() }, s.send() } } var r = window.history.pushState; window.history.pushState = function () { var t = arguments[2]; t && a(t), r.apply(history, arguments) }; var i = window.history.replaceState; window.history.replaceState = function () { var t = arguments[2]; t && a(t), i.apply(history, arguments) }, e || a(location.href, !0) }();
+    </script>
     <script>if (window.ga = window.ga || function () { (ga.q = ga.q || []).push(arguments) }, ga.l = +new Date, window.PerformanceObserver) try { var observer = new window.PerformanceObserver((function (e) { for (var r = e.getEntries(), n = 0; n < r.length; n++) { var a = r[n], i = a.name, t = Math.round(a.startTime + a.duration); ga("send", { hitType: "timing", timingCategory: "Performance Metrics", timingVar: i, timingValue: t }) } })); observer.observe({ entryTypes: ["paint"] }) } catch (e) { }</script>
     <script>"loading" in HTMLImageElement.prototype ? document.addEventListener("DOMContentLoaded", (function () { document.querySelectorAll("img[loading].lazyload").forEach((function (e) { e.src = e.dataset.src })) })) : document.write('<script type="text/javascript" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/polyfill.6eeeee64c6017caa.js"><\/script>')</script>
-    <script>window.MutationObserver || document.write('<script type="text/javascript" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/polyfill.909f7922f04e46f7.js"><\/script>')</script>
+    <script>window.MutationObserver || document.write('<script type="text/javascript" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/assets/polyfill.909f7922f04e46f7.js"><\/script>')</script>
     <script>"IntersectionObserver" in window && "IntersectionObserverEntry" in window && "intersectionRatio" in window.IntersectionObserverEntry.prototype && "isIntersecting" in window.IntersectionObserverEntry.prototype || document.write('<script type="text/javascript" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/polyfill.e74248e871a636a1.js"><\/script>')</script>
     <script>!function () { var e = document.createElement("div").style; e.setProperty && e.setProperty("--x", "x"), e.getPropertyValue && "x" === e.getPropertyValue("--x") || (document.write('<script type="text/javascript" src="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/polyfill.0b761ff65aca5425.js"><\/script>'), document.write("<script>window.cssVars({preserveVars:!0,watch:!0});<\/script>")) }()</script>
-    <link type="application/opensearchdescription+xml" rel="search" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/b25e10cdd951cc747e7eec62679d438f.xml">
+    <link type="application/opensearchdescription+xml" rel="search" href="~/Content/shop/shopee-pcmall-live-sg/assets/b25e10cdd951cc747e7eec62679d438f.xml">
     <link rel="dns-prefetch" href="//cf.shopee.vn/">
     <link rel="dns-prefetch" href="//deo.shopeemobile.com/shopee/">
     <link rel="dns-prefetch" href="//cv.shopee.vn/">
-    <script src="https://deo.shopeemobile.com/shopee/shopee-trackingsdk-live-sg/index.js"></script>
-    @*<script src="~/shopee/shopee-trackingsdk-live-sg/index.js"></script>*@
+    <script src="~/Content/shop/shopee-trackingsdk-live-sg/index.js"></script>
 
     <style></style>
-    <script id="gtm-script" data-locale="vn" data-gtm-id="GTM-WJZQSJF">!function (t, e, a, n) { t[n] = []; var o = ["PL", "ES"].indexOf(__LOCALE__) >= 0, r = o ? "denied" : "granted"; !function () { dataLayer.push(arguments) }("consent", "default", { consent_analytical: r, consent_functional: r, consent_advertising: r, consent_thirdparty_google: r, consent_thirdparty_tiktok: r, wait_for_update: o ? 15e3 : 0 }); var d = document.currentScript || document.getElementById("gtm-script"); if (d) { var i = d.getAttribute("data-locale"), c = d.getAttribute("data-gtm-id"), s = d.getAttribute("data-delay-load"), u = "", g = 0; s && (u = "delay", g = 5e3), t[n] = t[n] || []; var m = Date.now(), _ = { "gtm.start": m, event: "gtm.js", country: i }; u && (_.userGroup = u), t[n].push(_); var l = !1; t.__shopeeLoadGTM = function () { l || (l = !0, g = Math.max(0, Math.min(g, g - (Date.now() - m))), setTimeout((function () { var t = e.getElementsByTagName(a)[0], n = e.createElement(a); n.async = !0, n.src = "https://www.googletagmanager.com/gtm.js?id=" + c, t.parentNode.insertBefore(n, t) }), g)) }, o || t.__shopeeLoadGTM() } }(window, document, "script", "dataLayer");</script>
-    <link rel="stylesheet" data-modern="true" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg//assets/bundle.771defbd521b8480.css">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col22.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col60.1665065262.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col262.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col115.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col159.1666774034.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col134.1657694310.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col57.1665744593.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col46.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col35.1666767567.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col516.1657695376.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col26.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col34.1657259124.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col96.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col25.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col179.1664877711.json">
-    @*<link rel="stylesheet" data-modern="true" href="~/shopee/shopee-pcmall-live-sg//assets/bundle.771defbd521b8480.css">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col22.1655981629.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col60.1665065262.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col262.1655981629.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col115.1655981629.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col159.1666774034.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col134.1657694310.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col57.1665744593.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col46.1655981629.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col35.1666767567.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col516.1657695376.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col26.1655981629.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col34.1657259124.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col96.1655981629.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col25.1655981629.json">
-        <link rel="prefetch" as="fetch" href="~/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col179.1664877711.json">*@
+    <script id="gtm-script" data-locale="vn" data-gtm-id="GTM-WJZQSJF">
+        !function (t, e, a, n) { t[n] = []; var o = ["PL", "ES"].indexOf(__LOCALE__) >= 0, r = o ? "denied" : "granted"; !function () { dataLayer.push(arguments) }("consent", "default", { consent_analytical: r, consent_functional: r, consent_advertising: r, consent_thirdparty_google: r, consent_thirdparty_tiktok: r, wait_for_update: o ? 15e3 : 0 }); var d = document.currentScript || document.getElementById("gtm-script"); if (d) { var i = d.getAttribute("data-locale"), c = d.getAttribute("data-gtm-id"), s = d.getAttribute("data-delay-load"), u = "", g = 0; s && (u = "delay", g = 5e3), t[n] = t[n] || []; var m = Date.now(), _ = { "gtm.start": m, event: "gtm.js", country: i }; u && (_.userGroup = u), t[n].push(_); var l = !1; t.__shopeeLoadGTM = function () { l || (l = !0, g = Math.max(0, Math.min(g, g - (Date.now() - m))), setTimeout((function () { var t = e.getElementsByTagName(a)[0], n = e.createElement(a); n.async = !0, n.src = "https://www.googletagmanager.com/gtm.js?id=" + c, t.parentNode.insertBefore(n, t) }), g)) }, o || t.__shopeeLoadGTM() } }(window, document, "script", "dataLayer");
+    </script>
+    <link rel="stylesheet" data-modern="true" href="~/Content/shop/shopee-pcmall-live-sg/assets/bundle.771defbd521b8480.css">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col22.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col60.1665065262.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col262.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col115.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col159.1666774034.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col134.1657694310.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col57.1665744593.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col46.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col35.1666767567.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col516.1657695376.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col26.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col34.1657259124.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col96.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col25.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col179.1664877711.json">
 
     <style class="coc-coc-fonts">
         @*@media screen {@font-face {
@@ -283,7 +265,9 @@
     <meta name="theme-color" content="#f53d2d" data-rh="true">
     <meta property="og:title" content="Nông Sản Zeno Việt Nam" data-rh="true">
     <link rel="icon" href="~/images/logo.png">
-    @*<script type="application/ld+json" data-rh="true">{"@context":"http://schema.org","@type":"WebSite","url":"https://shopee.vn","potentialAction":{"@type":"SearchAction","target":"/search?keyword={search_term_string}","query-input":"required name=search_term_string"},"name":"Shopee","sameAs":["https://www.facebook.com/ShopeeVN","https://www.instagram.com/Shopee_VN/","https://www.youtube.com/channel/UCKcxoGpxOJx3nt83MCG-nuQ","https://play.google.com/store/apps/details?id=com.shopee.vn","https://itunes.apple.com/VN/app/id959841449"]}</script>*@
+    <script type="application/ld+json" data-rh="true">
+        @*{"@context":"http://schema.org","@type":"WebSite","url":"https://shopee.vn","potentialAction":{"@type":"SearchAction","target":"/search?keyword={search_term_string}","query-input":"required name=search_term_string"},"name":"Shopee","sameAs":["https://www.facebook.com/ShopeeVN","https://www.instagram.com/Shopee_VN/","https://www.youtube.com/channel/UCKcxoGpxOJx3nt83MCG-nuQ","https://play.google.com/store/apps/details?id=com.shopee.vn","https://itunes.apple.com/VN/app/id959841449"]}*@
+    </script>
     <style>
 .--savior-overlay-transform-reset {
   transform: none !important;
@@ -426,10 +410,10 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
   }
 }*@
     </style>
-    <link rel="stylesheet" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/homepage/pcmall-homepage.f85d6475c4de93381fb0.css">
-    <script type="text/javascript" id="sp-af-c9349935" src="https://deo.shopeemobile.com/shopee/web-sdk/js/live/36ddfa55f2da93ccff3bad19fe0466c7ee5b12a2.js"></script>
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col38.1655981629.json">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col456.1655981629.json">
+    <link rel="stylesheet" href="~/Content/shop/shopee-pcmall-live-sg/homepage/pcmall-homepage.f85d6475c4de93381fb0.css">
+    <script type="text/javascript" id="sp-af-c9349935" src="~/Content/shop/web-sdk/js/live/36ddfa55f2da93ccff3bad19fe0466c7ee5b12a2.js"></script>
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col38.1655981629.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col456.1655981629.json">
     <link rel="canonical" href="https://shopee.vn" data-rh="true">
     <meta name="robots" content="all" data-rh="true">
     <meta property="og:type" content="website" data-rh="true">
@@ -476,12 +460,12 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
     </style>
     <meta http-equiv="origin-trial" content="A9+ldib+sKhGj2FcIjq5GnvBZFuIiXID0+NkE6k7cEk71MhaHFGqo3wUlUFmZ6d9w0KPwx9UxGiCTYWtRnTGDQkAAACAeyJvcmlnaW4iOiJodHRwczovL2NyaXRlby5uZXQ6NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY4MDY1Mjc5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
     <meta http-equiv="origin-trial" content="AzLNuh8GFzfIOcwvhEg7Ymr7YCzlYVTKeD7i2iETABbRf+sL2FAx+r+HlTtxSi1zgUFxBlJVoxgLjuhqiwTjAw4AAACAeyJvcmlnaW4iOiJodHRwczovL2NyaXRlby5jb206NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY4MDY1Mjc5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
-    <link rel="stylesheet" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/flashsale/849.0d4705bc202f74f710c1.legacy.css">
-    <link rel="stylesheet" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/flashsale/649.e5e34359b351d0bdb6b8.legacy.css">
-    <link rel="stylesheet" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/flashsale/pcmall-flashsale-entry.b57a08a45958e37b98e0.legacy.css">
-    <link rel="stylesheet" href="https://deo.shopeemobile.com/shopee/shopee-pcmall-live-sg/rcmd/pcmall-rcmd-daily-discover-module.e3992020e3eb5ecfdad3.legacy.css">
+    <link rel="stylesheet" href="~/Content/shop/shopee-pcmall-live-sg/flashsale/849.0d4705bc202f74f710c1.legacy.css">
+    <link rel="stylesheet" href="~/Content/shop/shopee-pcmall-live-sg/flashsale/649.e5e34359b351d0bdb6b8.legacy.css">
+    <link rel="stylesheet" href="~/Content/shop/shopee-pcmall-live-sg/flashsale/pcmall-flashsale-entry.b57a08a45958e37b98e0.legacy.css">
+    <link rel="stylesheet" href="~/Content/shop/shopee-pcmall-live-sg/rcmd/pcmall-rcmd-daily-discover-module.e3992020e3eb5ecfdad3.legacy.css">
     <meta http-equiv="origin-trial" content="A0KGawWMfAygakxUO+Z3rulPwK2j0AqkLneiEt4pAI951GYaafeHNV9Ya+PAn7s0y12QSrfTjc9LdOUU+QfkdQwAAACAeyJvcmlnaW4iOiJodHRwczovL2NyaXRlby5jb206NDQzIiwiZmVhdHVyZSI6IlByaXZhY3lTYW5kYm94QWRzQVBJcyIsImV4cGlyeSI6MTY2OTc2NjM5OSwiaXNTdWJkb21haW4iOnRydWUsImlzVGhpcmRQYXJ0eSI6dHJ1ZX0=">
-    <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col58.1664766611.json">
+    <link rel="prefetch" as="fetch" href="~/Content/shop/stm-sg-live/shopee-pcmall-live-sg/vi.col58.1664766611.json">
     <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col119.1666778300.json">
     <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col122.1655981629.json">
     <link rel="prefetch" as="fetch" href="https://deo.shopeemobile.com/shopee/stm-sg-live/shopee-pcmall-live-sg/vi.col120.1655981629.json">
@@ -6119,7 +6103,7 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
                                         <div role="button" class="stardust-popover__target">
                                             <div class="cart-drawer-container">
                                                 <a class="cart-drawer flex v-center" id="cart_drawer_target_id" href="@Url.Action("Giohang","GioHang")"></a>
-                                                @Html.Action("GiohangPartial1", "GioHang")
+                                                @Html.Action("GiohangPartial", "GioHang")
                                             </div>
                                         </div>
                                     </div>
