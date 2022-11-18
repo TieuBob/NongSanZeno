@@ -19,9 +19,9 @@ namespace NongSanZeno.Controllers
         public ActionResult TrangChu()
         {
             //Lay top 6 san pham ban chay nhat
-            var sanpham = Laysanpham(4);
+            var sanpham = Laysanpham(42);
             string s = Request.QueryString["s"];
-            if (!string.IsNullOrEmpty(s)) sanpham = data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(4).Where(w => w.TenSP.Contains(s)).ToList();
+            if (!string.IsNullOrEmpty(s)) sanpham = data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(42).Where(w => w.TenSP.Contains(s)).ToList();
             return View(sanpham);
         }
 

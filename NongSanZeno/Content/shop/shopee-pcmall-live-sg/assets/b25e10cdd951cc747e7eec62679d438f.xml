@@ -1,0 +1,7 @@
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+<ShortName>Shopee Việt Nam</ShortName>
+<LongName>Shopee Việt Nam</LongName>
+<Description>Mua và Bán Trên Ứng Dụng Di Động Hoặc Website</Description>
+<Tags>shopee</Tags>
+<Url type="text/html" rel="results" method="get" template="https://shopee.vn/search/?keyword={searchTerms}"/>
+</OpenSearchDescription>
