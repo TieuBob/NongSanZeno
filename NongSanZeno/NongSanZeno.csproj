@@ -2568,7 +2568,7 @@
     <Content Include="Views\GioHang\GioHangNull.cshtml" />
     <Content Include="Views\Layout\_Layout1.cshtml" />
     <Content Include="Views\GioHang\GiohangPartial1.cshtml" />
-    <Content Include="Views\Layout\_Layout2.cshtml" />
+    <Content Include="Views\Layout\_LayoutSanPham2.cshtml" />
     <Content Include="Views\Layout\_Layout3.cshtml" />
   </ItemGroup>
   <ItemGroup>
