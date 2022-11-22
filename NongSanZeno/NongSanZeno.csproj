@@ -177,13 +177,16 @@
     <Content Include="Content\LoginUser\images\xacnhandonhang.png" />
     <Content Include="Content\sanpham.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\1179.d5dff76d181a796c.css" />
+    <Content Include="Content\shop\shopee-pcmall-live-sg\assets\1281.8a3b0de1f8a79f3d.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\1337.7bb0a3e45592e52d.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\2274.419df2653e630b31.legacy.js" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\5823.825bbbd5ad2a3966.css" />
+    <Content Include="Content\shop\shopee-pcmall-live-sg\assets\5823.b30e7de93b6e74d8.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\7464.9b744d99d42b7c54.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\785.0e338541bc71e4db.js" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\b25e10cdd951cc747e7eec62679d438f.xml" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\bundle.771defbd521b8480.css" />
+    <Content Include="Content\shop\shopee-pcmall-live-sg\assets\bundle.a91d8837c86c6a40.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\bundle.b0ea9df67410c156.legacy.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\bundle.d708e928e3fd455c.js" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\bundle.fcaf551c6efca552.legacy.js" />
@@ -2498,8 +2501,8 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Layout\Error.cshtml" />
-    <Content Include="Views\Layout\_Layout.cshtml" />
-    <Content Include="Views\Layout\_LayoutSanPham.cshtml" />
+    <Content Include="Views\Layout\_Layout0.cshtml" />
+    <Content Include="Views\Layout\_LayoutSanPham1.cshtml" />
     <Content Include="Views\NongSanZeno\SanPham.cshtml" />
     <Content Include="Views\NongSanZeno\ChiTiet.cshtml" />
     <Content Include="Views\NongSanZeno\NhomSP.cshtml" />
@@ -2568,8 +2571,8 @@
     <Content Include="Views\GioHang\GioHangNull.cshtml" />
     <Content Include="Views\Layout\_Layout1.cshtml" />
     <Content Include="Views\GioHang\GiohangPartial1.cshtml" />
-    <Content Include="Views\Layout\_LayoutSanPham2.cshtml" />
-    <Content Include="Views\Layout\_Layout3.cshtml" />
+    <Content Include="Views\Layout\_LayoutSanPham.cshtml" />
+    <Content Include="Views\Layout\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

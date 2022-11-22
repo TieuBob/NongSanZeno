@@ -20,7 +20,7 @@ namespace NongSanZeno.Controllers
         public ActionResult SanPham(int? page)
         {
             //Tao bien quy dinh so san pham tren moi trang
-            int pageSize = 8;
+            int pageSize = 15;
             //tao bien so trang
             int pageNum = (page ?? 1);
 
@@ -66,7 +66,7 @@ namespace NongSanZeno.Controllers
             {
                 return HttpNotFound();
             }
-            int pagesize = 8;
+            int pagesize = 15;
             int pageNum = (page ?? 1);
             var SPbk = from sp in data.tbSanPhams where sp.MaNhom == id select sp;
             return View(SPbk.ToPagedList(pageNum, pagesize));
@@ -85,7 +85,7 @@ namespace NongSanZeno.Controllers
             {
                 return HttpNotFound();
             }
-            int pagesize = 6;
+            int pagesize = 15;
             int pageNum = (page ?? 1);
             var SPLoai = from sp in data.tbSanPhams where sp.MaLoaiSP == id select sp;
             return View(SPLoai.ToPagedList(pageNum, pagesize));
