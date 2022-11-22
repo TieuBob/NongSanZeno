@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<NongSanZeno.Models.tbLoaiSanPham>
 
-<h2 style="text-align:center">LOẠI NÔNG SẢN</h2>
+@*<h2 style="text-align:center">LOẠI NÔNG SẢN</h2>
 <ul>
     @foreach (var item in Model)
     {
@@ -10,4 +10,19 @@
             </a>
         </li>
     }
-</ul>
+</ul>*@
+@foreach (var item in Model)
+{
+    <div class="shopee-filter shopee-checkbox-filter">
+        <div class="shopee-checkbox">
+            <label class="shopee-checkbox__control">               
+                <input type="checkbox" name="" value="11036279">
+                <div class="shopee-checkbox__box"><i>&ensp;</i></div>
+                <a href="@Url.Action("SPTheoLoai", "NongSanZeno", new {id = item.MaLoaiSP})">
+                    <span class="shopee-checkbox__label" style="color:black">@item.TenLoaiSP</span>
+                </a>
+
+            </label>
+        </div>
+    </div>
+}
