@@ -1,0 +1,17 @@
+﻿@{
+    string content = ViewBag.Description;
+    if (string.IsNullOrEmpty(content))
+    {
+        content = "Cửa hàng bán nông sản các loại.";
+    }
+    else
+    {
+        content = content.Substring(0, 100) + "...";
+    }
+}
+<!DOCTYPE html>
+
+<html>
+
+
+</html>

@@ -135,6 +135,7 @@
     <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\LoginUserController.cs" />
     <Compile Include="Controllers\NongSanZenoController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\userController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,6 +177,9 @@
     <Content Include="Content\Cart\x3.65c58097.50478c53b08055d3ddc5.css" />
     <Content Include="Content\LoginUser\images\xacnhandonhang.png" />
     <Content Include="Content\sanpham.css" />
+    <Content Include="Content\shop\shopee-cs-live-sg\static\helpcenterfe\async.f5360aba.chunk.css" />
+    <Content Include="Content\shop\shopee-cs-live-sg\static\helpcenterfe\commonUtils.3e25d363.chunk.css" />
+    <Content Include="Content\shop\shopee-cs-live-sg\static\helpcenterfe\umi.2e0c68a0.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\1179.d5dff76d181a796c.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\1281.8a3b0de1f8a79f3d.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\assets\1337.7bb0a3e45592e52d.css" />
@@ -2502,7 +2506,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Layout\Error.cshtml" />
     <Content Include="Views\Layout\_Layout0.cshtml" />
-    <Content Include="Views\Layout\_LayoutSanPham1.cshtml" />
+    <Content Include="Views\Layout\_LayoutHelp.cshtml" />
     <Content Include="Views\NongSanZeno\SanPham.cshtml" />
     <Content Include="Views\NongSanZeno\ChiTiet.cshtml" />
     <Content Include="Views\NongSanZeno\NhomSP.cshtml" />
@@ -2573,6 +2577,7 @@
     <Content Include="Views\GioHang\GiohangPartial1.cshtml" />
     <Content Include="Views\Layout\_LayoutSanPham.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
+    <Content Include="Views\Support\Help.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

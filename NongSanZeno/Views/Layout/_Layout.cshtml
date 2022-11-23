@@ -1,5 +1,15 @@
-﻿<!DOCTYPE html>
-
+﻿@{
+    string content = ViewBag.Description;
+    if (string.IsNullOrEmpty(content))
+    {
+        content = "Cửa hàng bán nông sản các loại.";
+    }
+    else
+    {
+        content = content.Substring(0, 100) + "...";
+    }
+}
+<!DOCTYPE html>
 <html dir="ltr" lang="vi">
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -265,6 +275,7 @@
     <meta name="theme-color" content="#f53d2d" data-rh="true">
     <meta property="og:title" content="Nông Sản Zeno Việt Nam" data-rh="true">
     <link rel="icon" href="~/images/logo.png">
+    <meta name="description" content="@content" />
     <script type="application/ld+json" data-rh="true">
         @*{"@context":"http://schema.org","@type":"WebSite","url":"https://shopee.vn","potentialAction":{"@type":"SearchAction","target":"/search?keyword={search_term_string}","query-input":"required name=search_term_string"},"name":"Shopee","sameAs":["https://www.facebook.com/ShopeeVN","https://www.instagram.com/Shopee_VN/","https://www.youtube.com/channel/UCKcxoGpxOJx3nt83MCG-nuQ","https://play.google.com/store/apps/details?id=com.shopee.vn","https://itunes.apple.com/VN/app/id959841449"]}*@
     </script>
@@ -5987,7 +5998,7 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
                         </div>
                         <div class="navbar__spacer"></div>
                         <ul class="navbar__links">
-                            <a class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link--help" href="https://help.shopee.vn/vn/s" target="_blank" rel="noopener noreferrer" tabindex="0">
+                            <a class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link--help" href="/Support/Help" target="_blank" rel="noopener noreferrer" tabindex="0">
                                 <div class="navbar__help-center-icon">
                                     <svg height="16" viewBox="0 0 16 16" width="16" class="shopee-svg-icon icon-help-center">
                                         <g fill="none" fill-rule="evenodd" transform="translate(1)">
@@ -6017,28 +6028,37 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
                                     </div>
                                 </div>
                             </li>
-                            <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link--account">
-                                <div class="stardust-popover" id="stardust-popover1" tabindex="0">
-                                    <div role="button" class="stardust-popover__target">
-                                        <div class="navbar__link--account__container">
-                                            <div class="shopee-avatar">
-                                                <div class="shopee-avatar__placeholder">
-                                                    <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon icon-headshot">
-                                                        <g>
-                                                            <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
-                                                            <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path>
-                                                        </g>
-                                                    </svg>
+                            @if (Session["User"] == null)
+                            {
+                                <a class="navbar__link navbar__link--account navbar__link--signup navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium navbar__link-text--normal-case" href="/LoginUser/DangKy">Đăng Ký</a>
+                                <div class="navbar__link-separator"></div>
+                                <a class="navbar__link navbar__link--account navbar__link--login navbar__link--tappable navbar__link--hoverable navbar__link-text navbar__link-text--medium navbar__link-text--normal-case" href="/LoginUser/Dangnhap">Đăng Nhập</a>
+                            }
+                            else
+                            {
+                                <li class="navbar__link navbar__link--tappable navbar__link--hoverable navbar__link--account">
+                                    <div class="stardust-popover" id="stardust-popover1" tabindex="0">
+                                        <div role="button" class="stardust-popover__target">
+                                            <div class="navbar__link--account__container">
+                                                <div class="shopee-avatar">
+                                                    <div class="shopee-avatar__placeholder">
+                                                        <svg enable-background="new 0 0 15 15" viewBox="0 0 15 15" x="0" y="0" class="shopee-svg-icon icon-headshot">
+                                                            <g>
+                                                                <circle cx="7.5" cy="4.5" fill="none" r="3.8" stroke-miterlimit="10"></circle>
+                                                                <path d="m1.5 14.2c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke-linecap="round" stroke-miterlimit="10"></path>
+                                                            </g>
+                                                        </svg>
+                                                    </div>
+                                                    <img class="shopee-avatar__img" src="https://cf.shopee.vn/file/a79273da4ba63074f758aca5888d28b2_tn">
                                                 </div>
-                                                <img class="shopee-avatar__img" src="https://cf.shopee.vn/file/a79273da4ba63074f758aca5888d28b2_tn">
-                                            </div>
-                                            <div class="navbar__username">
-                                                <a style="color:white" href="@Url.Action("profile","user")">@Session["User"]</a>
+                                                <div class="navbar__username">
+                                                    <a style="color:white" href="@Url.Action("profile", "user")">@Session["User"]</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
+                                </li>
+                            }
                         </ul>
                     </nav>
                 </div>
@@ -6077,8 +6097,8 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
                             <div class="ofs-header__right">
                                 <div class="shopee-searchbar">
                                     <div class="shopee-searchbar__main">
-                                        <form role="search" class="shopee-searchbar-input" autocomplete="off">
-                                            <input aria-label="Tìm trong Shopee Mall" class="shopee-searchbar-input__input" maxlength="128" placeholder="Tìm " autocomplete="off" aria-autocomplete="list" aria-controls="shopee-searchbar-listbox" aria-expanded="false" role="combobox" value="">
+                                        <form role="search" class="shopee-searchbar-input" autocomplete="off" method="get" action="">
+                                            <input type="text" name="s" aria-label="Tìm" class="shopee-searchbar-input__input" maxlength="128" placeholder="Tìm " autocomplete="off" aria-autocomplete="list" aria-controls="shopee-searchbar-listbox" aria-expanded="false" role="combobox" value="">
                                         </form>
                                     </div>
                                     <button type="button" class="btn btn-solid-primary btn--s btn--inline shopee-searchbar__search-button">
@@ -6090,6 +6110,7 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
                                                             <g transform="translate(611 11)">
                                                                 <path d="m8 16c4.418278 0 8-3.581722 8-8s-3.581722-8-8-8-8 3.581722-8 8 3.581722 8 8 8zm0-2c-3.3137085 0-6-2.6862915-6-6s2.6862915-6 6-6 6 2.6862915 6 6-2.6862915 6-6 6z"></path>
                                                                 <path d="m12.2972351 13.7114222 4.9799555 4.919354c.3929077.3881263 1.0260608.3842503 1.4141871-.0086574.3881263-.3929076.3842503-1.0260607-.0086574-1.414187l-4.9799554-4.919354c-.3929077-.3881263-1.0260608-.3842503-1.4141871.0086573-.3881263.3929077-.3842503 1.0260608.0086573 1.4141871z"></path>
+                                                                <a href="javascript:" onclick="document.getElementById('frm-search').submit();" id="search-submit" style="padding: 8px;"></a>
                                                             </g>
                                                         </g>
                                                     </g>
@@ -6175,11 +6196,13 @@ section.--savior-overlay-z-index-reset>main[role="main"].--savior-overlay-z-inde
                     </div>
                 </div>
             </header>
+
             <div style="display: contents;">
-                <div>
+                <div style="margin-top:9rem">
                     @RenderBody()
                 </div>
             </div>
+
             <footer role="contentinfo" class="_5mVtqL uZncG4">
                 <div class="TqkMMy">
                     <div class="ZFiAah QmC5FB">
