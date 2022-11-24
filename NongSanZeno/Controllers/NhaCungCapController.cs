@@ -14,10 +14,9 @@ namespace NongSanZeno.Controllers
             return View();
         }
 
-        public ActionResult Index()
+        public ActionResult DangKyNCC()
         {
             return View();
-        }
-
+        }        
     }
 }

@@ -213,6 +213,7 @@
     <Content Include="Content\shop\shopee-pcmall-live-sg\homepage\HomeOfficialShopSection.ec62e6cc621fd63669d7.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\homepage\HomeTopProducts.ad72d6a1e44164c7a839.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\homepage\pcmall-homepage.f85d6475c4de93381fb0.css" />
+    <Content Include="Content\shop\shopee-seller-live-sg\rootpages\static\modules\onboarding\css\index.e5743bd43b3eb79871f8.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\mall\2.js" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\mall\315.f947cb6caccd64325101.js" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\mall\554.2e82c9589ecfeba55d7d.js" />
@@ -2585,6 +2586,7 @@
     <Content Include="Views\Home\AnToanThucPham.cshtml" />
     <Content Include="Views\NhaCungCap\NhaCungCap.cshtml" />
     <Content Include="Views\NhaCungCap\ChaoMungNCC.cshtml" />
+    <Content Include="Views\NhaCungCap\DangKyNCC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
