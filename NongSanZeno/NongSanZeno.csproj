@@ -2584,7 +2584,6 @@
     <Content Include="Views\Layout\_Layout.cshtml" />
     <Content Include="Views\Support\Help.cshtml" />
     <Content Include="Views\Home\AnToanThucPham.cshtml" />
-    <Content Include="Views\NhaCungCap\NhaCungCap.cshtml" />
     <Content Include="Views\NhaCungCap\ChaoMungNCC.cshtml" />
     <Content Include="Views\NhaCungCap\DangKyNCC.cshtml" />
   </ItemGroup>
