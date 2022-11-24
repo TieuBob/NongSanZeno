@@ -81,3 +81,7 @@ C:\Users\Admin\Downloads\Đồ án chuyên ngành CNTT\NongSanZeno\NongSanZeno\b
 C:\Users\Admin\Downloads\Đồ án chuyên ngành CNTT\NongSanZeno\NongSanZeno\obj\Debug\NongSanZeno.csproj.CopyComplete
 C:\Users\Admin\Downloads\Đồ án chuyên ngành CNTT\NongSanZeno\NongSanZeno\obj\Debug\NongSanZeno.dll
 C:\Users\Admin\Downloads\Đồ án chuyên ngành CNTT\NongSanZeno\NongSanZeno\obj\Debug\NongSanZeno.pdb
+C:\Users\admin\Desktop\Đồ án chuyên ngành\NongSanZeno\NongSanZeno\obj\Debug\NongSanZeno.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\Đồ án chuyên ngành\NongSanZeno\NongSanZeno\obj\Debug\NongSanZeno.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\Đồ án chuyên ngành\NongSanZeno\NongSanZeno\obj\Debug\NongSanZeno.dll
+C:\Users\admin\Desktop\Đồ án chuyên ngành\NongSanZeno\NongSanZeno\obj\Debug\NongSanZeno.pdb

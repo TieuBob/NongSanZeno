@@ -2042,6 +2042,10 @@
     <Content Include="images\sanpham\thuc-don-giam-can-bang-kho-qua-1.jpg" />
     <Content Include="images\sanpham\tradung.jpg" />
     <Content Include="images\sanpham\travang.jpg" />
+    <Content Include="images\tintuc\tintuc01.jpg" />
+    <Content Include="images\tintuc\tintuc02.jpg" />
+    <Content Include="images\tintuc\tintuc03.jpg" />
+    <Content Include="images\tintuc\tintuc04.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Models\dbNongSanZeno.dbml">

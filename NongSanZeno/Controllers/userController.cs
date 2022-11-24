@@ -7,6 +7,14 @@ using System.Web;
 using System.Web.Mvc;
 using NongSanZeno.Models;
 
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Net;
+using System.Net.Mail;
+using PagedList;
+using System.Configuration;
+using System.Data.SqlClient;
+
 namespace NongSanZeno.Controllers
 {
     public class userController : Controller
@@ -48,12 +56,7 @@ namespace NongSanZeno.Controllers
         {
             return View();
         }
-        public ActionResult purchase()
-        {
-            return View();
-        }
-        [HttpGet]
-        public ActionResult DSdonhang(int? page)
+        public ActionResult purchase(int? page)
         {
             int pagesize = 8;
             int pageNum = (page ?? 1);
@@ -61,8 +64,9 @@ namespace NongSanZeno.Controllers
             var list = data.tbDonHangs.Where(s => s.NgayDat >= GioHienTai).OrderByDescending(i => i.NgayDat).ToList();
             return View(list.ToPagedList(pageNum, pagesize));
         }
+
         [HttpPost]
-        public ActionResult DSdonhang(string date, string date2, int? page)
+        public ActionResult purchase(string date, string date2, int? page)
         {
             int pagesize = 8;
             int pageNum = (page ?? 1);
@@ -76,6 +80,6 @@ namespace NongSanZeno.Controllers
             var Date2 = DateTime.Parse(date2);
             var list = data.tbDonHangs.Where(s => s.NgayDat >= Date && s.NgayDat <= Date2).OrderByDescending(i => i.NgayDat).ToList();
             return View(list.ToPagedList(pageNum, pagesize));
-        }
+        }       
     }
 }
