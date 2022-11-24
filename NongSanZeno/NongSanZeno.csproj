@@ -134,6 +134,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\LoginUserController.cs" />
+    <Compile Include="Controllers\NhaCungCapController.cs" />
     <Compile Include="Controllers\NongSanZenoController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\userController.cs" />
@@ -2509,7 +2510,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Layout\Error.cshtml" />
-    <Content Include="Views\Layout\_Layout0.cshtml" />
+    <Content Include="Views\Layout\_LayoutNhaCungCap.cshtml" />
     <Content Include="Views\Layout\_LayoutHelp.cshtml" />
     <Content Include="Views\NongSanZeno\SanPham.cshtml" />
     <Content Include="Views\NongSanZeno\ChiTiet.cshtml" />
@@ -2533,7 +2534,6 @@
     <Content Include="Views\LoginUser\Thongtintk.cshtml" />
     <Content Include="Views\Layout\_LayoutLoginUser.cshtml" />
     <Content Include="Views\Home\TinTuc.cshtml" />
-    <Content Include="Views\Home\KhuyenMai.cshtml" />
     <Content Include="Views\AdminDonHang\DSdonhang.cshtml" />
     <Content Include="Views\AdminDonHang\ChiTietdonhang.cshtml" />
     <Content Include="Views\AdminDonHang\Suadonhang.cshtml" />
@@ -2582,6 +2582,9 @@
     <Content Include="Views\Layout\_LayoutSanPham.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
     <Content Include="Views\Support\Help.cshtml" />
+    <Content Include="Views\Home\AnToanThucPham.cshtml" />
+    <Content Include="Views\NhaCungCap\NhaCungCap.cshtml" />
+    <Content Include="Views\NhaCungCap\ChaoMungNCC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
