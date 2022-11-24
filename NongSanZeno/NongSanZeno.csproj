@@ -2577,7 +2577,7 @@
     <Content Include="Views\user\purchase.cshtml" />
     <Content Include="Views\user\profile.cshtml" />
     <Content Include="Views\GioHang\GioHangNull.cshtml" />
-    <Content Include="Views\Layout\_Layout1.cshtml" />
+    <Content Include="Views\Layout\_LayoutChiTiet.cshtml" />
     <Content Include="Views\GioHang\GiohangPartial1.cshtml" />
     <Content Include="Views\Layout\_LayoutSanPham.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
