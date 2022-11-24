@@ -1,7 +1,7 @@
 ﻿@using NongSanZeno.Models
 @{
     ViewBag.Title = "ChiTiet";
-    Layout = "~/Views/Layout/_Layout1.cshtml";
+    Layout = "~/Views/Layout/_LayoutChiTiet.cshtml";
 }
 
 <div class="page-product">
@@ -244,7 +244,7 @@
                                         <div class="flex items-center _3Bh7nx">
                                             @*<button class="product-variation product-variation--disabled" aria-label="cam" aria-disabled="true">cam</button>*@                                  
                                             <button class="product-variation product-variation--selected" aria-label="hồng" aria-disabled="false">
-                                                hồng
+                                                kilogram
                                                 @Model.MaDVT
                                             </button>                                          
                                         </div>
@@ -289,8 +289,8 @@
                                             <line fill="none" stroke-linecap="round" stroke-miterlimit="10" x1="9" x2="9" y1="8.5" y2="5.5"></line>
                                         </g>
                                     </svg>
-                                    <a href="@Url.Action("ThemGiohang", "GioHang", new {@masp = @Model.MaSP, @strURL=Request.Url.ToString() })">
-                                        thêm vào giỏ hàng
+                                    <a style="color:black" href="@Url.Action("ThemGiohang", "GioHang", new {@masp = @Model.MaSP, @strURL=Request.Url.ToString() })">
+                                        Thêm Vào Giỏ Hàng
                                     </a>
                                 </button>
                                 @*<button type="button" class="btn btn-solid-primary btn--l _3f7_YI" aria-disabled="false">

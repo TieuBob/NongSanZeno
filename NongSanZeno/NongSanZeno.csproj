@@ -134,6 +134,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginAdminController.cs" />
     <Compile Include="Controllers\LoginUserController.cs" />
+    <Compile Include="Controllers\NhaCungCapController.cs" />
     <Compile Include="Controllers\NongSanZenoController.cs" />
     <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Controllers\userController.cs" />
@@ -212,6 +213,7 @@
     <Content Include="Content\shop\shopee-pcmall-live-sg\homepage\HomeOfficialShopSection.ec62e6cc621fd63669d7.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\homepage\HomeTopProducts.ad72d6a1e44164c7a839.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\homepage\pcmall-homepage.f85d6475c4de93381fb0.css" />
+    <Content Include="Content\shop\shopee-seller-live-sg\rootpages\static\modules\onboarding\css\index.e5743bd43b3eb79871f8.css" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\mall\2.js" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\mall\315.f947cb6caccd64325101.js" />
     <Content Include="Content\shop\shopee-pcmall-live-sg\mall\554.2e82c9589ecfeba55d7d.js" />
@@ -2509,7 +2511,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Layout\Error.cshtml" />
-    <Content Include="Views\Layout\_Layout0.cshtml" />
+    <Content Include="Views\Layout\_LayoutNhaCungCap.cshtml" />
     <Content Include="Views\Layout\_LayoutHelp.cshtml" />
     <Content Include="Views\NongSanZeno\SanPham.cshtml" />
     <Content Include="Views\NongSanZeno\ChiTiet.cshtml" />
@@ -2533,7 +2535,6 @@
     <Content Include="Views\LoginUser\Thongtintk.cshtml" />
     <Content Include="Views\Layout\_LayoutLoginUser.cshtml" />
     <Content Include="Views\Home\TinTuc.cshtml" />
-    <Content Include="Views\Home\KhuyenMai.cshtml" />
     <Content Include="Views\AdminDonHang\DSdonhang.cshtml" />
     <Content Include="Views\AdminDonHang\ChiTietdonhang.cshtml" />
     <Content Include="Views\AdminDonHang\Suadonhang.cshtml" />
@@ -2577,11 +2578,15 @@
     <Content Include="Views\user\purchase.cshtml" />
     <Content Include="Views\user\profile.cshtml" />
     <Content Include="Views\GioHang\GioHangNull.cshtml" />
-    <Content Include="Views\Layout\_Layout1.cshtml" />
+    <Content Include="Views\Layout\_LayoutChiTiet.cshtml" />
     <Content Include="Views\GioHang\GiohangPartial1.cshtml" />
     <Content Include="Views\Layout\_LayoutSanPham.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
     <Content Include="Views\Support\Help.cshtml" />
+    <Content Include="Views\Home\AnToanThucPham.cshtml" />
+    <Content Include="Views\NhaCungCap\NhaCungCap.cshtml" />
+    <Content Include="Views\NhaCungCap\ChaoMungNCC.cshtml" />
+    <Content Include="Views\NhaCungCap\DangKyNCC.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

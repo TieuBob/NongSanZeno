@@ -36,7 +36,7 @@ namespace NongSanZeno.Controllers
             return View();
         }
 
-        public ActionResult KhuyenMai()
+        public ActionResult AnToanThucPham()
         {
             return View();
         }
