@@ -52,5 +52,30 @@ namespace NongSanZeno.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult DSdonhang(int? page)
+        {
+            int pagesize = 8;
+            int pageNum = (page ?? 1);
+            var GioHienTai = DateTime.Today;
+            var list = data.tbDonHangs.Where(s => s.NgayDat >= GioHienTai).OrderByDescending(i => i.NgayDat).ToList();
+            return View(list.ToPagedList(pageNum, pagesize));
+        }
+        [HttpPost]
+        public ActionResult DSdonhang(string date, string date2, int? page)
+        {
+            int pagesize = 8;
+            int pageNum = (page ?? 1);
+            var Date = DateTime.Parse(date);
+
+            if (date2 == "")
+            {
+                var listdate = data.tbDonHangs.Where(s => s.NgayDat >= Date).OrderByDescending(i => i.NgayDat).ToList();
+                return View(listdate.ToPagedList(pageNum, pagesize));
+            }
+            var Date2 = DateTime.Parse(date2);
+            var list = data.tbDonHangs.Where(s => s.NgayDat >= Date && s.NgayDat <= Date2).OrderByDescending(i => i.NgayDat).ToList();
+            return View(list.ToPagedList(pageNum, pagesize));
+        }
     }
 }

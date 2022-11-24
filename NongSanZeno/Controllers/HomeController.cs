@@ -12,6 +12,7 @@ namespace NongSanZeno.Controllers
     public class HomeController : Controller
     {
         dbNongSanZenoDataContext data = new dbNongSanZenoDataContext();
+
         private List<tbSanPham> Laysanpham(int count)
         {
             return data.tbSanPhams.OrderByDescending(a => a.NgayCapNhat).Take(count).ToList();
