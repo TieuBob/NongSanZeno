@@ -11,12 +11,26 @@ namespace NongSanZeno.Controllers
         // GET: NhaCungCap
         public ActionResult ChaoMungNCC()
         {
+            //if (Session["Taikhoan"] == null || Session["Taikhoan"].ToString() == "")
+            //{
+            //    return RedirectToAction("Dangnhap", "LoginUser");
+            //}
             return View();
         }
 
-        public ActionResult DangKyNCC()
+        public ActionResult ThongTin()
         {
             return View();
-        }        
+        }
+
+        public ActionResult VanChuyen()
+        {
+            return View();
+        }
+
+        public ActionResult CungCapSanPham()
+        {
+            return View();
+        }
     }
 }
