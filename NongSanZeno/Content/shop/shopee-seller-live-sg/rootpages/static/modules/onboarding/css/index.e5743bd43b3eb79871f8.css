@@ -4356,7 +4356,7 @@ html[data-focus-visible] .shopee-button--danger:focus {
 }
 
 .shopee-step.active .shopee-step__head-dot, .shopee-step.active .shopee-step__head-step, .shopee-step.finished .shopee-step__tail {
-    background-color: #ee4d2d
+    background-color: #3c763d;
 }
 
 .shopee-step.active .shopee-step__head-icon {
