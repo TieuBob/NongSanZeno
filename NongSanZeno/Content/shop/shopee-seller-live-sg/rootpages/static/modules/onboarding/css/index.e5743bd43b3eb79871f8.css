@@ -4543,7 +4543,7 @@ html[data-focus-visible] .shopee-button--danger:focus {
 }
 
     .shopee-form-item--error .shopee-input__inner, .shopee-form-item--error .shopee-selector {
-        border-color: #ff4742
+        border-color: #4e4e22
     }
 
 .shopee-form-item--small {
@@ -6187,7 +6187,7 @@ html[data-focus-visible] .shopee-button--danger:focus {
 }
 
     .shopee-input__inner.focused, .shopee-input__inner:hover {
-        border-color: #b7b7b7
+        border-color: #e5e5e5
     }
 
     .shopee-input__inner .shopee-input__prefix-icon.shopee-icon, .shopee-input__inner .shopee-input__suffix-icon.shopee-icon {

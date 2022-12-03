@@ -2588,8 +2588,6 @@
     <Content Include="Views\Home\AnToanThucPham.cshtml" />
     <Content Include="Views\NhaCungCap\ChaoMungNCC.cshtml" />
     <Content Include="Views\NhaCungCap\ThongTin.cshtml" />
-    <Content Include="Views\NhaCungCap\VanChuyen.cshtml" />
-    <Content Include="Views\NhaCungCap\CungCapSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
