@@ -56,30 +56,65 @@ namespace NongSanZeno.Controllers
         {
             return View();
         }
-        public ActionResult purchase(int? page)
+
+        public ActionResult DSsanpham(int? page)
         {
+            if (Session["TKadmin"] == null)
+            {
+                return RedirectToAction("SanPham", "NongSanZeno");
+            }
             int pagesize = 8;
             int pageNum = (page ?? 1);
-            var GioHienTai = DateTime.Today;
-            var list = data.tbDonHangs.Where(s => s.NgayDat >= GioHienTai).OrderByDescending(i => i.NgayDat).ToList();
+            var list = data.tbSanPhams.OrderByDescending(s => s.MaSP).ToList();
             return View(list.ToPagedList(pageNum, pagesize));
         }
 
-        [HttpPost]
-        public ActionResult purchase(string date, string date2, int? page)
+        public ActionResult ChiTietdonhang(int? id)
         {
+            if (Session["TKadmin"] == null)
+            {
+                return RedirectToAction("SanPham", "NongSanZeno");
+            }
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            var list = data.tbChiTietDonHangs.Where(s => s.MaDH == id).OrderByDescending(s => s.MaSP).ToList();
+            return View(list);
+        }
+
+        //[HttpGet]
+        public ActionResult purchase(int? page)
+        {
+            //if (Session["TKadmin"] == null)
+            //{
+            //    return RedirectToAction("SanPham", "NongSanZeno");
+            //}
             int pagesize = 8;
             int pageNum = (page ?? 1);
-            var Date = DateTime.Parse(date);
+            //var GioHienTai = DateTime.Today;
+            //var list = data.tbDonHangs.Where(s => s.NgayDat >= GioHienTai).OrderByDescending(i => i.NgayDat).ToList();
+            //return View(list.ToPagedList(pageNum, pagesize));
 
-            if (date2 == "")
-            {
-                var listdate = data.tbDonHangs.Where(s => s.NgayDat >= Date).OrderByDescending(i => i.NgayDat).ToList();
-                return View(listdate.ToPagedList(pageNum, pagesize));
-            }
-            var Date2 = DateTime.Parse(date2);
-            var list = data.tbDonHangs.Where(s => s.NgayDat >= Date && s.NgayDat <= Date2).OrderByDescending(i => i.NgayDat).ToList();
+            var list = data.tbDonHangs.OrderByDescending(i => i.NgayDat).ToList();
             return View(list.ToPagedList(pageNum, pagesize));
-        }       
+        }
+
+        //[HttpPost]
+        //public ActionResult purchase(string date, string date2, int? page)
+        //{
+        //    int pagesize = 8;
+        //    int pageNum = (page ?? 1);
+        //    var Date = DateTime.Parse(date);
+
+        //    if (date2 == "")
+        //    {
+        //        var listdate = data.tbDonHangs.Where(s => s.NgayDat >= Date).OrderByDescending(i => i.NgayDat).ToList();
+        //        return View(listdate.ToPagedList(pageNum, pagesize));
+        //    }
+        //    var Date2 = DateTime.Parse(date2);
+        //    var list = data.tbDonHangs.Where(s => s.NgayDat >= Date && s.NgayDat <= Date2).OrderByDescending(i => i.NgayDat).ToList();
+        //    return View(list.ToPagedList(pageNum, pagesize));
+        //}       
     }
 }
